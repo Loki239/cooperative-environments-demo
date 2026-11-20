@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "environments_all_three_modes": 30,
+  "download_links": 90,
+  "chat_delivery_roles": 3,
+  "cpu_variants_browser_sample": 12,
+  "viewport_widths": [
+    1440,
+    390
+  ],
+  "javascript_errors": [],
+  "http_errors": [],
+  "checks": [
+    "manual simultaneous actions",
+    "private sensor visibility",
+    "one-tick chat and text escaping",
+    "invalid action ends episode",
+    "restart",
+    "download own trace",
+    "replay seek and pause",
+    "all saved final goals",
+    "search and filter",
+    "mobile catalogue and play"
+  ]
+}

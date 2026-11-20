@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "network": "all HTTP(S) requests blocked",
+  "checks": [
+    "replay final goal",
+    "manual chat",
+    "download exact world JSON",
+    "360 px without overflow"
+  ]
+}

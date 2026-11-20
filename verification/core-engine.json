@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "environments": {
+    "GRAPH": {
+      "test_cases": 30,
+      "transitions": 415
+    },
+    "GL023": {
+      "test_cases": 129,
+      "transitions": 167
+    },
+    "E113": {
+      "test_cases": 8,
+      "transitions": 116
+    },
+    "E044": {
+      "test_cases": 28,
+      "transitions": 400
+    },
+    "NG007": {
+      "test_cases": 8,
+      "transitions": 124
+    },
+    "E082-core": {
+      "test_cases": 8,
+      "transitions": 116
+    },
+    "IN013": {
+      "test_cases": 8,
+      "transitions": 128
+    }
+  },
+  "cases": 219,
+  "steps": 1466,
+  "observations": 7230,
+  "scope": "Frozen examples and native differential controls; not a proof for arbitrary games.",
+  "model_calls": 0
+}

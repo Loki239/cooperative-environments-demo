@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "worlds": 30,
+  "cases": 630,
+  "transitions": 7172,
+  "observations": 29290,
+  "model_calls": 0
+}

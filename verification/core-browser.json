@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "core_environments": 7,
+  "native_replay_variants": 35,
+  "checks": [
+    "three modes in all seven entries",
+    "graph activation and one-tick delivery",
+    "correct and incorrect graph answers",
+    "lever phase switch and private anonymous board",
+    "full capsule manual local-message witness",
+    "separate 7/30 collections",
+    "mobile layout",
+    "offline native replay"
+  ],
+  "javascript_errors": [],
+  "http_errors": []
+}

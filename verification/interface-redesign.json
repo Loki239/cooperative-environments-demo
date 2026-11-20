@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "recorded_at_moscow": "2026-11-20T23:08:38.561990+03:00",
+  "reference_url": "https://andreya1998.github.io/cooperative-math-demo/",
+  "environment_count": 37,
+  "collections": {
+    "core": 7,
+    "generated": 30
+  },
+  "physical_engines_rules_and_examples_unchanged": true,
+  "unchanged_files": 40,
+  "browser": {
+    "generated": {
+      "status": "PASS",
+      "environments_all_three_modes": 30,
+      "download_links": 90,
+      "chat_delivery_roles": 3,
+      "cpu_variants_browser_sample": 12,
+      "viewport_widths": [
+        1440,
+        390
+      ],
+      "javascript_errors": [],
+      "http_errors": [],
+      "checks": [
+        "manual simultaneous actions",
+        "private sensor visibility",
+        "one-tick chat and text escaping",
+        "invalid action ends episode",
+        "restart",
+        "download own trace",
+        "replay seek and pause",
+        "all saved final goals",
+        "search and filter",
+        "mobile catalogue and play"
+      ]
+    },
+    "core": {
+      "status": "PASS",
+      "core_environments": 7,
+      "native_replay_variants": 35,
+      "checks": [
+        "three modes in all seven entries",
+        "graph activation and one-tick delivery",
+        "correct and incorrect graph answers",
+        "lever phase switch and private anonymous board",
+        "full capsule manual local-message witness",
+        "separate 7/30 collections",
+        "mobile layout",
+        "offline native replay"
+      ],
+      "javascript_errors": [],
+      "http_errors": []
+    },
+    "selection": {
+      "status": "PASS",
+      "shared_starts_and_reloads": 37,
+      "viewport_widths": [
+        360,
+        390,
+        768,
+        1000,
+        1440
+      ],
+      "checks": [
+        "filtered random environment",
+        "random distinct start",
+        "single-start disabled",
+        "invalid shared start fallback",
+        "mode preserved on environment switch",
+        "offline native to WorldSpec navigation"
+      ],
+      "javascript_errors": []
+    }
+  },
+  "runtime_sha256": {
+    "index.html": "68e3ce595e759085b684dc7f9841e2e944ed4b1c471616a90e45263f7ed3a189",
+    "styles.css": "cb6fe5ff44c921c3c87bdb967450e29682d365431f7cf42a93a427d8e98ab7ef",
+    "app.js": "cadbeebe0ae8940cdf812a2bbd0c59396c3d8658af5680294b8fe48aa1c1b59a",
+    "established-ui.js": "a81d405b2b111ea758c2e39bc3174be4e10a9cf423c9718cfeba77548ff3e1e8",
+    "engine.js": "a3909b2faa2b9726acb07e2f6bb94376d88182e9c356092c09d7ab9fbcc1812a",
+    "established-engine.js": "2db745306b970704ae9556abeb21ba9508f72024ab47795c87f22e55ab09e793"
+  },
+  "model_calls": 0
+}

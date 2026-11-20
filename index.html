@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9f8">
+  <meta name="description" content="37 исполняемых сред для исследования общения агентов: ручная игра, роли, сообщения и проверенные CPU-прохождения.">
+  <title>Среды для общения агентов</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2318314e'/%3E%3Ccircle cx='13' cy='14' r='5' fill='%237da6f4'/%3E%3Ccircle cx='28' cy='14' r='5' fill='%2370c7bf'/%3E%3Ccircle cx='20' cy='28' r='5' fill='%23e6b563'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="engine.js"></script>
+  <script defer src="scenes.js"></script>
+  <script defer src="core-scenes.js"></script>
+  <script defer src="established-engine.js"></script>
+  <script defer src="established-ui.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">К среде</a>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#env=GRAPH&mode=about" aria-label="Среды для общения агентов — главная">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#27765c"/><path d="M10 11L26 12L18 26Z" fill="none" stroke="#c8e4d9" stroke-width="1.5"/><circle cx="10" cy="11" r="3.5" fill="white"/><circle cx="26" cy="12" r="3.5" fill="white"/><circle cx="18" cy="26" r="3.5" fill="white"/></svg>
+        <span>Среды для общения агентов</span>
+      </a>
+      <div class="header-actions"><span class="local-note">Работает в браузере, без API</span><a class="source-link" href="https://github.com/Loki239/cooperative-environments-demo" target="_blank" rel="noopener">Исходники</a></div>
+    </header>
+    <nav class="collection-switch" aria-label="Подборка сред">
+      <button class="collection-button active" data-collection="core" aria-pressed="true">Наши основные <span>7</span></button>
+      <button class="collection-button" data-collection="generated" aria-pressed="false">Новые продолжения <span>30</span></button>
+    </nav>
+    <section id="catalogue" class="catalogue" aria-label="Выбор среды">
+      <div class="catalogue-controls">
+        <label class="control-label" for="environment-select">Среда<select id="environment-select" class="select" disabled><option>Загружаем каталог…</option></select></label>
+        <label class="control-label" for="start-select">Вариант старта<select id="start-select" class="select" disabled><option>1</option></select></label>
+        <button id="random-environment" class="button secondary" disabled>Случайная среда</button>
+        <button id="random-start" class="button secondary" disabled>Другой старт</button>
+      </div>
+      <div class="catalogue-options">
+        <label class="search"><span class="sr-only">Найти среду</span><input id="search" type="search" placeholder="Поиск по названию или ID" aria-label="Найти среду"></label>
+        <label class="checkbox-option"><input id="scene-filter" type="checkbox">Со схемой</label>
+        <p id="catalogue-status" class="muted" role="status"><span id="environment-count">7</span> сред в подборке</p>
+        <button class="text-button" id="about-data">Что здесь проверено</button>
+      </div>
+    </section>
+    <main id="workspace" tabindex="-1"><div class="loading">Загружаем среду…</div></main>
+    <footer class="page-footer">Один браузер, все роли. Расписание ходов и доступные участникам сведения указаны в каждой среде.</footer>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="data-dialog"><button class="dialog-close button secondary" aria-label="Закрыть">Закрыть</button><h2>Что здесь проверено</h2><p>В каталоге две подборки: семь давно разобранных задач и 30 новых продолжений от 20 ноября 2026 года. Для основных задач сохранены 67 примеров разных типов, для новых — по 12 CPU-примеров. У каждой основной задачи указан объём проверки и его границы.</p><p>В примерах новых продолжений идеальная команда объединяет законные наблюдения всех ролей. Отправки сообщений в них не исполнялись. Проверка необходимости реального чата осталась <code>UNKNOWN</code>, модельных игр у этой серии пока нет.</p><p>Для новых продолжений и четырёх основных WorldSpec-сред работает сохранённый контракт чата: одно действие на роль за такт, сообщение занимает действие. У скрытой сети, пяти рычагов и пневмопочты сохранены их собственные расписания, описанные в карточках. Успех CPU-примера не доказывает, что в том же горизонте получится выиграть с такими сообщениями.</p><p>Вы управляете всеми ролями на одном устройстве. Это песочница для знакомства с правилами, а не сервер для независимых игроков. Полные правила и исходные варианты доступны для исследования; интерфейс выбранной роли скрывает недоступные ей поля.</p><p><a href="provenance.json" download>Скачать происхождение данных</a></p></dialog>
+  <noscript><div class="noscript">Для игры и просмотра шагов нужен JavaScript. <a href="catalogue.json">Скачать список сред</a> или <a href="provenance.json">сведения о проверках</a>.</div></noscript>
+</body>
+</html>

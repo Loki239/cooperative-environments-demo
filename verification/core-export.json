@@ -1,0 +1,74 @@
+{
+  "recorded_at_moscow": "2026-11-20T20:23:14+03:00",
+  "environments": {
+    "E113": {
+      "name": "перегрузка груза и ремонт машины",
+      "examples": 8,
+      "test_cases": 8,
+      "source_hashes": {
+        "data/random_ten_full_catalogue_20261112/fast_generation_E113/world.json": "43ca5e1c1478153f04ef2078701242ad9e9862ab6664c912f4bd40cab6c297e3"
+      }
+    },
+    "NG007": {
+      "name": "снятие приёмной головки",
+      "examples": 8,
+      "test_cases": 8,
+      "source_hashes": {
+        "data/random_ten_20261112/fast_generation_NG007/world.json": "572d585ef80f3d09679955e77b9b279bd54cd92eb4b72383cd08206167454386"
+      }
+    },
+    "E082-core": {
+      "name": "жизнеобеспечение станции",
+      "examples": 8,
+      "test_cases": 8,
+      "source_hashes": {
+        "data/random_ten_full_catalogue_20261112/fast_generation_E082/world.json": "848c6bf9faa48f8bbb3e8950862ea51c0a018e5e3e5f77070b58725c27e40a13"
+      }
+    },
+    "IN013": {
+      "name": "сборка по удалённой инструкции",
+      "examples": 8,
+      "test_cases": 8,
+      "source_hashes": {
+        "data/random_ten_full_catalogue_20261112/fast_generation_IN013/world.json": "f498cf92a9da1913b5b95de9fd14195f6a04f48a522aae211486fa9cd86509f4"
+      }
+    },
+    "GRAPH": {
+      "name": "скрытая сеть",
+      "examples": 30,
+      "test_cases": 30,
+      "source_hashes": {
+        "output/global_comm_20261115/network_inputs.json": "7bc87eb43c64c94a5f872702e9558224b5fda2e9d8986bc3576b1296bd0989b6",
+        "output/communication_difficulty_20261115/misha_graph_topology_environment.py": "a6e2c8de83dedddbfba10d5bd2474c79d04d7acff69c8250e10616a404a9ccdb"
+      }
+    },
+    "GL023": {
+      "name": "пять рычагов с зарядом",
+      "examples": 1,
+      "test_cases": 129,
+      "source_hashes": {
+        "research/five_player_levers.py": "c11077865efdb0ef33ef8150d71e23ccc2b6200ca6a9900bdcea3329be0ebf13",
+        "data/gemma_five_levers_20261112/18350/world.json": "d0996e12f74ec566fe344f2085153f89143500f8c0c3c73e67a26b9645deb1f6"
+      }
+    },
+    "E044": {
+      "name": "пневмопочта с заменой картриджа",
+      "examples": 4,
+      "test_cases": 28,
+      "source_hashes": {
+        "research/ready_scenarios/capsule.py": "d16811931d3755c2b83105f60c12624ac7203ac7b4061ffa677484bc7aca12f3",
+        "research/block_comm_hint/capsule.py": "33bfa5bcc30cb60b390dea3c127084134474ecb5e8107402f6c76290821f49ff"
+      }
+    }
+  },
+  "model_calls": 0,
+  "browser_runtime_sha256": {
+    "engine.js": "a3909b2faa2b9726acb07e2f6bb94376d88182e9c356092c09d7ab9fbcc1812a",
+    "established-engine.js": "2db745306b970704ae9556abeb21ba9508f72024ab47795c87f22e55ab09e793",
+    "established-ui.js": "a81d405b2b111ea758c2e39bc3174be4e10a9cf423c9718cfeba77548ff3e1e8",
+    "app.js": "c6adb86f0761b67e97a6eeeeaf10809c5e2237672edf0b2710bb208fdb189647",
+    "core-scenes.js": "b860b3b0ccee413755b0c13365ae8819b2e87b052868dec7ecb1c7b695e235bf"
+  },
+  "browser_runtime_recorded_at_moscow": "2026-11-21T01:35:33.592037+03:00",
+  "browser_runtime_verification": "core-scenes.json"
+}
