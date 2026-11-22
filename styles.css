@@ -74,3 +74,13 @@
 @media(max-width:520px){.team-stage .communication-scene{padding:10px}.team-stage .communication-scene svg{height:155px;max-height:155px}.team-stage .scene-wrap>svg,.team-stage .scene-wrap svg.mechanism-scene,.team-stage .e113-scene svg.e113-map{height:220px;max-height:220px}.team-stage .comm-select{font-size:11px}.team-layout .next-message{flex-basis:100%}.team-layout .replay-controls{top:4px}.team-stage .comm-preview{font-size:12px}}
 .team-context{padding:7px 14px;background:#edf5ef;color:#426352;font-size:11px;border-bottom:1px solid #dae7de}
 .team-layout .team-stage .scene-observations,.team-layout .team-stage .e113-reading-details{display:none}
+/* Physical action links use solid strokes; envelopes remain communication only. */
+.team-stage{position:relative}
+.team-stage .communication-scene svg{height:auto;max-height:none}
+.action-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.action-key{font-size:11px;color:#687e71;margin:4px 0 10px;line-height:1.45}
+.has-physical-action{cursor:pointer}.person-action text{font-weight:550}.person-action.selected-action text{font-weight:750;text-decoration:underline;text-underline-offset:3px}.team-person.selected-action{stroke-width:4}
+[data-action-actor]:focus{outline:none;filter:drop-shadow(0 0 2px #456b48)}
+.action-explanation{display:flex;gap:8px;align-items:center;padding:9px 16px;color:var(--role);background:#f5f9f6;border-top:1px solid #dbe7de;font-size:12px;line-height:1.45}
+.action-role-number{border:1.5px solid var(--role);border-radius:50%;width:21px;height:21px;display:grid;place-items:center;flex:none;background:#fff;font-weight:650}
+@media(max-width:520px){.team-stage .communication-scene svg{height:auto;max-height:none}.action-key{font-size:10px}.action-explanation{font-size:11px;padding:8px 12px}}

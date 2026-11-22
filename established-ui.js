@@ -30,6 +30,9 @@ function diagram(frame,full,actions={}){
    if(data.kind==='graph')svg+=glyph(!full&&a!==role?'статус скрыт':(frame.active||[]).includes(a)?'активен':'ожидает',x,y+55,'#60728a',12);
    else {const own=frame.observations[a];svg+=glyph(full||a===role?`заряд ${s.charge[a]} · ставка ${own.rate??'—'}`:'личные показания',x,y+53,'#60728a',12);}
   }
+  if(data.kind==='levers')for(const a of actors){const [x,y]=coords[a],on=(full||a===role)&&actions[a]?.press===true;
+   svg+=`<g data-lever-owner="${esc(a)}" transform="translate(${x+38} ${y})"><path d="M-9 15H9M0 15V0L${on?12:-9} -10" fill="none" stroke="${color(a)}" stroke-width="3" stroke-linecap="round"/><circle cx="${on?12:-9}" cy="-10" r="5" fill="#fff" stroke="${color(a)}" stroke-width="2"/></g>`;
+  }
   if(data.kind==='graph')svg+=glyph(full?'Полная сеть':'Соседи выбранной вершины',280,462,'#60728a',14);
   else svg+=glyph(full?'Четыре приватные доски':'Связи досок скрыты за локальными номерами',280,462,'#60728a',14);
  }else{
@@ -38,6 +41,7 @@ function diagram(frame,full,actions={}){
   svg+=`<rect x="55" y="170" width="120" height="110" rx="18" fill="#e6eefc" stroke="#3266c9" stroke-width="3"/><circle cx="115" cy="220" r="26" fill="${pressure?'#3266c9':'#b6c6df'}"/>`+glyph('A · насос',115,310,'#3266c9');
   svg+=`<rect x="247" y="195" width="66" height="62" rx="12" fill="#e4f3ef" stroke="#087f8c" stroke-width="3"/>`+glyph(route??'?',280,234,'#087f8c',22)+glyph('B · развилка',280,310,'#087f8c');
   for(const [t,y] of [[0,130],[1,320]]){const on=opened===t||opened==='T'+t;svg+=`<rect x="405" y="${y-35}" width="100" height="70" rx="12" fill="${on?'#f1dfbf':'#f7f3ed'}" stroke="#a96620" stroke-width="3"/>`+glyph('T'+t,455,y+7,'#a96620',21);}
+  svg+=`<g data-capsule-sensor="C"><rect x="436" y="209" width="38" height="32" rx="5" fill="#fff" stroke="#a96620" stroke-width="2"/><path d="M442 230L451 217L458 228L467 216" fill="none" stroke="#a96620" stroke-width="2"/></g>`+glyph('Датчик',455,263,'#a96620',13);
   svg+=glyph('C · приёмник и датчик',410,410,'#a96620',16)+glyph('Скрытый картридж',280,160,'#60728a',13)+glyph(`Доставлено ${s.delivered.length} из 2`,160,410,'#60728a',16);
  }
  return `<svg viewBox="0 0 560 470" role="img" aria-label="${esc(data.name)}"><defs><marker id="native-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#3266c9"/></marker></defs>${svg}</svg>`;
@@ -87,7 +91,14 @@ function communication(frame,full,actions,replay){
    }
   }
  }
- return window.CommunicationScene.render(events,{actors:data.kind==='levers'&&!full?[role,...Object.keys(frame.observations[role].boards||{}).map(p=>'board:'+p)]:actors,color,name:a=>a.startsWith('board:')?'Доска '+a.slice(6):a,round,key:`${data.id}/${index}/${replay?'replay':'play'}/${round}`,empty:data.kind==='levers'?'Новых записей на доступных досках в этом такте нет.':'В доступной истории сообщений пока нет.',timing:data.kind==='levers'?'Запись уже доступна участнику доски. Текст может содержать самопредставление; система не удостоверяет автора в локальном виде.':data.kind==='capsule'?'Сообщение выбрано до результата инструмента и доступно партнёрам перед их следующими ходами.':'Сообщение уже доставлено, доступно перед следующим выбором. Движение повторяет записанную передачу.'});
+ const roleNumbers=Object.fromEntries(actors.map((a,i)=>[a,i+1]));
+ const actionCalls=data.kind==='capsule'?(actions.actor?{[actions.actor]:actions}:{}):actions;
+ const actionRows=Object.entries(actionCalls).filter(([a])=>full||a===role).map(([a,call])=>{
+  const feedback=replay?(data.kind==='capsule'?frame.state.last_result?.[a]:null):lastFeedback;
+  const described=feedback?.ok===false?{kind:'rejected',label:'Ход отклонён'}:window.ActionTargets.describe(data.id,a,call,{actors,public:{}});
+  return {...described,actor:a,number:roleNumbers[a],color:color(a),roleName:a};
+ });
+ return window.CommunicationScene.render(events,{actors:data.kind==='levers'&&!full?[role,...Object.keys(frame.observations[role].boards||{}).map(p=>'board:'+p)]:actors,color,roleNumbers,actionRows,name:a=>a.startsWith('board:')?'Доска '+a.slice(6):a,round,key:`${data.id}/${index}/${replay?'replay':'play'}/${round}`,empty:data.kind==='levers'?'Новых записей на доступных досках в этом такте нет.':'В доступной истории сообщений пока нет.',timing:data.kind==='levers'?'Запись уже доступна участнику доски. Текст может содержать самопредставление; система не удостоверяет автора в локальном виде.':data.kind==='capsule'?'Сообщение выбрано до результата инструмента и доступно партнёрам перед их следующими ходами.':'Сообщение уже доставлено, доступно перед следующим выбором. Движение повторяет записанную передачу.'});
 }
 function toolbar(){return `<div class="work-toolbar"><span class="mode-note">${data.kind==='capsule'?'Участники ходят по очереди':data.kind==='levers'?'Нажатия и переписка отдельными фазами':'Одно действие на участника за такт'}</span><button class="button secondary" data-native="restart">Начать заново</button></div>`;}
 function form(){const v=game.observe(role),disabled=game.done||(data.kind==='graph'&&!active.has(role))||(data.kind==='capsule'&&role!==game.actors[game.turns%3]);let html='';
