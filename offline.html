@@ -83,7 +83,7 @@
 @media(max-width:520px){.team-stage .communication-scene{padding:10px}.team-stage .communication-scene svg{height:155px;max-height:155px}.team-stage .scene-wrap>svg,.team-stage .scene-wrap svg.mechanism-scene,.team-stage .e113-scene svg.e113-map{height:220px;max-height:220px}.team-stage .comm-select{font-size:11px}.team-layout .next-message{flex-basis:100%}.team-layout .replay-controls{top:4px}.team-stage .comm-preview{font-size:12px}}
 .team-context{padding:7px 14px;background:#edf5ef;color:#426352;font-size:11px;border-bottom:1px solid #dae7de}
 .team-layout .team-stage .scene-observations,.team-layout .team-stage .e113-reading-details{display:none}
-/* Physical action links use solid strokes; envelopes remain communication only. */
+/* Physical objects use role colors; envelopes remain communication only. */
 .team-stage{position:relative}
 .team-stage .communication-scene svg{height:auto;max-height:none}
 .action-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
@@ -770,7 +770,7 @@ function describe(env,actor,call,context={}){
 window.ActionTargets=Object.freeze({describe});
 })();
 </script>
-<script>/* Read-only links between recorded actors and explicitly mapped scene objects. */
+<script>/* Read-only role-colored highlights on explicitly mapped scene objects. */
 (()=>{
 'use strict';
 const NS='http://www.w3.org/2000/svg',esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -788,13 +788,6 @@ function draw(){
  const focused=points.find(r=>r.actor===selected),color=focused.color;
  const detail=document.createElement('div');detail.className='action-explanation';detail.style.setProperty('--role',color);detail.innerHTML=`<span class="action-role-number">${focused.number}</span><span>${esc(focused.roleName)} · ${esc(focused.label)} → ${esc(focused.target.name)}</span>`;stage.append(detail);
  const box=stage.getBoundingClientRect(),overlay=svgElement('svg',{class:'action-overlay',viewBox:`0 0 ${box.width} ${box.height}`,'aria-hidden':'true'});
- const defs=svgElement('defs'),marker=svgElement('marker',{id:'physical-action-arrow',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:5,markerHeight:5,orient:'auto'});marker.append(svgElement('path',{d:'M0 0L10 5L0 10Z',fill:color}));defs.append(marker);overlay.append(defs);
- const origin=stage.querySelector(`[data-action-origin="${CSS.escape(focused.actor)}"]`);
- if(origin){const r=origin.getBoundingClientRect(),start={x:r.left+r.width/2-box.left,y:r.bottom-box.top+3},end=focused.point,rail=start.x<box.width/2?7:box.width-7;
-  // Keep the long vertical leg outside message text; the final leg enters the object.
-  const approach=Math.max(end.y-28,start.y+16),d=`M${start.x} ${start.y} V${start.y+7} H${rail} V${approach} H${end.x} V${end.y-15}`;
-  overlay.append(svgElement('path',{class:'physical-action-link',d,fill:'none',stroke:color,'stroke-width':2.3,'stroke-linejoin':'round',opacity:.8,'marker-end':'url(#physical-action-arrow)','data-actor':focused.actor,'data-target':focused.target.name}));
- }
  const occupied=new Map();
  for(const r of points){const k=`${Math.round(r.point.x/16)}/${Math.round(r.point.y/16)}`,count=occupied.get(k)||0;occupied.set(k,count+1);const x=r.point.x,y=r.point.y;
   overlay.append(svgElement('circle',{class:'physical-target-ring',cx:x,cy:y,r:r.actor===selected?17:13,fill:'none',stroke:r.color,'stroke-width':r.actor===selected?2.7:1.7,opacity:.85,'data-actor':r.actor,'data-target':r.target.name}));
@@ -831,7 +824,7 @@ function actionCaption(row,actor,x,color,wrap){
  const visible=row.kind==='send'?'Сообщает':row.kind==='wait'?'Ждёт':row.label;
  const words=visible.split(' ').flatMap(word=>{const parts=[];while(word.length>wrap){parts.push(word.slice(0,wrap-1)+'‑');word=word.slice(wrap-1);}if(word)parts.push(word);return parts;}),lines=[''];for(const w of words){const n=lines.length-1;if(lines[n].length+w.length+1>wrap&&lines[n])lines.push(w);else lines[n]+=(lines[n]?' ':'')+w;}
  const shown=lines.slice(0,2);if(lines.length>2)shown[1]+='…';
- return `<g class="person-action" ${row.kind==='physical'&&row.target?`data-action-actor="${esc(actor)}" role="button" tabindex="0" aria-label="${esc(row.label)}"`:''}><title>${esc(row.label)}</title>${shown.map((line,i)=>`<text x="${x}" y="${195+i*14}" fill="${color}" font-size="12" text-anchor="middle" font-family="Arial,sans-serif">${esc(line)}</text>`).join('')}<circle data-action-origin="${esc(actor)}" cx="${x}" cy="220" r="2.5" fill="${color}" opacity="${row.kind==='physical'?.8:0}"/></g>`;
+ return `<g class="person-action" ${row.kind==='physical'&&row.target?`data-action-actor="${esc(actor)}" role="button" tabindex="0" aria-label="${esc(row.label)}"`:''}><title>${esc(row.label)}</title>${shown.map((line,i)=>`<text x="${x}" y="${195+i*14}" fill="${color}" font-size="12" text-anchor="middle" font-family="Arial,sans-serif">${esc(line)}</text>`).join('')}</g>`;
 }
 function diagram(events,options,animate){
  const ids=[...new Set([...options.actors,...events.flatMap(e=>[e.sender,...e.recipients])])];
@@ -851,7 +844,7 @@ function render(events,options){
  const key=options.key,animate=key!==lastKey;lastKey=key;
  const latest=events.length?Math.max(...events.map(e=>e.tick)):null,batch=events.filter(e=>e.tick===latest),name=options.name|| (x=>x);
  current={events:batch,options,selected:0};
- return `<section class="communication-scene"><div class="section-head"><h3>Команда</h3><small>${latest===null?'До первой передачи':latest===options.round?'Связь · такт '+latest:'Последняя связь · такт '+latest}</small></div><div class="comm-diagram">${diagram(batch,options,animate&&latest===options.round)}</div>${(options.actionRows||[]).some(r=>r.kind==='physical'&&r.target)?'<p class="action-key">Номер — участник. Сплошная стрелка — действие; конверт и пунктир — сообщение. Нажмите на действующего человека, чтобы выделить его связь.</p>':''}${batch.length?`<div class="comm-events">${batch.map((e,i)=>`<article class="comm-event"><button type="button" class="comm-select ${i===0?'active':''}" data-comm="${i}" aria-pressed="${i===0}">${esc(name(e.sender))} → ${esc(e.recipients.map(name).join(', '))}<span>${esc(e.channel)}</span></button>${summary(e.text)?`<p class="comm-summary">${esc(summary(e.text))}</p>`:''}<p class="comm-preview">${esc(preview(e.text))}</p><details><summary>Полный текст и доставка</summary><p>${esc(e.text)}</p><p>${esc(options.timing||'Доставлено после указанного такта; доступно перед следующим выбором. Движение повторяет этот переход.')}</p></details></article>`).join('')}</div>`:`<p class="empty">${esc(options.empty||'Пока сообщений нет. Люди показаны на своих местах; передача появится после отправки.')}</p>`}</section>`;
+ return `<section class="communication-scene"><div class="section-head"><h3>Команда</h3><small>${latest===null?'До первой передачи':latest===options.round?'Связь · такт '+latest:'Последняя связь · такт '+latest}</small></div><div class="comm-diagram">${diagram(batch,options,animate&&latest===options.round)}</div>${(options.actionRows||[]).some(r=>r.kind==='physical'&&r.target)?'<p class="action-key">Цвет предмета совпадает с цветом исполнителя. Конверт и пунктир — сообщение.</p>':''}${batch.length?`<div class="comm-events">${batch.map((e,i)=>`<article class="comm-event"><button type="button" class="comm-select ${i===0?'active':''}" data-comm="${i}" aria-pressed="${i===0}">${esc(name(e.sender))} → ${esc(e.recipients.map(name).join(', '))}<span>${esc(e.channel)}</span></button>${summary(e.text)?`<p class="comm-summary">${esc(summary(e.text))}</p>`:''}<p class="comm-preview">${esc(preview(e.text))}</p><details><summary>Полный текст и доставка</summary><p>${esc(e.text)}</p><p>${esc(options.timing||'Доставлено после указанного такта; доступно перед следующим выбором. Движение повторяет этот переход.')}</p></details></article>`).join('')}</div>`:`<p class="empty">${esc(options.empty||'Пока сообщений нет. Люди показаны на своих местах; передача появится после отправки.')}</p>`}</section>`;
 }
 function fromChats(chats,channels,selected=null,full=false){
  const events=[];
