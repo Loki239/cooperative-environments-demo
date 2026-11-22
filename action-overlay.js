@@ -14,13 +14,11 @@ function draw(){
  stage.querySelectorAll('[data-action-actor]').forEach(e=>{const active=points.some(r=>r.actor===e.dataset.actionActor);e.classList.toggle('has-physical-action',active);e.classList.toggle('selected-action',e.dataset.actionActor===selected);e.setAttribute('aria-pressed',String(e.dataset.actionActor===selected));});
  if(!points.length)return;
  const focused=points.find(r=>r.actor===selected),color=focused.color;
- const detail=document.createElement('div');detail.className='action-explanation';detail.style.setProperty('--role',color);detail.innerHTML=`<span class="action-role-number">${focused.number}</span><span>${esc(focused.roleName)} · ${esc(focused.label)} → ${esc(focused.target.name)}</span>`;stage.append(detail);
+ const detail=document.createElement('div');detail.className='action-explanation';detail.style.setProperty('--role',color);detail.innerHTML=`<span>${esc(focused.roleName)} · ${esc(focused.label)} → ${esc(focused.target.name)}</span>`;stage.append(detail);
  const box=stage.getBoundingClientRect(),overlay=svgElement('svg',{class:'action-overlay',viewBox:`0 0 ${box.width} ${box.height}`,'aria-hidden':'true'});
- const occupied=new Map();
- for(const r of points){const k=`${Math.round(r.point.x/16)}/${Math.round(r.point.y/16)}`,count=occupied.get(k)||0;occupied.set(k,count+1);const x=r.point.x,y=r.point.y;
+ for(const r of points){const x=r.point.x,y=r.point.y;
   overlay.append(svgElement('circle',{class:'physical-target-ring',cx:x,cy:y,r:r.actor===selected?17:13,fill:'none',stroke:r.color,'stroke-width':r.actor===selected?2.7:1.7,opacity:.85,'data-actor':r.actor,'data-target':r.target.name}));
-  const mark=svgElement('g',{'data-role-marker':r.actor,transform:`translate(${Math.max(11,Math.min(box.width-11,x+17+count*19))} ${y-17})`});
-  mark.append(svgElement('circle',{r:9,fill:'#fff',stroke:r.color,'stroke-width':2}));const text=svgElement('text',{y:4,'text-anchor':'middle','font-size':12,'font-family':'Arial,sans-serif',fill:r.color,'font-weight':700});text.textContent=r.number;mark.append(text);overlay.append(mark);
+
  }
  stage.append(overlay);
 

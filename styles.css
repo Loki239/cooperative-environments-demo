@@ -82,5 +82,4 @@
 .has-physical-action{cursor:pointer}.person-action text{font-weight:550}.person-action.selected-action text{font-weight:750;text-decoration:underline;text-underline-offset:3px}.team-person.selected-action{stroke-width:4}
 [data-action-actor]:focus{outline:none;filter:drop-shadow(0 0 2px #456b48)}
 .action-explanation{display:flex;gap:8px;align-items:center;padding:9px 16px;color:var(--role);background:#f5f9f6;border-top:1px solid #dbe7de;font-size:12px;line-height:1.45}
-.action-role-number{border:1.5px solid var(--role);border-radius:50%;width:21px;height:21px;display:grid;place-items:center;flex:none;background:#fff;font-weight:650}
 @media(max-width:520px){.team-stage .communication-scene svg{height:auto;max-height:none}.action-key{font-size:10px}.action-explanation{font-size:11px;padding:8px 12px}}

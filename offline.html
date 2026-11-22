@@ -91,7 +91,6 @@
 .has-physical-action{cursor:pointer}.person-action text{font-weight:550}.person-action.selected-action text{font-weight:750;text-decoration:underline;text-underline-offset:3px}.team-person.selected-action{stroke-width:4}
 [data-action-actor]:focus{outline:none;filter:drop-shadow(0 0 2px #456b48)}
 .action-explanation{display:flex;gap:8px;align-items:center;padding:9px 16px;color:var(--role);background:#f5f9f6;border-top:1px solid #dbe7de;font-size:12px;line-height:1.45}
-.action-role-number{border:1.5px solid var(--role);border-radius:50%;width:21px;height:21px;display:grid;place-items:center;flex:none;background:#fff;font-weight:650}
 @media(max-width:520px){.team-stage .communication-scene svg{height:auto;max-height:none}.action-key{font-size:10px}.action-explanation{font-size:11px;padding:8px 12px}}
 </style>
 
@@ -786,13 +785,11 @@ function draw(){
  stage.querySelectorAll('[data-action-actor]').forEach(e=>{const active=points.some(r=>r.actor===e.dataset.actionActor);e.classList.toggle('has-physical-action',active);e.classList.toggle('selected-action',e.dataset.actionActor===selected);e.setAttribute('aria-pressed',String(e.dataset.actionActor===selected));});
  if(!points.length)return;
  const focused=points.find(r=>r.actor===selected),color=focused.color;
- const detail=document.createElement('div');detail.className='action-explanation';detail.style.setProperty('--role',color);detail.innerHTML=`<span class="action-role-number">${focused.number}</span><span>${esc(focused.roleName)} · ${esc(focused.label)} → ${esc(focused.target.name)}</span>`;stage.append(detail);
+ const detail=document.createElement('div');detail.className='action-explanation';detail.style.setProperty('--role',color);detail.innerHTML=`<span>${esc(focused.roleName)} · ${esc(focused.label)} → ${esc(focused.target.name)}</span>`;stage.append(detail);
  const box=stage.getBoundingClientRect(),overlay=svgElement('svg',{class:'action-overlay',viewBox:`0 0 ${box.width} ${box.height}`,'aria-hidden':'true'});
- const occupied=new Map();
- for(const r of points){const k=`${Math.round(r.point.x/16)}/${Math.round(r.point.y/16)}`,count=occupied.get(k)||0;occupied.set(k,count+1);const x=r.point.x,y=r.point.y;
+ for(const r of points){const x=r.point.x,y=r.point.y;
   overlay.append(svgElement('circle',{class:'physical-target-ring',cx:x,cy:y,r:r.actor===selected?17:13,fill:'none',stroke:r.color,'stroke-width':r.actor===selected?2.7:1.7,opacity:.85,'data-actor':r.actor,'data-target':r.target.name}));
-  const mark=svgElement('g',{'data-role-marker':r.actor,transform:`translate(${Math.max(11,Math.min(box.width-11,x+17+count*19))} ${y-17})`});
-  mark.append(svgElement('circle',{r:9,fill:'#fff',stroke:r.color,'stroke-width':2}));const text=svgElement('text',{y:4,'text-anchor':'middle','font-size':12,'font-family':'Arial,sans-serif',fill:r.color,'font-weight':700});text.textContent=r.number;mark.append(text);overlay.append(mark);
+
  }
  stage.append(overlay);
 
@@ -814,10 +811,10 @@ window.ActionOverlay={mount};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let current=null,lastKey=null;
 const palette=['#3266c9','#087f8c','#a96620','#8556a8','#ae4b6e','#52744a'];
-function person(x,y,color,label,board=false,sending=false,actor="",row=null,number=null,wrap=18){
+function person(x,y,color,label,board=false,sending=false,actor="",row=null,wrap=18){
  const lines=label.length>(window.innerWidth<600?10:19)?label.replace(/ (?!.* )/,'\n').split('\n'):[label];
  const shape=board?`<rect x="${x-22}" y="${y-27}" width="44" height="57" rx="4"/><path d="M${x-13} ${y-12}h26m-26 12h26m-26 12h18"/>`:`<circle cx="${x}" cy="${y-32}" r="13"/><path d="M${x} ${y-19}v10"/><rect x="${x-12}" y="${y-10}" width="24" height="35" rx="10"/><path d="M${x-11} ${y-2}l-17 18m39-18 17 ${sending?-7:18}M${x-6} ${y+25}l-8 23m20-23 8 23"/>`;
- return `<g class="team-person" data-person="${esc(label)}" data-actor="${esc(actor)}" ${row?.kind==='physical'&&row.target?`data-action-actor="${esc(actor)}" role="button" tabindex="0" aria-label="${esc(label+': '+row.label)}"`: ''} stroke="${color}" stroke-width="3.3" fill="#fff" stroke-linecap="round" stroke-linejoin="round">${shape}</g>${lines.map((s,i)=>`<text x="${x}" y="${y+70+i*18}" text-anchor="middle" fill="${color}" font-size="15" font-family="Arial,sans-serif">${esc(s)}</text>`).join('')}${!board&&number?`<g class="person-number" transform="translate(${x-22} ${y-44})"><circle r="9" fill="#fff" stroke="${color}" stroke-width="2"/><text y="4" text-anchor="middle" fill="${color}" font-size="12" font-family="Arial,sans-serif">${number}</text></g>`:''}${actionCaption(row,actor,x,color,wrap)}`;
+ return `<g class="team-person" data-person="${esc(label)}" data-actor="${esc(actor)}" ${row?.kind==='physical'&&row.target?`data-action-actor="${esc(actor)}" role="button" tabindex="0" aria-label="${esc(label+': '+row.label)}"`: ''} stroke="${color}" stroke-width="3.3" fill="#fff" stroke-linecap="round" stroke-linejoin="round">${shape}</g>${lines.map((s,i)=>`<text x="${x}" y="${y+70+i*18}" text-anchor="middle" fill="${color}" font-size="15" font-family="Arial,sans-serif">${esc(s)}</text>`).join('')}${actionCaption(row,actor,x,color,wrap)}`;
 }
 function actionCaption(row,actor,x,color,wrap){
  if(!row?.label)return '';
@@ -836,7 +833,7 @@ function diagram(events,options,animate){
   const direction=x(r)>x(event.sender)?1:-1,end=x(r)-13*direction,start=x(event.sender)+13*direction,route=`M ${start} ${yy-3} Q ${(start+end)/2} ${-16+n%3*17} ${end} ${yy-3}`;
   paths+=`<path class="comm-route" d="${route}" fill="none" stroke="${color(event.sender)}" opacity=".55" stroke-width="2" stroke-dasharray="5 5"/><g class="comm-envelope ${animate?'comm-moving':''}" data-sender="${esc(event.sender)}" data-recipient="${esc(r)}" transform="translate(${end} ${yy-3})" style="--route:path('${route}')"><rect x="-11" y="-8" width="22" height="16" rx="2" fill="#fff" stroke="${color(event.sender)}" stroke-width="2"/><path d="m-10-7 10 8 10-8" fill="none" stroke="${color(event.sender)}" stroke-width="1.5"/></g>`;
  }));
- return `<svg viewBox="0 0 ${width} 230" role="img" aria-label="Команда и фактические передачи сообщений">${paths}${ids.map(id=>person(x(id),yy,color(id),name(id),id.startsWith('board:'),animate&&events.some(e=>e.sender===id),id,(options.actionRows||[]).find(r=>r.actor===id),options.roleNumbers?.[id],Math.max(7,Math.floor(Math.min(2*x(id)-8,2*(width-x(id))-8,(width-2*margin)/Math.max(1,ids.length-1)-10)/6.5)))).join('')}</svg>`;
+ return `<svg viewBox="0 0 ${width} 230" role="img" aria-label="Команда и фактические передачи сообщений">${paths}${ids.map(id=>person(x(id),yy,color(id),name(id),id.startsWith('board:'),animate&&events.some(e=>e.sender===id),id,(options.actionRows||[]).find(r=>r.actor===id),Math.max(7,Math.floor(Math.min(2*x(id)-8,2*(width-x(id))-8,(width-2*margin)/Math.max(1,ids.length-1)-10)/6.5)))).join('')}</svg>`;
 }
 function summary(text){try{if(text.startsWith('NETCERT1:')){const d=JSON.parse(text.slice(9));return `Сообщает известные связи для ${Object.keys(d.adjacency||{}).length} вершин.`;}const d=JSON.parse(text);if(typeof d.flow==='boolean'&&Object.hasOwn(d,'block'))return `Пробный поток ${d.flow?'проходит':'не проходит'}. Блок ${d.block}.`;}catch{}return '';}
 function preview(text){return text.length>210?text.slice(0,210)+'…':text;}
