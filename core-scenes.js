@@ -95,12 +95,12 @@ const config={
 };
 function readouts(id,s,actions){return `<div class="scene-instruments">${config[id].roles.map(([actor,job,keys])=>{
  const own=s.private?.[actor],isActive=actions[actor]&&actions[actor].id!=='wait';
- return `<section class="scene-instrument ${isActive?'is-active':''}" style="--role:${roleColors[actor]}"><h4>${esc(roles[actor])}</h4><p class="instrument-job">${esc(job)}</p>${keys.map(key=>{const value=own?.[key],unread=value===undefined?'личное показание':(key==='condenser_reading'&&value===0?'не измерено':values[value]??String(value));return `<div class="instrument-reading"><span>${esc(sensors[key])}</span><strong data-reading="${key}">${esc(unread)}</strong></div>`;}).join('')}${!keys.length?'<p class="instrument-job">Действует по сообщениям команды</p>':''}</section>`;
+ return `<section class="scene-instrument ${isActive?'is-active':''}" style="--role:${roleColors[actor]}"><h4>${esc(roles[actor])}</h4><p class="instrument-job">${esc(job)}</p>${keys.map(key=>{const value=own?.[key],unread=value===undefined?'личное показание':(key==='condenser_reading'&&value===0?'не измерено':values[value]??String(value));return `<div class="instrument-reading"><span>${esc(sensors[key])}</span><strong data-reading="${key}">${esc(unread)}</strong></div>`;}).join('')}${!keys.length?'<p class="instrument-job">Подготавливает материалы и инструменты</p>':''}</section>`;
  }).join('')}</div>`;}
 window.CoreEnvironmentScenes={has:id=>Boolean(config[id]),render(id,s,actions={},previous=s,options={}){
  moving=options.animate!==false&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  const active=Object.entries(actions).filter(([,c])=>c.id!=='wait');
  const caption=active.map(([a,c])=>`${roles[a]||a}: ${c.id==='send_message'?'отправлено сообщение':labels[c.id]||c.id}`).join('; ');
- return `<svg class="mechanism-scene" viewBox="0 0 640 375" role="img" aria-label="Предметная схема: состояние механизма" data-environment="${id}" font-family="Arial,sans-serif">${config[id].draw(s,previous,actions)}</svg>${caption?`<p class="scene-action" role="status">${esc(caption)}</p>`:''}${readouts(id,s,actions)}`;
+ return `<svg class="mechanism-scene" viewBox="0 0 640 375" role="img" aria-label="Предметная схема: состояние механизма" data-environment="${id}" font-family="Arial,sans-serif">${config[id].draw(s,previous,actions)}</svg>${caption?`<p class="scene-action" role="status">${esc(caption)}</p>`:''}${options.compact?`<details class="scene-observations"><summary>Показания по ролям</summary>${readouts(id,s,actions)}</details>`:readouts(id,s,actions)}`;
 }};
 })();

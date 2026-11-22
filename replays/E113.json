@@ -1,0 +1,362 @@
+{
+  "version": 1,
+  "environment": "E113",
+  "instance_index": 1,
+  "model": "Qwen/Qwen3.8-27B",
+  "source_mode": "none",
+  "source_sha256": "e672ec07e271304c5751826a068de4400fd275c975ff29d496ad372b214d01fd",
+  "actions": [
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "drive_depot_hub"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Technician: I can refuel C now (cart full, C at hub, fuel_c=1). Please confirm work order is assigned to left or right before I refuel, so the swap can proceed. driverB: start B depot->hub. driverC: be ready to exchange after bed is released."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "dock_at_hub"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {
+          "lift_side": "left"
+        },
+        "id": "reassign_and_reserve_lift"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Puncture is LEFT (wheel_alarm=left). Dispatcher: use reassign_and_reserve_lift with lift_side=right to keep work_order=right. Technician: refuel C now. I will release cargo as soon as work_order is left/right."
+        },
+        "id": "send_message"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "release_urgent_cargo"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "refuel_reserve_car"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "exchange_and_inspect"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {
+          "destination": "clinic"
+        },
+        "id": "deliver_reserve_load"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {
+          "socket": "hex"
+        },
+        "id": "mount_spare"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Tyre repaired, C at clinic, B at hub, bed swapped, rig parked. Technician: preload_lifting_beam now. driverB: wait for level, then expose_lock_window. I will lift_lug after preload. driverC: standby."
+        },
+        "id": "send_message"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "preload_lifting_beam"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {
+          "lug": "nose"
+        },
+        "id": "lift_lug"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "expose_lock_window"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "drive_crosspin"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "lower_onto_lock"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Rig loaded but tension_dial=loose. driverB: ratchet_once now to tighten. Then driverB: crimp_seal. driverC: wait at clinic. I will wait."
+        },
+        "id": "send_message"
+      },
+      "driverB": {
+        "args": {},
+        "id": "ratchet_once"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "crimp_seal"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "dispatcher": {
+        "args": {},
+        "id": "wait"
+      },
+      "driverB": {
+        "args": {
+          "destination": "lab"
+        },
+        "id": "deliver_repaired_load"
+      },
+      "driverC": {
+        "args": {},
+        "id": "wait"
+      },
+      "technician": {
+        "args": {},
+        "id": "wait"
+      }
+    }
+  ],
+  "outcome": {
+    "success": true,
+    "reward": 1,
+    "status": "completed"
+  },
+  "note": "Сохранённая игра Qwen, запись E113-01-r2-D-none; исходный режим: без подсказок (none). Общий чат, доставка гарантирована. Сообщения и действия сохранены дословно, включая ошибки; это выбранный успешный пример, а не доказательство причинного эффекта сообщений."
+}

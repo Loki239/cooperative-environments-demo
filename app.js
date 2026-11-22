@@ -6,11 +6,11 @@
   const $ = selector => document.querySelector(selector);
   const esc = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const human = text => String(text).replaceAll('_', ' ');
-  const roleName = actor => scenes.ROLE[actor] || human(actor);
-  const fieldName = key => scenes.SENSOR[key] || human(key);
+  const roleName = actor => (data?.id==='E113'?window.E113Scene.ROLE[actor]:null) || scenes.ROLE[actor] || human(actor);
+  const fieldName = key => (data?.id==='E113'?window.E113Scene.SENSOR[key]:null) || scenes.SENSOR[key] || human(key);
   const commonValues = {unread:'ещё не прочитано', unknown:'неизвестно', none:'нет', locked:'заблокировано', ready:'готово', done:'завершено', pending:'ожидается'};
-  const valueName = value => typeof value === 'boolean' ? (value ? 'да' : 'нет') : value === null ? 'нет показания' : scenes.VALUE[value] || commonValues[value] || human(value);
-  const actionName = call => call.id === 'wait' ? 'Подождать' : call.id === 'send_message' ? 'Отправить сообщение' : scenes.LABEL[call.args?.operation] || scenes.LABEL[call.id] || human(call.id);
+  const valueName = value => typeof value === 'boolean' ? (value ? 'да' : 'нет') : value === null ? 'нет показания' : (data?.id==='E113'?window.E113Scene.VALUE[value]:null) || scenes.VALUE[value] || commonValues[value] || human(value);
+  const actionName = call => call.id === 'wait' ? 'Подождать' : call.id === 'send_message' ? 'Отправить сообщение' : (data?.id==='E113'?window.E113Scene.LABEL[call.id]:null) || scenes.LABEL[call.args?.operation] || scenes.LABEL[call.id] || human(call.id);
   const cache = new Map();
   async function readJSON(path) {
     if (window.ENVIRONMENT_LAB_EMBEDDED && Object.hasOwn(window.ENVIRONMENT_LAB_EMBEDDED,path)) return structuredClone(window.ENVIRONMENT_LAB_EMBEDDED[path]);
@@ -19,9 +19,11 @@
     return response.json();
   }
   let catalogue = [], data, mode = 'about', instance = 0, role, game, drafts, playTrace = [], lastResult = null, previousPlayState = null, lastSceneKey = null;
+  let recorded=null,replaySource='cpu';
+  const recordIDs=new Set(['E113','NG007','E082-core','IN013']);
   let replayFrames = [], replayStep = 0, timer = null, observer = false, filter = 'all', collection = 'core', loadNumber = 0;
   const colors = ['#3266c9','#087f8c','#a96620','#8556a8'];
-  const roleColor = actor => scenes.ROLE_COLOR[actor] || colors[data.world.actors.indexOf(actor) % colors.length];
+  const roleColor = actor => (data?.id==='E113'?window.E113Scene.ROLE_COLOR[actor]:null) || scenes.ROLE_COLOR[actor] || colors[data.world.actors.indexOf(actor) % colors.length];
   const isPublic = key => data.world.state[key].visible_to.includes('public') || data.world.actors.every(a => data.world.state[key].visible_to.includes(a));
   const plural=(n,one,few,many)=>n%100>=11&&n%100<=14?many:n%10===1?one:n%10>=2&&n%10<=4?few:many;
   const title = item => `${item.source_id || item.id} (${item.name})`;
@@ -51,11 +53,11 @@
     const snap = snapshot(world, selected, full);
     const active = Object.fromEntries(Object.entries(actions).filter(([,a]) => a.id !== 'wait'));
     let content;
-    if (window.CoreEnvironmentScenes?.has(data.id)) {
+    if (window.E113Scene?.has(data.id) || window.CoreEnvironmentScenes?.has(data.id)) {
       let before=snap;
       if(previousState){const w=new World(data.world,data.instances[instance]);w.state=previousState;w.round=Math.max(0,world.round-1);before=snapshot(w,selected,full);}
       const key=`${data.id}/${instance}/${mode}/${world.round}`;
-      content=window.CoreEnvironmentScenes.render(data.id,snap,active,before,{animate:key!==lastSceneKey});lastSceneKey=key;
+      content=(window.E113Scene?.has(data.id)?window.E113Scene:window.CoreEnvironmentScenes).render(data.id,snap,active,before,{animate:key!==lastSceneKey,compact:mode==='replay'});lastSceneKey=key;
     } else if (scenes.has(data.id)) {
       content = `<svg viewBox="40 120 640 440" role="img" aria-label="${esc(title(data))}: состояние среды">${scenes.render(data.id,snap,active)}</svg>`;
     } else {
@@ -70,15 +72,26 @@
     playTrace = []; lastResult = null; previousPlayState = null; lastSceneKey = null; observer = false;
   }
   function buildReplay() {
-    const world = new World(data.world, data.instances[instance]);
-    replayFrames = [{world:structuredClone(world.state), round:0, actions:{}}];
-    for (const actions of data.examples[instance].actions) {
-      const result = world.stepJoint(actions);
-      if (!result.ok) throw new Error('Сохранённое прохождение не соответствует правилам.');
-      replayFrames.push({world:structuredClone(world.state),round:world.round,actions});
+    const useRecord=replaySource==='recorded'&&recorded?.instance_index===instance;
+    const engine=useRecord?new ChatWorld(data.world,data.contract,data.instances[instance]):new World(data.world,data.instances[instance]);
+    const w=()=>useRecord?engine.world:engine;
+    const save=actions=>({world:structuredClone(w().state),round:w().round,actions,chats:useRecord?structuredClone(engine.chats):{}});
+    replayFrames=[save({})];
+    for(const actions of (useRecord?recorded.actions:data.examples[instance].actions)){
+      if(!engine.stepJoint(actions).ok)throw new Error('Сохранённое прохождение не соответствует правилам.');
+      replayFrames.push(save(actions));
     }
-    replayStep = 0;
+    replayStep=0;
   }
+  function communication(chats,round,selected=null,full=false,empty=''){
+    return window.CommunicationScene.render(window.CommunicationScene.fromChats(chats,data.contract.channels,selected,full),{
+      actors:data.world.actors,name:roleName,color:roleColor,round,key:`${data.id}/${instance}/${mode}/${round}/${replaySource}`,empty
+    });
+  }
+  function sourceControls(){
+    return recorded?`<div class="replay-source"><label for="replay-source">Запись прохождения</label><select class="select" id="replay-source"><option value="cpu" ${replaySource==='cpu'?'selected':''}>CPU · текущий старт · без переписки</option><option value="recorded" ${replaySource==='recorded'?'selected':''}>Qwen · старт ${recorded.instance_index+1} · с перепиской</option></select><a href="replays/${data.id}.json" download>Запись Qwen</a></div>`:'';
+  }
+  function recordedNotice(){return `Архивная игра ${recorded.model}; старт ${instance+1}; ${recorded.source_mode==='none'?'без подсказок':'с оконными подсказками отправителю'}. Показаны фактические действия и сообщения. Состояния восстановлены CPU; обзор исследователя. Удачный ход сам по себе не доказывает, что сообщение помогло.`;}
   function renderCatalogue() {
     const query = $('#search').value.trim().toLocaleLowerCase('ru');
     const items = catalogue.filter(x=>(x.collection||'generated')===collection && (filter !== 'scenes' || x.scene) && `${x.id} ${x.name} ${x.summary} ${x.actors.join(' ')}`.toLocaleLowerCase('ru').includes(query));
@@ -95,16 +108,16 @@
     const n=currentInstance();
     $('#start-select').innerHTML=data.instances.map((_,i)=>`<option value="${i}" ${i===n?'selected':''}>${i+1} из ${data.instances.length}</option>`).join('');
     $('#start-select').disabled=false;$('#random-start').disabled=data.instances.length<2;
-    history.replaceState(null,'',`#env=${data.id}&mode=${mode}&start=${n+1}`);
+    history.replaceState(null,'',`#env=${data.id}&mode=${mode}&start=${n+1}${replaySource==='recorded'&&!data.kind?'&replay=recorded':''}`);
   }
   function selectInstance(value){
     stopPlayback();const n=validInstance(value);
     if(data.kind)window.EstablishedUI.selectInstance(n);
-    else{instance=n;resetGame();buildReplay();render();}
+    else{instance=n;if(recorded?.instance_index!==instance)replaySource='cpu';resetGame();buildReplay();render();}
   }
   function overview() {
     const world = new World(data.world, data.instances[instance]);
-    return `<div class="overview">${scene(world,{},null,false,'Начальное состояние. Частные показания открываются по ходу игры.')}<section class="overview-copy"><h2>Одна задача на всю команду</h2><p>${esc(data.summary)}</p><div class="roles">${data.world.actors.map(a=>`<span class="role-tag" style="--role:${roleColor(a)}">${esc(roleName(a))}</span>`).join('')}</div><p class="mode-note">Сыграйте за все роли по очереди или разберите готовое прохождение по тактам.</p><div class="button-row"><button class="button primary" data-mode="play">Играть вручную</button><button class="button secondary" data-mode="replay">Смотреть прохождение</button></div></section></div><div class="evidence-note"><strong>${data.instances.length} вариантов проверены CPU</strong><p>${data.collection==='core'?'Для каждого старта независимо найден и исполнен физический план, без переписки.':'Примеры выполнены идеальной командой с общими наблюдениями, без переписки.'} ${data.collection==='core'?'Проверки общения и прежние исследования описаны в паспорте ниже.':'Необходимость явного чата пока не установлена; модельных игр в этой серии нет.'}</p></div><details class="details"><summary>Роли и передача информации</summary><div class="details-body">${data.description.slice(1,3).map(p=>`<p>${esc(p)}</p>`).join('')}</div></details><details class="details"><summary>Проверки и границы этой реализации</summary><div class="details-body">${data.description.slice(3).map(p=>`<p>${esc(p)}</p>`).join('')}<p>Ниже доступны полные исследовательские данные, включая скрытые параметры и примеры решения.</p></div></details>${downloads()}`;
+    return `<div class="overview">${scene(world,{},null,false,'Начальное состояние. Частные показания открываются по ходу игры.')}<section class="overview-copy"><h2>Одна задача на всю команду</h2><p>${esc(data.summary)}</p><div class="roles">${data.world.actors.map(a=>`<span class="role-tag" style="--role:${roleColor(a)}">${esc(roleName(a))}</span>`).join('')}</div><p class="mode-note">Сыграйте за все роли по очереди или разберите готовое прохождение по тактам.</p><div class="button-row"><button class="button primary" data-mode="play">Играть вручную</button><button class="button secondary" data-mode="replay">Смотреть прохождение</button>${recorded?`<button class="button quiet" id="recorded-replay">Qwen с перепиской · старт ${recorded.instance_index+1}</button>`:''}</div></section></div><div class="evidence-note"><strong>${data.instances.length} вариантов проверены CPU</strong><p>${data.collection==='core'?'Для каждого старта независимо найден и исполнен физический план, без переписки.':'Примеры выполнены идеальной командой с общими наблюдениями, без переписки.'} ${data.collection==='core'?'Проверки общения и прежние исследования описаны в паспорте ниже.':'Необходимость явного чата пока не установлена; модельных игр в этой серии нет.'}</p></div><details class="details"><summary>Роли и передача информации</summary><div class="details-body">${data.description.slice(1,3).map(p=>`<p>${esc(p)}</p>`).join('')}</div></details><details class="details"><summary>Проверки и границы этой реализации</summary><div class="details-body">${data.description.slice(3).map(p=>`<p>${esc(p)}</p>`).join('')}<p>Ниже доступны полные исследовательские данные, включая скрытые параметры и примеры решения.</p></div></details>${downloads()}`;
   }
   function passport() {
     const v=data.verification;
@@ -117,7 +130,7 @@
   function roleButtons() { return `<div class="role-switcher" aria-label="Выберите роль">${data.world.actors.map(a=>`<button class="role-button ${a===role?'active':''}" style="--role:${roleColor(a)}" data-role="${esc(a)}" aria-pressed="${a===role}">${esc(roleName(a))}</button>`).join('')}</div>`; }
   function chatView(view) {
     const entries = view.chats.flatMap(c=>c.history.flatMap(h=>h.messages.map(m=>({...m,tick:h.tick,channel:c.id}))));
-    return `<section class="panel chat-panel"><h3>Переписка ${esc(roleName(role))}</h3><div class="chat-list">${entries.map(m=>`<article class="chat-message"><header><span>${esc(m.sender?roleName(m.sender):'Анонимный участник')}</span><span>доставлено к такту ${m.tick}</span></header><p>${esc(m.content)}</p></article>`).join('') || '<p class="empty">Доставленных сообщений пока нет.</p>'}</div></section>`;
+    return `<section class="panel chat-panel"><h3>Переписка ${esc(roleName(role))}</h3><div class="chat-list">${entries.reverse().map(m=>`<article class="chat-message"><header><span>${esc(m.sender?roleName(m.sender):'Анонимный участник')}</span><span>доставлено к такту ${m.tick}</span></header><p>${esc(m.content)}</p></article>`).join('') || '<p class="empty">Доставленных сообщений пока нет.</p>'}</div></section>`;
   }
   function playView() {
     const view = game.observe(role), publicEntries = Object.entries(view.state).filter(([k])=>isPublic(k)), privateEntries = Object.entries(view.state).filter(([k])=>!isPublic(k));
@@ -125,7 +138,7 @@
     if (lastResult) result = `<div class="turn-result ${game.success()?'success':game.done?'failure':''}" role="status">${game.success()?'Цель достигнута. Команда справилась.':!lastResult.ok?'Совместный ход недопустим. По правилам этого режима эпизод завершён; начните заново.':game.done?'Лимит тактов исчерпан. Цель не достигнута.':`Такт ${game.round} выполнен. Новые показания и доставленные сообщения уже доступны ролям.`}</div>`;
     const chosen = drafts[role];
     const tools = [{id:'wait',parameters:{}}, ...view.tools];
-    return toolbar()+`<p class="replay-notice">Вы управляете всеми ролями. Выберите по одному действию для участников, затем выполните общий такт. Сообщение занимает действие; получатель видит его перед следующим ходом.</p>${result}<div class="play-grid"><div>${scene(game.world,playTrace.at(-1)?.actions||{},role,observer,observer?'Обзор исследователя: законные наблюдения всех ролей.':'Сцена учитывает частные показания только выбранной роли.',previousPlayState)}<label class="observer"><input id="observer" type="checkbox" ${observer?'checked':''}>Показать полное состояние исследователю</label>${observer?`<div class="observer-warning">В этом виде видны скрытые параметры. Он не соответствует информации отдельного игрока.</div><details class="details"><summary>Все параметры мира</summary><div class="details-body">${facts(Object.entries(game.world.state))}</div></details>`:''}${chatView(view)}</div><section class="panel">${roleButtons()}<div class="section-head"><h3>Что видит ${esc(roleName(role))}</h3><small>такт ${game.round}</small></div><div class="private-facts facts-scroll" style="--role:${roleColor(role)}">${facts(privateEntries)}</div><details class="details"><summary>Общие параметры · ${publicEntries.length}</summary><div class="details-body facts-scroll">${facts(publicEntries)}</div></details><form id="action-form" class="action-form"><label for="action">Действие роли</label><select id="action" class="select" ${game.done?'disabled':''}>${tools.map(a=>`<option value="${esc(a.id)}" ${a.id===chosen.id?'selected':''}>${esc(actionName(a))}</option>`).join('')}</select><div id="action-fields"></div><div class="button-row"><button class="button quiet" type="submit" ${game.done?'disabled':''}>Записать действие роли</button></div></form><div class="draft-summary"><strong>Подготовлены к общему такту</strong>${data.world.actors.map(a=>`<div><span style="color:${roleColor(a)}">${esc(roleName(a))}</span>: ${esc(actionName(drafts[a]))}</div>`).join('')}</div><div class="commit-area"><small>Незаполненные роли ждут. Правила проверяются для всех действий одновременно.</small><button class="button primary" id="commit" ${game.done?'disabled':''}>Выполнить такт →</button></div><details class="details"><summary>Как устроен чат</summary><div class="details-body"><p>Общий канал для ${view.chats[0]?.members.length||0} ролей. Доставка гарантирована, задержка ${data.contract.delay} такт. Сообщение заменяет физическое действие отправителя.</p><p>Для этой роли осталось ${view.communication_budget.messages_left} сообщений. В каждом — не более ${data.contract.max_chars} символов.</p><p>Меню содержит все инструменты роли. Недопустимые сейчас действия не отфильтрованы по скрытому состоянию.</p></div></details></section></div>`;
+    return toolbar()+`<p class="replay-notice">Вы управляете всеми ролями. Выберите по одному действию для участников, затем выполните общий такт. Сообщение занимает действие; получатель видит его перед следующим ходом.</p>${result}<div class="play-grid"><div>${scene(game.world,lastResult?.ok===false?{}:(playTrace.at(-1)?.actions||{}),role,observer,observer?'Обзор исследователя: законные наблюдения всех ролей.':'Сцена учитывает частные показания только выбранной роли.',previousPlayState)}<label class="observer"><input id="observer" type="checkbox" ${observer?'checked':''}>Показать полное состояние исследователю</label>${observer?`<div class="observer-warning">В этом виде видны скрытые параметры. Он не соответствует информации отдельного игрока.</div><details class="details"><summary>Все параметры мира</summary><div class="details-body">${facts(Object.entries(game.world.state))}</div></details>`:''}${communication(game.chats,game.round,role,observer)}${chatView(view)}</div><section class="panel">${roleButtons()}<div class="section-head"><h3>Что видит ${esc(roleName(role))}</h3><small>такт ${game.round}</small></div><div class="private-facts facts-scroll" style="--role:${roleColor(role)}">${facts(privateEntries)}</div><details class="details"><summary>Общие параметры · ${publicEntries.length}</summary><div class="details-body facts-scroll">${facts(publicEntries)}</div></details><form id="action-form" class="action-form"><label for="action">Действие роли</label><select id="action" class="select" ${game.done?'disabled':''}>${tools.map(a=>`<option value="${esc(a.id)}" ${a.id===chosen.id?'selected':''}>${esc(actionName(a))}</option>`).join('')}</select><div id="action-fields"></div><div class="button-row"><button class="button quiet" type="submit" ${game.done?'disabled':''}>Записать действие роли</button></div></form><div class="draft-summary"><strong>Подготовлены к общему такту</strong>${data.world.actors.map(a=>`<div><span style="color:${roleColor(a)}">${esc(roleName(a))}</span>: ${esc(actionName(drafts[a]))}</div>`).join('')}</div><div class="commit-area"><small>Незаполненные роли ждут. Правила проверяются для всех действий одновременно.</small><button class="button primary" id="commit" ${game.done?'disabled':''}>Выполнить такт →</button></div><details class="details"><summary>Как устроен чат</summary><div class="details-body"><p>Общий канал для ${view.chats[0]?.members.length||0} ролей. Доставка гарантирована, задержка ${data.contract.delay} такт. Сообщение заменяет физическое действие отправителя.</p><p>Для этой роли осталось ${view.communication_budget.messages_left} сообщений. В каждом — не более ${data.contract.max_chars} символов.</p><p>Меню содержит все инструменты роли. Недопустимые сейчас действия не отфильтрованы по скрытому состоянию.</p></div></details></section></div>`;
   }
   function renderActionFields() {
     if (mode!=='play') return;
@@ -135,7 +148,7 @@
       html = `<label for="chat-id">Канал</label><select id="chat-id" class="select">${game.observe(role).chats.map(c=>`<option value="${esc(c.id)}">Общий чат: ${esc(c.members.map(roleName).join(', '))}</option>`).join('')}</select><label for="content">Сообщение</label><textarea class="message-input" id="content" placeholder="Передайте показание или договоритесь о следующем ходе">${esc(stored.content||'')}</textarea><p class="mode-note">До ${data.contract.max_chars} символов. Отправится при выполнении общего такта.</p>`;
     } else if (id!=='wait') {
       const action = data.world.actions.find(a=>a.id===id);
-      html = `<p class="action-id">${esc(id)}</p><div class="parameters">${Object.entries(action.parameters||{}).map(([k,values],n)=>`<div><label for="param-${n}">${esc(human(k))}</label><select class="select" id="param-${n}" data-param="${esc(k)}">${values.map((v,i)=>`<option value="${i}" ${v===stored[k]?'selected':''}>${esc(valueName(v))}</option>`).join('')}</select></div>`).join('')}</div><details class="details"><summary>Условие и эффект действия</summary><div class="details-body"><p>Правило без подстановки скрытых значений.</p><div class="rule-code">Можно выполнить, если ${esc(expression(action.guard))}.</div><div class="rule-code">${Object.entries(action.effects).map(([k,v])=>esc(fieldName(k)+' ← '+expression(v))).join('<br>')}</div></div></details>`;
+      html = `<p class="action-id">${esc(id)}</p><div class="parameters">${Object.entries(action.parameters||{}).map(([k,values],n)=>`<div><label for="param-${n}">${esc(fieldName(k))}</label><select class="select" id="param-${n}" data-param="${esc(k)}">${values.map((v,i)=>`<option value="${i}" ${v===stored[k]?'selected':''}>${esc(valueName(v))}</option>`).join('')}</select></div>`).join('')}</div><details class="details"><summary>Условие и эффект действия</summary><div class="details-body"><p>Правило без подстановки скрытых значений.</p><div class="rule-code">Можно выполнить, если ${esc(expression(action.guard))}.</div><div class="rule-code">${Object.entries(action.effects).map(([k,v])=>esc(fieldName(k)+' ← '+expression(v))).join('<br>')}</div></div></details>`;
     } else html = '<p class="mode-note" style="margin-top:12px">Роль пропускает физическое действие в этом такте.</p>';
     $('#action-fields').innerHTML = html;
   }
@@ -151,7 +164,7 @@
     world.state = frame.world; world.round = frame.round;
     const previous = replayFrames[Math.max(0,replayStep-1)].world;
     const changes = Object.entries(world.state).filter(([k,v])=>!isPublic(k)&&v!==previous[k]&&data.world.state[k].visible_to.length);
-    return toolbar()+`<p class="replay-notice">${data.collection==='core'?esc(data.verification.replay_notice):'CPU-пример: команда объединяет доступные наблюдения всех ролей. Отправки сообщений здесь не исполнялись.'}</p><div class="play-grid"><div><div class="replay-controls"><button class="icon-button" id="previous" aria-label="Предыдущий такт" ${replayStep===0?'disabled':''}>←</button><button class="button primary" id="autoplay">${timer?'Пауза':'Смотреть'}</button><button class="icon-button" id="next" aria-label="Следующий такт" ${replayStep===replayFrames.length-1?'disabled':''}>→</button><input type="range" id="seek" min="0" max="${replayFrames.length-1}" value="${replayStep}" aria-label="Такт прохождения"><span class="step-count">${replayStep} / ${replayFrames.length-1}</span></div>${scene(world,frame.actions,null,true,replayStep===0?'Стартовый мир до первого действия.':'Состояние после совместного действия выбранного такта.',previous)}${world.success()?'<div class="turn-result success">Цель достигнута. Это сохранённый успешный CPU-пример.</div>':''}</div><section class="panel replay-panel"><h3>${replayStep?'Действия в этом такте':'Перед первым ходом'}</h3><div class="action-list">${data.world.actors.map(a=>`<div class="recorded-action" style="--role:${roleColor(a)}"><span class="role-dot"></span><div><strong>${esc(roleName(a))}</strong>${replayStep?esc(actionName(frame.actions[a])):'Исходные наблюдения'}${Object.keys(frame.actions[a]?.args||{}).length?`<div class="action-id">${esc(Object.entries(frame.actions[a].args).map(([k,v])=>human(k)+': '+valueName(v)).join(' · '))}</div>`:''}</div></div>`).join('')}</div><div class="section-head"><h3>Новые частные показания</h3></div>${changes.length?changes.map(([k,v])=>`<div class="recorded-action" style="--role:${roleColor(data.world.state[k].visible_to[0])}"><span class="role-dot"></span><div><strong>${esc(data.world.state[k].visible_to.map(roleName).join(', '))}</strong>${esc(fieldName(k))}: ${esc(valueName(v))}</div></div>`).join(''):'<p class="empty">В этом такте частные показания не изменились.</p>'}<details class="details"><summary>Наблюдения всех ролей</summary><div class="details-body">${data.world.actors.map(a=>`<h4 style="color:${roleColor(a)};margin:14px 0 6px">${esc(roleName(a))}</h4>${facts(Object.entries(world.observe(a).state).filter(([k])=>!isPublic(k)))}`).join('')}</div></details><details class="details"><summary>Общие параметры</summary><div class="details-body facts-scroll">${facts(Object.entries(world.state).filter(([k])=>isPublic(k)))}</div></details></section></div>${downloads()}`;
+    return toolbar()+sourceControls()+`<p class="replay-notice">${replaySource==='recorded'?esc(recordedNotice()):data.collection==='core'?esc(data.verification.replay_notice):'CPU-пример: команда объединяет доступные наблюдения всех ролей. Отправки сообщений здесь не исполнялись.'}</p><div class="play-grid"><div><div class="replay-controls"><button class="icon-button" id="previous" aria-label="Предыдущий такт" ${replayStep===0?'disabled':''}>←</button><button class="button primary" id="autoplay">${timer?'Пауза':'Смотреть'}</button><button class="icon-button" id="next" aria-label="Следующий такт" ${replayStep===replayFrames.length-1?'disabled':''}>→</button><input type="range" id="seek" min="0" max="${replayFrames.length-1}" value="${replayStep}" aria-label="Такт прохождения"><span class="step-count">${replayStep} / ${replayFrames.length-1}</span></div>${scene(world,frame.actions,null,true,replayStep===0?'Стартовый мир до первого действия.':'Состояние после совместного действия выбранного такта.',previous)}${communication(frame.chats,world.round,null,true,replaySource==='cpu'?(recorded?'В этом CPU-примере отправок нет. Для переписки выберите запись Qwen выше.':'В этом физическом CPU-примере отправок нет.'):'До этого такта никто не отправлял сообщений.')}${world.success()?`<div class="turn-result success">Цель достигнута. ${replaySource==='recorded'?'Архивная игра Qwen.':'Сохранённый CPU-пример.'}</div>`:''}</div><section class="panel replay-panel"><h3>${replayStep?'Действия в этом такте':'Перед первым ходом'}</h3><div class="action-list">${data.world.actors.map(a=>`<div class="recorded-action" style="--role:${roleColor(a)}"><span class="role-dot"></span><div><strong>${esc(roleName(a))}</strong>${replayStep?esc(actionName(frame.actions[a])):'Исходные наблюдения'}${Object.keys(frame.actions[a]?.args||{}).length?`<div class="action-id">${esc(Object.entries(frame.actions[a].args).map(([k,v])=>human(k)+': '+valueName(v)).join(' · '))}</div>`:''}</div></div>`).join('')}</div><div class="section-head"><h3>Новые частные показания</h3></div>${changes.length?changes.map(([k,v])=>`<div class="recorded-action" style="--role:${roleColor(data.world.state[k].visible_to[0])}"><span class="role-dot"></span><div><strong>${esc(data.world.state[k].visible_to.map(roleName).join(', '))}</strong>${esc(fieldName(k))}: ${esc(valueName(v))}</div></div>`).join(''):'<p class="empty">В этом такте частные показания не изменились.</p>'}<details class="details"><summary>Наблюдения всех ролей</summary><div class="details-body">${data.world.actors.map(a=>`<h4 style="color:${roleColor(a)};margin:14px 0 6px">${esc(roleName(a))}</h4>${facts(Object.entries(world.observe(a).state).filter(([k])=>!isPublic(k)))}`).join('')}</div></details><details class="details"><summary>Общие параметры</summary><div class="details-body facts-scroll">${facts(Object.entries(world.state).filter(([k])=>isPublic(k)))}</div></details></section></div>${downloads()}`;
   }
   function render() {
     $('#workspace').innerHTML = `<div class="env-heading"><div><div class="env-kicker"><span>${data.world.actors.length} ${plural(data.world.actors.length,'роль','роли','ролей')}</span><span>${data.world.horizon} ${plural(data.world.horizon,'такт','такта','тактов')}</span><span>${data.instances.length} ${plural(data.instances.length,'вариант','варианта','вариантов')}</span></div><h1>${esc(title(data))}</h1></div><div class="heading-buttons"><button class="icon-button" id="share" aria-label="Скопировать ссылку на среду" title="Скопировать ссылку"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg></button></div></div><div class="tabs" aria-label="Режим просмотра">${[['about','О среде'],['play','Играть'],['replay','Прохождение']].map(([id,label])=>`<button class="tab ${id===mode?'active':''}" data-mode="${id}" aria-pressed="${id===mode}">${label}</button>`).join('')}</div>${data.kind?window.EstablishedUI.render(mode):mode==='about'?overview():mode==='play'?playView():replayView()}${data.collection==='core'?passport():''}`;
@@ -164,7 +177,7 @@
     if (!['about','play','replay'].includes(next)) next='about';
     stopPlayback(); mode=next; render();
   }
-  async function selectEnvironment(id, next='about', start=0) {
+  async function selectEnvironment(id, next='about', start=0, source='cpu') {
     const entry=catalogue.find(x=>x.id===id)||catalogue[0], ticket=++loadNumber;
     stopPlayback();
     try {
@@ -172,7 +185,7 @@
         cache.set(entry.id,await readJSON(entry.data));
       }
       if(ticket!==loadNumber) return;
-      data=cache.get(entry.id); collection=entry.collection||'generated'; instance=validInstance(start==='random'?Math.floor(Math.random()*data.instances.length):start); if(data.kind)window.EstablishedUI.load(data,render,instance);else {resetGame();buildReplay();} setMode(next); renderCatalogue();
+      data=cache.get(entry.id); recorded=recordIDs.has(data.id)?await readJSON(`replays/${data.id}.json`):null;if(ticket!==loadNumber)return;replaySource=source==='recorded'&&recorded?'recorded':'cpu';if(replaySource==='recorded')start=recorded.instance_index; collection=entry.collection||'generated'; instance=validInstance(start==='random'?Math.floor(Math.random()*data.instances.length):start); if(data.kind)window.EstablishedUI.load(data,render,instance);else {resetGame();buildReplay();} setMode(next); renderCatalogue();
     } catch(error) { $('#workspace').innerHTML=`<div class="error-view"><h2>Среда не загрузилась</h2><p>${esc(error.message)}</p><button class="button secondary" onclick="location.reload()">Обновить страницу</button></div>`; }
   }
   $('#search').addEventListener('input',renderCatalogue);
@@ -185,6 +198,7 @@
     }
     const button=event.target.closest('button'); if(!button) return;
     if(button.dataset.env) {selectEnvironment(button.dataset.env);return;}
+    if(button.id==='recorded-replay'){replaySource='recorded';instance=recorded.instance_index;resetGame();buildReplay();setMode('replay');return;}
     if(button.dataset.mode) {setMode(button.dataset.mode);return;}
     if(button.dataset.collection){collection=button.dataset.collection;filter='all';$('#search').value='';$('#scene-filter').checked=false;renderCatalogue();const first=catalogue.find(x=>(x.collection||'generated')===collection);if(first)selectEnvironment(first.id);return;}
     if(button.id==='random-environment'){
@@ -206,7 +220,7 @@
     }
     if(button.id==='previous'||button.id==='next') {stopPlayback();replayStep+=button.id==='next'?1:-1;render();return;}
     if(button.id==='autoplay') {
-      if(timer) stopPlayback(); else {if(replayStep===replayFrames.length-1)replayStep=0;timer=setInterval(()=>{replayStep++;if(replayStep===replayFrames.length-1)stopPlayback();render();},1100);}render();return;
+      if(timer) stopPlayback(); else {if(replayStep===replayFrames.length-1)replayStep=0;timer=setInterval(()=>{replayStep++;if(replayStep===replayFrames.length-1)stopPlayback();render();},1800);}render();return;
     }
     if(button.id==='export-play') {
       const artifact={environment:data.id,world_hash:data.verification.world_hash,instance_index:instance,mode:'manual_hotseat_tool_chat',delivery:true,trace:playTrace,success:game.success(),done:game.done};
@@ -215,6 +229,7 @@
     }
   });
   document.addEventListener('change',event=>{
+    if(event.target.id==='replay-source'){stopPlayback();replaySource=event.target.value;if(replaySource==='recorded')instance=recorded.instance_index;resetGame();buildReplay();render();}
     if(event.target.id==='start-select') selectInstance(event.target.value);
     if(event.target.id==='environment-select'&&event.target.value) selectEnvironment(event.target.value,mode);
     if(event.target.id==='scene-filter'){filter=event.target.checked?'scenes':'all';renderCatalogue();}
@@ -229,12 +244,12 @@
   });
   window.addEventListener('hashchange',()=>{
     const query=new URLSearchParams(location.hash.slice(1)), id=query.get('env'), next=query.get('mode')||'about', start=Number(query.get('start')||1)-1;
-    if(id===data?.id){if(validInstance(start)!==currentInstance())selectInstance(start);setMode(next);}else selectEnvironment(id,next,start);
+    if(id===data?.id){if((query.get('replay')||'cpu')!==replaySource){selectEnvironment(id,next,start,query.get('replay'));return;}if(validInstance(start)!==currentInstance())selectInstance(start);setMode(next);}else selectEnvironment(id,next,start,query.get('replay'));
   });
   async function start() {
     try {
       catalogue=(await readJSON('catalogue.json')).environments;renderCatalogue();
-      const query=new URLSearchParams(location.hash.slice(1));await selectEnvironment(query.get('env')||'GRAPH',query.get('mode')||'about',Number(query.get('start')||1)-1);
+      const query=new URLSearchParams(location.hash.slice(1));await selectEnvironment(query.get('env')||'GRAPH',query.get('mode')||'about',Number(query.get('start')||1)-1,query.get('replay'));
     } catch(error) {$('#workspace').innerHTML=`<div class="error-view"><h2>Не удалось открыть каталог</h2><p>${esc(error.message)} Откройте страницу через HTTP-сервер или GitHub Pages.</p></div>`;}
   }
   start();

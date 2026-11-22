@@ -1,0 +1,432 @@
+{
+  "version": 1,
+  "environment": "E082-core",
+  "instance_index": 6,
+  "model": "Qwen/Qwen3.8-27B",
+  "source_mode": "window",
+  "source_sha256": "a6a1d3e9d9b87382f0ac17c8f4b3d1b9d7fafb73c4e17acde1e1f065d814a01d",
+  "actions": [
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "discharge_generator"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Water here. Phase 0. Please Power: discharge_generator. I will probe condenser at phase 1."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "probe_condenser"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Stores here. Phase 2. Water: please tell me your condenser_reading (1 or 2). I will then meter_repair_coolant with units equal to that reading."
+        },
+        "id": "send_message"
+      },
+      "Water": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Water: condenser_reading=1. Phase 2. Stores: meter_repair_coolant with units=1."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {
+          "units": 1
+        },
+        "id": "meter_repair_coolant"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Stores here. Phase 3. Water: restore_return_loop."
+        },
+        "id": "send_message"
+      },
+      "Water": {
+        "args": {},
+        "id": "restore_return_loop"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "sample_return_catalyst"
+      },
+      "Power": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Power here. Phase 4. Air: sample_return_catalyst."
+        },
+        "id": "send_message"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Water: Phase 4. Air: sample_return_catalyst. Then Power: prepare_air_cartridge with the sampled recipe. Air: run_oxygen_converter. Water: fill_drinking_tank."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "Air": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Air: catalyst_reading=A. Phase 5. Power: prepare_air_cartridge with recipe=A."
+        },
+        "id": "send_message"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {
+          "recipe": "A"
+        },
+        "id": "prepare_air_cartridge"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "run_oxygen_converter"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Power here. Phase 7. Air: run_oxygen_converter (needs charge>=1, coolant>=1). Current charge=0. Please coordinate: Water, do we need to refill charge? Or is run_oxygen_converter blocked?"
+        },
+        "id": "send_message"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "fill_drinking_tank"
+      }
+    },
+    {
+      "Air": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Air here. Phase 8. oxygen_tank=1, drinking_tank=1, charge=0, coolant=1. Next: Water read_membrane_stroke, then Stores inject_metered_charge, then I will sample_regulator_response."
+        },
+        "id": "send_message"
+      },
+      "Power": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8. accumulator idle, regulator isolated, outlet retracted, seat unread. Water: read_membrane_stroke. Stores: inject_metered_charge (1 or 2). Air: sample_regulator_response. Power: pulse_service_drain / heat_closed_regulator / reconnect_thawed_regulator / inspect_outlet_window. Air: crimp_cabin_seal (sheet or ring)."
+        },
+        "id": "send_message"
+      },
+      "Stores": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Stores here. Phase 8. State: charge=0, coolant=1, O2=1, drink=1. Water: please read_membrane_stroke. Then I will inject_metered_charge. Air: sample_regulator_response. Power: handle regulator + inspect outlet. Air: crimp. Note: charge=0 is fine for phase 8 actions."
+        },
+        "id": "send_message"
+      },
+      "Water": {
+        "args": {},
+        "id": "read_membrane_stroke"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Water: stroke_reading=large. accumulator_status=meter_ready. Stores: inject_metered_charge with measures=2."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {
+          "measures": 2
+        },
+        "id": "inject_metered_charge"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "sample_regulator_response"
+      },
+      "Power": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Power: Phase 8. accumulator=pressurized, regulator=isolated. Air: please sample_regulator_response now."
+        },
+        "id": "send_message"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Air: flow_reading=ice. Phase 8. Power: please heat_closed_regulator now. Then Power: reconnect_thawed_regulator, inspect_outlet_window. I will crimp_cabin_seal once outlet is crimp_ready."
+        },
+        "id": "send_message"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "heat_closed_regulator"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {},
+        "id": "reconnect_thawed_regulator"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Air: regulator is now thawed. Power: please reconnect_thawed_regulator, then inspect_outlet_window. I will crimp_cabin_seal as soon as outlet is crimp_ready."
+        },
+        "id": "send_message"
+      },
+      "Power": {
+        "args": {},
+        "id": "inspect_outlet_window"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {},
+        "id": "wait"
+      },
+      "Power": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Power: Phase 8. outlet_status=crimp_ready. seat_reading=flat. Air: please crimp_cabin_seal with seal=sheet."
+        },
+        "id": "send_message"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "Air": {
+        "args": {
+          "seal": "sheet"
+        },
+        "id": "crimp_cabin_seal"
+      },
+      "Power": {
+        "args": {},
+        "id": "wait"
+      },
+      "Stores": {
+        "args": {},
+        "id": "wait"
+      },
+      "Water": {
+        "args": {},
+        "id": "wait"
+      }
+    }
+  ],
+  "outcome": {
+    "success": true,
+    "reward": 1,
+    "status": "completed"
+  },
+  "note": "Сохранённая игра Qwen, запись E082-06-r1-D-window; исходный режим: оконная подсказка отправителю (window). Общий чат, доставка гарантирована. Сообщения и действия сохранены дословно, включая ошибки; это выбранный успешный пример, а не доказательство причинного эффекта сообщений."
+}

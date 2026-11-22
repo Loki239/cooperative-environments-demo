@@ -1,0 +1,346 @@
+{
+  "version": 1,
+  "environment": "NG007",
+  "instance_index": 5,
+  "model": "Qwen/Qwen3.8-27B",
+  "source_mode": "window",
+  "source_sha256": "702b3e11500777efd669284966044aad614a351897d7a61e5312b480de4d6286",
+  "actions": [
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "lock_hot_water_isolation"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "ProtectionChecker ready. Awaiting Phase 5 for charge analysis and Phase 8 for head operations."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "pin_verified_valves"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "run_differential_flow_check"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 3 reached. FlowDiagnostic, please run the differential flow check to reveal restriction_site."
+        },
+        "id": "send_message"
+      },
+      "FlowDiagnostic": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 3: restriction_reading=inlet. FieldPerformer, please realign_restriction_bypass with branch=inlet to establish flow."
+        },
+        "id": "send_message"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "branch": "inlet"
+        },
+        "id": "realign_restriction_bypass"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "open_circulation_unlocked_test_port"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 5: test port open, flow established. ProtectionChecker, please analyze_guarded_cold_sample to reveal backup_charge."
+        },
+        "id": "send_message"
+      },
+      "FlowDiagnostic": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 5: test_port_open=true, flow_established=true, damaged=false. ProtectionChecker, please analyze_guarded_cold_sample."
+        },
+        "id": "send_message"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "analyze_guarded_cold_sample"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 6: test port open, flow established, not damaged. ProtectionChecker, please proceed with empty_through_protected_route after charge analysis completes."
+        },
+        "id": "send_message"
+      },
+      "ProtectionChecker": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 6: charge_reading=liquid. FlowDiagnostic, please connect_contents_recovery with route=liquid_receiver."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {
+          "route": "liquid_receiver"
+        },
+        "id": "connect_contents_recovery"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "empty_through_protected_route"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "read_head_differential"
+      },
+      "ProtectionChecker": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: backup empty, test port sealed. FlowDiagnostic, please read_head_differential to reveal cavity and enable head operations."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: read_head_differential done. cavity_reading=outer. FieldPerformer, please seat_relief_insert with cavity=outer."
+        },
+        "id": "send_message"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "cavity": "outer"
+        },
+        "id": "seat_relief_insert"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "inspect_retainer_profile"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: retainer_reading=split_ring, head_condition=profile_inspected. ProtectionChecker, please extract_split_ring."
+        },
+        "id": "send_message"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: head_condition=window_open. FieldPerformer, please inspect_retainer_profile to reveal retainer_type."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "extract_split_ring"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "wait"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "gauge_sealing_land"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: head_condition=detached. ProtectionChecker, please gauge_sealing_land to reveal sealing_land."
+        },
+        "id": "send_message"
+      },
+      "FlowDiagnostic": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: head_condition=detached. ProtectionChecker, please gauge_sealing_land to reveal sealing_land."
+        },
+        "id": "send_message"
+      },
+      "ProtectionChecker": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Phase 8: land_reading=radial, head_condition=land_gauged. FieldPerformer, please crimp_fitting_cap with seal=radial."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {
+          "seal": "radial"
+        },
+        "id": "crimp_fitting_cap"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "FieldPerformer": {
+        "args": {},
+        "id": "seal_cold_backup"
+      },
+      "FlowDiagnostic": {
+        "args": {},
+        "id": "wait"
+      },
+      "ProtectionChecker": {
+        "args": {},
+        "id": "wait"
+      }
+    }
+  ],
+  "outcome": {
+    "success": true,
+    "reward": 1,
+    "status": "completed"
+  },
+  "note": "Сохранённая игра Qwen, запись NG007-05-r3-D-window; исходный режим: оконная подсказка отправителю (window). Общий чат, доставка гарантирована. Сообщения и действия сохранены дословно, включая ошибки; это выбранный успешный пример, а не доказательство причинного эффекта сообщений."
+}

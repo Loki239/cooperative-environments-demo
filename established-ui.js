@@ -2,14 +2,14 @@
 (()=>{
 'use strict';
 const E=window.EstablishedEngines,esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let data,game,index=0,role,drafts,active,trace=[],inbox,messages,observer=false,step=0,timer=null,redraw=()=>{},lastFeedback=null;
+let data,game,index=0,role,drafts,active,trace=[],inbox,messages,observer=false,step=0,timer=null,redraw=()=>{},lastFeedback=null,previousFrame=null;
 const colors=['#3266c9','#087f8c','#a96620','#8556a8','#ae4b6e','#52744a'];
 const color=a=>colors[data.world.actors.indexOf(a)%colors.length];
 const label={wait:'Подождать',send_message:'Отправить сообщение',submit_answer:'Назвать расстояние',start_test_flow:'Включить пробный поток',stop_pump:'Остановить насос',release_capsule:'Выпустить капсулу',set_route:'Выставить переключатель',open_receiver:'Открыть приёмник',read_target_flow:'Считать датчик',press:'Нажать рычаг',pass:'Пропустить запись'};
 const fields={name:'Игрок',you:'Вы',actor:'Роль',round:'Раунд',turn:'Рабочий ход',phase:'Фаза',board_tick:'Такт досок',last_pay:'Ваша последняя выплата',base_rate:'Ваша базовая ставка',charge:'Ваш заряд',bonus_active:'Удвоение уже действует',reward_multiplier:'Множитель ставки',rate:'Ваша текущая ставка',planned_bonus:'Объявление удвоения',neighbours:'Ваши соседи',roster:'Все участники',assignment:'Задание',horizon:'Лимит тактов',stage:'Капсула',current_destination:'Текущий адресат',task_finished:'Игра завершена',last_tool_result:'Результат вашего действия',pressure:'Давление',capsules_remaining:'Капсул осталось',route:'Переключатель',open_receiver:'Открытый приёмник',received_capsules:'Полученные капсулы'};
 function value(v){if(v===null)return 'ещё нет';if(typeof v==='boolean')return v?'да':'нет';if(Array.isArray(v))return v.length?v.join(', '):'нет';if(typeof v==='object'){if(v.task==='distance')return 'Расстояние до '+v.target;if(Object.hasOwn(v,'owner'))return `Раунд ${v.round}, ход ${v.turn}; ${v.owner||'владелец ещё не объявлен'}`;return JSON.stringify(v);}return ({play:'Нажатия',talk:'Доски',end:'Завершено'})[v]||String(v);}
 function facts(view){return `<dl class="facts">${Object.entries(view).filter(([k])=>!['rules','tools','chats','boards','communication_budget','terminated'].includes(k)).map(([k,v])=>`<div class="fact"><dt>${esc(fields[k]||k)}</dt><dd>${esc(value(v))}</dd></div>`).join('')}</dl>`;}
-function newGame(){const c=data.cases[index];game=data.kind==='graph'?new E.Graph(c):data.kind==='levers'?new E.Levers(c):new E.Capsule(c.seed);role=data.world.actors[0];active=new Set([c.root]);trace=[];lastFeedback=null;observer=false;inbox=Object.fromEntries(data.world.actors.map(a=>[a,[]]));messages=structuredClone(inbox);resetDrafts();step=0;}
+function newGame(){const c=data.cases[index];game=data.kind==='graph'?new E.Graph(c):data.kind==='levers'?new E.Levers(c):new E.Capsule(c.seed);role=data.world.actors[0];active=new Set([c.root]);trace=[];lastFeedback=null;previousFrame=null;observer=false;inbox=Object.fromEntries(data.world.actors.map(a=>[a,[]]));messages=structuredClone(inbox);resetDrafts();step=0;}
 function resetDrafts(){drafts=Object.fromEntries(data.world.actors.map(a=>[a,data.kind==='graph'?{id:'wait',args:{}}:data.kind==='levers'?(game.current[0]==='talk'?{pass:true}:{press:false}):{tool:'wait',arguments:{}}]));}
 function stop(){if(timer)clearInterval(timer);timer=null;}
 function currentFrame(){return {state:game.dump(),observations:Object.fromEntries(data.world.actors.map(a=>[a,game.observe(a)])),active:[...active],inbox,messages};}
@@ -48,7 +48,46 @@ function channels(frame){const v=frame.observations[role];let rows=[];
  if(data.kind==='graph')rows=v.chats.flatMap(ch=>ch.history.flatMap(h=>h.messages.map(m=>({head:`${m.sender} · ${ch.members.join(' ↔ ')} · такт ${h.tick}`,text:m.content}))));
  if(data.kind==='levers')rows=Object.entries(v.boards).flatMap(([p,msgs])=>msgs.map(text=>({head:'Ваша доска '+p,text})));
  if(data.kind==='capsule')rows=(frame.messages?.[role]||[]).map(m=>({head:`${m.sender} · отправлено на такте ${m.sent_tick}`,text:m.text}));
- return `<section class="panel chat-panel"><h3>${data.kind==='levers'?'Ваши доски':'Полученные сообщения'}</h3><div class="chat-list">${rows.map(m=>`<article class="chat-message"><header>${esc(m.head)}</header><p>${esc(m.text)}</p></article>`).join('')||'<p class="empty">Записей пока нет.</p>'}</div></section>`;
+ return `<section class="panel chat-panel"><h3>${data.kind==='levers'?'Ваши доски':'Переписка '+esc(role)}</h3><div class="chat-list">${rows.reverse().map(m=>`<article class="chat-message"><header>${esc(m.head)}</header><p>${esc(m.text)}</p></article>`).join('')||'<p class="empty">Записей пока нет.</p>'}</div></section>`;
+}
+function communication(frame,full,actions,replay){
+ const c=data.cases[index],actors=data.world.actors,events=[];
+ const before=replay?data.examples[index].frames[Math.max(0,step-1)]:previousFrame;
+ const round=data.kind==='levers'?(replay?step:trace.length):(frame.state.round??frame.state.turns);
+ if(data.kind==='graph'){
+  const chats=Object.fromEntries(frame.observations[role].chats.map(ch=>[ch.id,ch.history]));
+  if(full)for(const v of Object.values(frame.observations))for(const ch of v.chats)chats[ch.id]=ch.history;
+  events.push(...window.CommunicationScene.fromChats(chats,c.contract.channels,role,full));
+ }else if(data.kind==='capsule'){
+  const seen=new Set();
+  for(const a of (full?actors:[role]))for(const m of frame.messages?.[a]||[]){
+   const key=JSON.stringify([m.sender,m.sent_tick,m.text]);if(seen.has(key))continue;seen.add(key);
+   const recipients=actors.filter(b=>b!==m.sender&&(frame.messages?.[b]||[]).some(n=>n.sender===m.sender&&n.sent_tick===m.sent_tick&&n.text===m.text));
+   events.push({tick:m.sent_tick+1,sender:m.sender,recipients,channel:'Сообщение обоим партнёрам',text:m.text});
+  }
+  if(!full&&actions.actor===role&&actions.message?.text){
+   const m=actions.message,recipients=actors.filter(b=>b!==role&&(frame.messages?.[b]||[]).some(n=>n.sender===role&&n.sent_tick===round-1&&n.text===m.text));
+   if(recipients.length)events.push({tick:round,sender:role,recipients,channel:'Сообщение обоим партнёрам',text:m.text});
+  }
+ }else if(before){
+  if(full){
+   for(const [a,call] of Object.entries(actions)){
+    if(call.text===undefined)continue;
+    const edge=c.ports[a]?.[call.port-1];if(edge===undefined)continue;
+    const added=(frame.state.boards[edge]||[]).slice((before.state.boards[edge]||[]).length);
+    if(added.includes(call.text))events.push({tick:round,sender:a,recipients:c.edges[edge].filter(b=>b!==a),channel:'Приватная доска · обзор исследователя',text:call.text});
+   }
+  }else{
+   for(const [port,entries] of Object.entries(frame.observations[role].boards||{})){
+    const old=before.observations[role].boards?.[port]||[];
+    const added=entries.slice(old.length),own=actions[role];let ownUsed=false;
+    for(const text of added){const isOwn=!ownUsed&&own?.port===Number(port)&&own.text===text;ownUsed ||= isOwn;
+     events.push({tick:round,sender:isOwn?role:'board:'+port,recipients:[isOwn?'board:'+port:role],channel:'Локальная доска '+port+' · авторы анонимны',text});
+    }
+   }
+  }
+ }
+ return window.CommunicationScene.render(events,{actors,color,name:a=>a.startsWith('board:')?'Доска '+a.slice(6):a,round,key:`${data.id}/${index}/${replay?'replay':'play'}/${round}`,empty:data.kind==='levers'?'Новых записей на доступных досках в этом такте нет.':'В доступной истории сообщений пока нет.',timing:data.kind==='levers'?'Запись уже доступна участнику доски. Текст может содержать самопредставление; система не удостоверяет автора в локальном виде.':data.kind==='capsule'?'Сообщение выбрано до результата инструмента и доступно партнёрам перед их следующими ходами.':'Сообщение уже доставлено, доступно перед следующим выбором. Движение повторяет записанную передачу.'});
 }
 function toolbar(){return `<div class="work-toolbar"><span class="mode-note">${data.kind==='capsule'?'Участники ходят по очереди':data.kind==='levers'?'Нажатия и переписка отдельными фазами':'Одно действие на участника за такт'}</span><button class="button secondary" data-native="restart">Начать заново</button></div>`;}
 function form(){const v=game.observe(role),disabled=game.done||(data.kind==='graph'&&!active.has(role))||(data.kind==='capsule'&&role!==game.actors[game.turns%3]);let html='';
@@ -63,7 +102,7 @@ function form(){const v=game.observe(role),disabled=game.done||(data.kind==='gra
  }
  return `<form id="native-form" class="action-form"><fieldset ${disabled?'disabled':''}>${html}<div class="button-row"><button class="button quiet" type="submit">${data.kind==='capsule'?'Отправить и выполнить ход':'Записать действие роли'}</button></div></fieldset></form>`;
 }
-function summaryCall(c){if(c.id)return label[c.id]||c.id;if(c.action)return label[c.action.tool];if(c.tool)return label[c.tool];if(c.press!==undefined)return c.press?'Нажать рычаг':'Подождать';return c.text!==undefined?'Запись на доске':'Пропустить запись';}
+function summaryCall(c){if(c.id)return label[c.id]||c.id;if(c.action)return (c.message?.text?'Сообщение обоим партнёрам + ':'')+label[c.action.tool];if(c.tool)return label[c.tool];if(c.press!==undefined)return c.press?'Нажать рычаг':'Подождать';return c.text!==undefined?'Запись на доске':'Пропустить запись';}
 function view(mode){
  const replay=mode==='replay',frame=replay?data.examples[index].frames[step]:currentFrame(),example=data.examples[index];
  if(mode==='about')return `<div class="overview">${scene(frame,false,{})}<section class="overview-copy"><h2>Наша разобранная задача</h2><p>${esc(data.summary)}</p><div class="roles">${data.world.actors.map(a=>`<span class="role-tag" style="--role:${color(a)}">${esc(a)}</span>`).join('')}</div><div class="button-row"><button class="button primary" data-mode="play">Играть вручную</button><button class="button secondary" data-mode="replay">Смотреть пример</button></div></section></div>`;
@@ -75,10 +114,10 @@ function view(mode){
  let right=roleButtons()+`<h3>Что видит ${esc(role)}</h3><div class="facts-scroll">${facts(frame.observations[role])}</div>`;
  if(!replay){right+=form();if(data.kind!=='capsule')right+=`<div class="draft-summary"><strong>Подготовленные действия</strong>${data.world.actors.map(a=>`<div>${esc(a)}: ${esc(summaryCall(drafts[a]))}</div>`).join('')}</div><div class="commit-area"><small>Все решения исполняются одновременно.</small><button class="button primary" data-native="commit" ${game.done?'disabled':''}>Выполнить такт</button></div>`;}
  else right+=`<div class="section-head"><h3>${step?'Действия в этом такте':'Начальное состояние'}</h3></div><div class="action-list">${(data.kind==='capsule'&&actions.actor?[[actions.actor,actions]]:Object.entries(actions)).map(([a,c])=>`<div class="recorded-action" style="--role:${color(a)}"><span class="role-dot"></span><div><strong>${esc(a)}</strong>${esc(summaryCall(c))}</div></div>`).join('')}</div>`;
- return toolbar()+`<p class="replay-notice">${esc(replay?data.verification.replay_notice:data.kind==='levers'?'Четыре раунда, по шесть нажатий; между раундами — пять тактов досок.':data.kind==='graph'?'Спящая вершина вступает в игру только после входящего сообщения. Отправка занимает такт.':'Участники ходят по очереди. Сообщение доставляется перед ходом следующего участника.')}</p>${end}<div class="play-grid"><div>${scene(frame,full,actions)}${controls}${full&&!replay?'<p class="observer-warning">Полный вид раскрывает сведения других участников.</p>':''}${channels(frame)}</div><section class="panel">${right}</section></div>`;
+ return toolbar()+`<p class="replay-notice">${esc(replay?data.verification.replay_notice:data.kind==='levers'?'Четыре раунда, по шесть нажатий; между раундами — пять тактов досок.':data.kind==='graph'?'Спящая вершина вступает в игру только после входящего сообщения. Отправка занимает такт.':'Участники ходят по очереди. Сообщение доставляется перед ходом следующего участника.')}</p>${end}<div class="play-grid"><div>${replay?controls:''}${scene(frame,full,actions)}${communication(frame,full,actions,replay)}${replay?'':controls}${full&&!replay?'<p class="observer-warning">Полный вид раскрывает сведения других участников.</p>':''}${channels(frame)}</div><section class="panel">${right}</section></div>`;
 }
 function refreshActive(){if(data.kind==='graph')for(const a of game.actors)if(game.observe(a).chats.some(c=>c.history.some(h=>h.messages.some(m=>m.sender!==a))))active.add(a);}
-function commit(){if(game.done)return;try{lastFeedback=game.step(structuredClone(drafts));trace.push(structuredClone(drafts));refreshActive();resetDrafts();redraw();}catch(e){alert(e.message);}}
+function commit(){if(game.done)return;try{previousFrame=structuredClone(currentFrame());lastFeedback=game.step(structuredClone(drafts));trace.push(structuredClone(drafts));refreshActive();resetDrafts();redraw();}catch(e){alert(e.message);}}
 document.addEventListener('submit',event=>{
  if(event.target.id!=='native-form')return;event.preventDefault();const chosen=document.querySelector('#native-action').value,text=document.querySelector('#native-text')?.value||'';
  if(Array.from(text).length>(data.kind==='graph'?4096:data.kind==='levers'?160:1600)){alert('Сообщение длиннее разрешённого лимита.');return;}
@@ -87,7 +126,7 @@ document.addEventListener('submit',event=>{
  else{
   if(game.done||role!==game.actors[game.turns%3])return;
   const action={tool:chosen,arguments:chosen==='set_route'?{route:document.querySelector('#native-route').value}:chosen==='open_receiver'?{target:Number(document.querySelector('#native-target').value)}:{}};
-  const call={actor:role,message:text?{to:'all',text}:null,action};inbox[role]=[];
+  previousFrame=structuredClone(currentFrame());const call={actor:role,message:text?{to:'all',text}:null,action};inbox[role]=[];
   if(text)for(const a of game.actors)if(a!==role){const message={sender:role,sent_tick:game.turns,to:'all',text};inbox[a].push(message);messages[a].push(message);}
   lastFeedback=game.step(role,action);trace.push(call);if(!game.done)role=game.actors[game.turns%3];
  }
@@ -100,7 +139,7 @@ document.addEventListener('click',event=>{
  if(cmd==='restart'){stop();newGame();}
  if(cmd==='commit'){commit();return;}
  if(cmd==='previous'||cmd==='next'){stop();step+=cmd==='next'?1:-1;}
- if(cmd==='autoplay'){if(timer)stop();else{if(step===data.examples[index].frames.length-1)step=0;timer=setInterval(()=>{step++;if(step===data.examples[index].frames.length-1)stop();redraw();},1100);}}
+ if(cmd==='autoplay'){if(timer)stop();else{if(step===data.examples[index].frames.length-1)step=0;timer=setInterval(()=>{step++;if(step===data.examples[index].frames.length-1)stop();redraw();},1800);}}
  redraw();
 });
 document.addEventListener('change',event=>{if(event.target.id==='native-instance'){stop();index=Number(event.target.value);newGame();redraw();}if(event.target.id==='native-observer'){observer=event.target.checked;redraw();}});

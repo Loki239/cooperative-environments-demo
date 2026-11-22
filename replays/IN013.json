@@ -1,0 +1,413 @@
+{
+  "version": 1,
+  "environment": "IN013",
+  "instance_index": 1,
+  "model": "Qwen/Qwen3.8-27B",
+  "source_mode": "window",
+  "source_sha256": "323d9de9e2fd96790ad1107f352de865477180ca2c7f3ec40dee6905451dca83",
+  "actions": [
+    {
+      "builder": {
+        "args": {},
+        "id": "gauge_socket"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Builder: please gauge_socket now. I can only see target_contact=make and socket=boxed, so I cannot infer the hidden broach/winding/fit/rate/offset parameters needed for the die, wiring, correction, and preload choices. Once you gauge, I will observe fit_mark and then send the exact punch values. Tester: after socket is seated, run clip/pulse. Do not cycle_load until my wiring line is punched and builder has riveted. Do not take edge imprint until clip is pulsed. We have 24 steps total, so please proceed strictly in this order: 1) gauge, 2) I punch die, 3) mount, 4) press, 5) clip, 6) pulse, 7) I punch wiring, 8) rivet, 9) edge imprint, 10) I punch correction, 11) press correction, 12) pulse armature, 13) expand or crimp pivot, 14) weigh spring, 15) I punch preload, 16) stake, 17) cycle load. Please confirm your next move after each step."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "I am ready. Please gauge the socket so I can clip and pulse."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Gauge done: fit_mark=toe, socket=gauged. Ready for die line."
+        },
+        "id": "send_message"
+      },
+      "designer": {
+        "args": {
+          "die": "nose"
+        },
+        "id": "punch_die_line"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "die": "nose"
+        },
+        "id": "mount_die"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Die line punched: die_line=nose. Builder, please mount_die(nose) then press_socket. Tester, after press_socket make sure socket=seated, then clip_coil and pulse_coil. I will punch wiring after pulse."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "press_socket"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Socket seated. Tester, please clip_coil then pulse_coil. I will rivet after wiring is punched."
+        },
+        "id": "send_message"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "clip_coil"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "pulse_coil"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {
+          "path": "straight"
+        },
+        "id": "punch_wiring_line"
+      },
+      "tester": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Pulse done: scope_trace=normal, test_clip=pulsed. Designer, please punch_wiring_line now. Builder, rivet after wiring is punched."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Wiring line punched: wire_line=straight. Builder, please rivet_from_strip now, then take_edge_imprint. After that I will punch correction."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "rivet_from_strip"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "take_edge_imprint"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Riveted and edge imprint taken: edge_imprint=inner_edge, guide=imprinted. Designer, please punch_correction now. I will press_from_correction after you punch."
+        },
+        "id": "send_message"
+      },
+      "designer": {
+        "args": {
+          "direction": "outward"
+        },
+        "id": "punch_correction"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "press_from_correction"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Correction punched: correction_line=outward. Builder, please press_from_correction now. After guide is centered, tester pulse_armature, then I will choose pivot fix and preload."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Press from correction done: guide=centered. Tester, please pulse_armature now. After that I will fix the pivot based on your swing trace, then weigh/stake spring."
+        },
+        "id": "send_message"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "pulse_armature"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Armature pulsed: swing_trace=slow_return, pivot=tested. This implies pinched bushing, so Builder please expand_with_mandrel. After pivot=sized, I will weigh_spring."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "expand_with_mandrel"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Pivot is tested. Builder, please expand_with_mandrel now. Tester, after pivot=sized please weigh_spring and report the weight_stroke so I can punch the correct preload."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Pivot sized via mandrel. Tester, please weigh_spring now and report weight_stroke so Designer can punch the correct preload."
+        },
+        "id": "send_message"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "weigh_spring"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Spring weighed: weight_stroke=short, spring=weighed. This implies stiff spring rate, so Designer please punch_preload(near). After Builder stakes, I will cycle_load."
+        },
+        "id": "send_message"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {
+          "notch": "near"
+        },
+        "id": "punch_preload"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Preload punched: preload_line=near. Builder, please stake_from_preload now. After spring=working, Tester please cycle_load."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "stake_from_preload"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "Stake done: spring=working. Tester, please cycle_load now to finish."
+        },
+        "id": "send_message"
+      },
+      "designer": {
+        "args": {},
+        "id": "wait"
+      },
+      "tester": {
+        "args": {},
+        "id": "wait"
+      }
+    },
+    {
+      "builder": {
+        "args": {},
+        "id": "wait"
+      },
+      "designer": {
+        "args": {
+          "chat_id": "chat_0",
+          "content": "All designer punches are complete and state is ready: socket=seated, test_clip=pulsed, load_contact=idle, guide=centered, pivot=sized, spring=working, correction_line=outward, preload_line=near. Tester, please cycle_load now to finish."
+        },
+        "id": "send_message"
+      },
+      "tester": {
+        "args": {},
+        "id": "cycle_load"
+      }
+    }
+  ],
+  "outcome": {
+    "success": true,
+    "reward": 1,
+    "status": "completed"
+  },
+  "note": "Сохранённая игра Qwen, запись IN013-01-r1-D-window; исходный режим: оконная подсказка отправителю (window). Общий чат, доставка гарантирована. Сообщения и действия сохранены дословно, включая ошибки; это выбранный успешный пример, а не доказательство причинного эффекта сообщений."
+}

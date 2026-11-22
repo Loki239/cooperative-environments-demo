@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-22",
+  "scope": "Visual repair of seven core environments. No new model inference. Original engines and 67 CPU examples preserved.",
+  "cpu_regression": {
+    "examples": 67,
+    "cases": 219,
+    "transitions": 1466,
+    "observations": 7230
+  },
+  "qwen_replay": [
+    {
+      "environment": "E113",
+      "snapshots": 19,
+      "observations": 76,
+      "mismatches": 0
+    },
+    {
+      "environment": "NG007",
+      "snapshots": 21,
+      "observations": 63,
+      "mismatches": 0
+    },
+    {
+      "environment": "E082-core",
+      "snapshots": 21,
+      "observations": 84,
+      "mismatches": 0
+    },
+    {
+      "environment": "IN013",
+      "snapshots": 25,
+      "observations": 75,
+      "mismatches": 0
+    }
+  ],
+  "communication_native_frames": 613,
+  "limits": [
+    "Four selected successful archival Qwen episodes; not an evaluation sample.",
+    "State snapshots reconstructed with the matching native simulator.",
+    "Message delivery and later action do not prove causal influence.",
+    "Local GL023 boards do not identify the author."
+  ],
+  "runtime_sha256": {
+    "app.js": "12df601bbb38bfaeda62bb17f6c7f409336ad9aa9314c8844bf874d0022d740b",
+    "e113-scene.js": "c2b9a9b19888ffd45f078411e39b3882cdf9fafa5ad1690da9c13210b936f80b",
+    "communication-scene.js": "d4c381a77b2c3724e604f67c54193e0c5105961ad32ec8429df16591fccc1c26",
+    "core-scenes.js": "6f0e71efbb08641916828d7af998940d368461578bf4e991136ee2517e0ed09c",
+    "established-ui.js": "a1fac75913ff6633420f582266a78656752d3b9dbf494fd28990eb7f180494f3",
+    "engine.js": "a3909b2faa2b9726acb07e2f6bb94376d88182e9c356092c09d7ab9fbcc1812a",
+    "established-engine.js": "2db745306b970704ae9556abeb21ba9508f72024ab47795c87f22e55ab09e793"
+  },
+  "browser": {
+    "offline_environments": 37,
+    "recorded_Qwen": 4,
+    "javascript_errors": 0,
+    "network_requests": 0,
+    "manual_delivery": [
+      "E044",
+      "NG007"
+    ],
+    "mobile_checked": true
+  },
+  "e113_projected_views": 620
+}
