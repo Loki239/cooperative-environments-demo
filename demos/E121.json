@@ -1,0 +1,1617 @@
+{
+  "version": 2,
+  "environment": "E121",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "aa40018f9735106191436631c323701300c16919a2060e480ea33906c0267aa5",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "cf4dd709c7c9bfbc664f6fe498b1a440a11f5cbcd9abe3193149c94b62add487",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "9cf5c5b3eccaac6e5204fda907005c1115f466c1932abe9ba132286fc09d9f32",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "55a45213abc8fdf90e2393620d3f689489ca5441057cacc1e98dded68498c96f",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "9d46237c29d85fa9a480e95c40803809b61cd2a26b94f4675c517f2551dbd455",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "15916182563214f8fbb2e392e01acca97b9bcdbd1302ee2a75a61202ffca351d",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "3b58c0fa2c1be5b16a257d91b480b5f0eaa1eb931141b5c29d5263b94ec469be",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "fdc3f9ae8f2f99de3a3bb9f1e75dad1a8b75de8e9f1ebeeb17cb45e688de78f1",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "7bd217c7a9e51925f6d87b492bc51f7c0c181781e924e0227af92940bfd320f9",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "6015809b34c25b6a76a15576d74cdd6d4c6275e608e006f338c2e23a7da0d70d",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "dbd0486ee3b7b89b55481dcc03c1f1d1a5ceb591a6d7de6236bf116f3f3f0af1",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "Glass": {
+            "id": "raise_glass_lever",
+            "args": {}
+          },
+          "Grove": {
+            "id": "raise_grove_lever",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "lift_hinge_veil",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Шарнир — по часовой стрелке."
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "0059a87a8432844ea3ca049d9fe8125fccae8b589c6c458da660d9e3af48d8a2",
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
+      "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
+      "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
+      "deliveries": [
+        {
+          "sender": "Glass",
+          "recipients": [
+            "Grove",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Шарнир — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "glass_hinge_reading",
+              "value": "clockwise",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hinge_handedness"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Stone",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "pin_stone_bridge",
+            "args": {
+              "rotation": "clockwise"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Stone",
+        "call": {
+          "id": "pin_stone_bridge",
+          "args": {
+            "rotation": "clockwise"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "glass_hinge_reading",
+        "source_parameters": [
+          "hinge_handedness"
+        ],
+        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

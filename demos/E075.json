@@ -1,0 +1,1785 @@
+{
+  "version": 2,
+  "environment": "E075",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "26acf90bb89b28872d1bc7ca5874303afeabea86b10bfe5adc13d54a602dd827",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "38cc2c1a440a75127625e3b77e27b8eac4cdf570dcba467529e952740a718e98",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "67eedd18ceabe3333aa59187ae9b4df22f88deef63bc29f1383aa90827534dcc",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "a2523eb9c9db0d2c0d77679aac38c3ea37d97079d31d1826591411ddf1ab7942",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "7ceb5581d374e0e6216ae4944551edb5e73605c76d17dfa3924d2eacfb8df391",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "c4370e4a80fd049f307db855ce7d0e9a2e011508ad83b19a28fd8c1cd4321472",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "8075735ad8853abdf786a9306cd08aeaae6c55698bea7db80cf735e356cdfd47",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "2c748c5b31d6043da6da143325f1723922ef8886c23911efe29b249d8257fa32",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "c1f514dae57513d3892ec99e6bcb82cf2aa4ca4bc0d8a5c8828968ac1cce81c9",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "4318d796b30d656426793424ddd087e9d8f3bd06748628fb842484c029e55193",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "67f7c2e1d3d8586182dd84a86ddcba4a82effe97e8fbc3d2d615c622fbb0179d",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "present_order_at_counter",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "release_sealed_diet_notice",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "open_diet_notice",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Основа заказа — овёс."
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "61666b91e4282cffc7d156448b5104fa3d97839c907333061550fbf29ec137d2",
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
+      "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
+      "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
+      "deliveries": [
+        {
+          "sender": "customer",
+          "recipients": [
+            "buyer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Основа заказа — овёс.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "diet_reading",
+              "value": "oat",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "diet_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "buyer",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "purchase_staple_crate",
+            "args": {
+              "category": "oat"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "buyer",
+        "call": {
+          "id": "purchase_staple_crate",
+          "args": {
+            "category": "oat"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "diet_reading",
+        "source_parameters": [
+          "diet_cause"
+        ],
+        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

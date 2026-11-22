@@ -1,0 +1,2037 @@
+{
+  "version": 2,
+  "environment": "E132",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "4eb6ecfd3d7930671a915e1723602fac667058cd149615b11e2736327143401c",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "cefa2a713fee4a65a79d6a0f9ed81efe7762700af07a6945da370a73fafe4407",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "1428cfdd8f39f1db6b95c8277f05944d6d8f4800523df438c8118b3da7b85551",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "b3de7e8fb10337fe6664f4b230f35178192e9cc6bf3545b6af3a792a4672b656",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "f45070f7a3c05af95ef3fb07793f3973389dcb5f6f4a65d32db2d79346d34691",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "1d9a7d636e57a2849f996b85c718452ddf4ae02a7a81ac9900a82f2e777d0564",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "6a56918f85037ac06ed7c4f90129b33c99f078e5d23afb32957fa3a810c522fe",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "036a2db996667ffbc67974c3a83aff7b7a996f771deabe40c35ac66f7bc21c69",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "f5586c573c0e4d7631895ab1808ed8a0ae712baa4e8facb2b41580a93ad004bd",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "da567242d4c0c0c2931b4c23d0d34bf1fcd1d3eece6c7d4e7c4794ebdcf30748",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "c2d69d53c98b8632196542cbc03d5bf0fa2309ae65195b7d604b41fc9b2a0466",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "Bedkeeper": {
+            "id": "loosen_bed",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "lay_adjacent_probe",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "count_root_clues",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cluekeeper": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Число выполненных условий корней — 0."
+            }
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Bedkeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Tiler": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "Cluekeeper": {
+            "id": "wait",
+            "args": {}
+          },
+          "Painter": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "0b890c5469f665d9cf5c9a083c72c992327617ebc2d0466a779ba6bd35ba5778",
+      "source_data_sha256": "e0aa85c35d4221909dde7757e2006ad34fc1257908d95cd29ca0e08e2f36491f",
+      "world_digest": "6adbb051effd57630b7adc6889450eef747df2571ac192d0b5bdf4776f4f153c",
+      "contract_digest": "a0fa1081e24e0b1c109eb0b1d9a0c9a2c5b68daaacb65e5a2c7a6f2642086c35",
+      "deliveries": [
+        {
+          "sender": "Cluekeeper",
+          "recipients": [
+            "Bedkeeper",
+            "Painter",
+            "Tiler"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Число выполненных условий корней — 0.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "root_count",
+              "value": 0,
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "root_predicate"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Tiler",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "seat_root_pockets",
+            "args": {
+              "gap": "far"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Tiler",
+        "call": {
+          "id": "seat_root_pockets",
+          "args": {
+            "gap": "far"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "root_count",
+        "source_parameters": [
+          "root_predicate"
+        ],
+        "rule_explanation": "Число условий корней связано с зазором корневых карманов.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2301 @@
+{
+  "version": 2,
+  "environment": "E130",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "bce9cc1d6b0a97d1457d206e01c652752e224fcbed1c7ef06099f073e2eea241",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "ef041b77d7669abd9afb603aae6546b2e7227e4c7b7a365a2bc3b3773d0dc2ca",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "db5c8ff6c8c78011e8e34b8631ecc3d0f1a785610d578df74864535efe79a935",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "8afec62aa08359c70b83df57b987ff14cd1a33d36e7201f23bf2e9a15d16b04e",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "1c8aa067ed73a3e1c737e5875d0b09809a1c3a38078769bf2a782e16666ade04",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "e323a99a10277c5a78efa8f7fba48a69530be5ecd4e11fa23f993ff5d9c9ad52",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "b7f6081d3dc6cb41bb5bd0bdf3f95d2c96cd737435549f47a377a5e502df0222",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "a75fd61811a974fd5b5f62659396389ebfa87efa0a5652e664781f30b7be45a9",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "8c466fddf5331de28bc2f562c1ace468b3b0a2abe979fc53a50942d679fd1dde",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "558c1bda4801305c5877f01172e6baccbf9ad4be051e238597ce9eeaaccbc497",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "fb1a00bd80ebf20cfd328b19b66d0fde69e7cc472f4a2a7c3c12ab6389ced6ac",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "cart_lead": {
+            "id": "stage_couch",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "choose_turn",
+            "args": {
+              "turn_side": "right"
+            }
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "inspect_wheel",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "brace_and_pivot",
+            "args": {
+              "hold_side": "right"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "inspect_lift",
+            "args": {}
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "wait",
+            "args": {}
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступность подъёмника — подъёмник открыт."
+            }
+          }
+        },
+        {
+          "cart_lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "left_loader": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "wheel_scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "lift_scout": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 6,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 5,
+      "source_prefix_ticks": 4,
+      "inserted_action_tick": 5,
+      "messages": 1,
+      "source_plan_sha256": "b78147cd6c567b3d6669f700810fc5caf349de9ea766f00beca8b5b402f78105",
+      "source_data_sha256": "e10a09ea2c85a2d0cf16f62af415b56519fea44c2a513e1a1e62d5928d238969",
+      "world_digest": "33dd23cc44ad0e24eb93d4a3eddf16f2aec8afb2a0173383d1cf565911e88647",
+      "contract_digest": "1293694a145b90fcffb9cb455298da64eee34c37b946a7f565551104ed2ea2f9",
+      "deliveries": [
+        {
+          "sender": "lift_scout",
+          "recipients": [
+            "cart_lead",
+            "left_loader",
+            "wheel_scout"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступность подъёмника — подъёмник открыт.",
+          "post_round": 4,
+          "delivery_round": 5,
+          "first_available_action_tick": 6,
+          "facts": [
+            {
+              "field": "lift_reading",
+              "value": "lift_open",
+              "revealed_after_tick": 4,
+              "source_parameters": [
+                "lift_cause"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "left_loader",
+          "shown_action_tick": 6,
+          "shown_call": {
+            "id": "choose_exit_route",
+            "args": {
+              "route": "elevator"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "left_loader",
+        "call": {
+          "id": "choose_exit_route",
+          "args": {
+            "route": "elevator"
+          }
+        },
+        "source_tick": 5,
+        "action_tick": 6,
+        "field": "lift_reading",
+        "source_parameters": [
+          "lift_cause"
+        ],
+        "rule_explanation": "Доступность подъёмника связана с выбором маршрута вывоза.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

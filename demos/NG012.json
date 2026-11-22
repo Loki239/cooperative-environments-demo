@@ -1,0 +1,1617 @@
+{
+  "version": 2,
+  "environment": "NG012",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "a598e2774cdf5be9d9b19066e6a88803e4c988f28f1f532738514fa7b57d3155",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "415fd2928d2450b5487a4798df94f150c1e95ef16eed36e42fc8a328b0b2aebb",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "f1bb01b91e80e9e822363f317d5b72990866c544953a60650ef6508805d7f518",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "4f6585af6451a70ebd02d65c4699a87794e832225a75c132d6038549774c51f1",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "f7df57805ac09cbcc43cf0dc823e234e5435a0e7ff58fca9cee052cd4aef68b3",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "a0f8d15e1793bc9b9408077f217fa6a071499f1ffb8eb50542f20a3a550f54db",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "087e0fbc6bc180774c75bdd1cf707b8ee6a1ec1c9c092463416710ec99f2b94f",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "5b981756b0b9f0d99717a8514831b90adf2e16a00cf09009d1abe4289ddf23f1",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "c21adfe638fa6ee50a98ca588b7bc7e10b31c2e3c7ba9c44eeb97842be25dbb9",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "2811b44e3208bcf49d72b7c1df71825d5d4fbb5afdc5a084f4d57157f64a50ca",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "491cd4a994b18bcd85813cbb3500c89d48cea72a4e31bb7139f06d73caf86d77",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "Documents": {
+            "id": "request_verification",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "inspect_returned_evidence",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Подтверждённый источник дохода — зарплата."
+            }
+          },
+          "Evaluator": {
+            "id": "wait",
+            "args": {}
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Documents": {
+            "id": "wait",
+            "args": {}
+          },
+          "Evaluator": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "OfferManager": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "f62db2c2640a43bf954fe9555b5c3fbac5c4a4089abac4ab1564a96bb05efb5c",
+      "source_data_sha256": "83ddebc51211dc475aebb410fbf2a974eb73d2127d7fb94bb28e0f1b2382e5e4",
+      "world_digest": "1cdd8a67677afa5de13cd4b7701b205e8d4140c72a29a374770985812e6cfa70",
+      "contract_digest": "41c6f4cdf30d046803142976d605802c77dd9f9e3bb2d083a33dd245403eaaa3",
+      "deliveries": [
+        {
+          "sender": "Documents",
+          "recipients": [
+            "Evaluator",
+            "OfferManager"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Подтверждённый источник дохода — зарплата.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "verified_income",
+              "value": "salary",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "income_channel"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Evaluator",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "bind_underwriting_security",
+            "args": {
+              "security": "payroll_assignment"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Evaluator",
+        "call": {
+          "id": "bind_underwriting_security",
+          "args": {
+            "security": "payroll_assignment"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "verified_income",
+        "source_parameters": [
+          "income_channel"
+        ],
+        "rule_explanation": "Подтверждённый доход связан с видом обеспечения заявки.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

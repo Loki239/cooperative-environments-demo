@@ -1,0 +1,2925 @@
+{
+  "version": 2,
+  "environment": "E092",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "3ed5ee81c3c426e4432ea0ec76d02a764b6fe897034882d4b20522a57cd932d5",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "119850c595df896762c8dd6bc2161a40c9b680937c1aa204321baca1085cb834",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "53a523c208784368996f120dad90cebd4c749d07d5dd86e34c298eba2487ddc8",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "17c7d166c9695431528f84180dcdf605660e18711c1443f0cad86c3d702925da",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "78846a32d96083edd40ac4f7fa4fd69943f1508f45ce56c7bcb04e5472552868",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "e41f407189090d45da7526378df10981aa1da2da4b6451b00e0a9da735237628",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "46d31bae9b24d39e91706bac49bd985da0c63d605207f15c3f287189aa1306ea",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "a35733a367627c9bc04c8c0451ac3620698e783fa2be48023ca2aeddcba0606a",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "a918026f4b032177fa3f276983e772a805cbd6f24800fc01ce06d2f7d17be04e",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "3dbdfe0f69f0e1d8a8c98d9b81a296cfbb6dffe718fa1a2ca61f1f2df07b339e",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "b8d092fe020aabd22b8752e887bacaf4fa46634171d03813670c51dad2033ed4",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "approach_contact",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "calibrate_scanner",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_hostile_shield",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "charge_single_discharge",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "fire_at_hostile",
+            "args": {
+              "spectrum": "ion"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "open_damaged_radiator",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "probe_hot_manifold",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячий коллектор — левый борт."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 9,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 8,
+      "source_prefix_ticks": 7,
+      "inserted_action_tick": 8,
+      "messages": 1,
+      "source_plan_sha256": "c38a468778c14eb02d790b909152cf761ac2751955fd1fb88fc6b42b1ebb69ae",
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
+      "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
+      "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячий коллектор — левый борт.",
+          "post_round": 7,
+          "delivery_round": 8,
+          "first_available_action_tick": 9,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 7,
+              "source_parameters": [
+                "hot_manifold"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 9,
+          "shown_call": {
+            "id": "chart_escape_lane",
+            "args": {
+              "lane": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "chart_escape_lane",
+          "args": {
+            "lane": "starboard"
+          }
+        },
+        "source_tick": 8,
+        "action_tick": 9,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_manifold"
+        ],
+        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
+        "relation_type": "commitment_checked_later"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1821 @@
+{
+  "version": 2,
+  "environment": "E188",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "bac2149ec656924ba5b2eca47e723e4d29deeda5ccc63b06863f94b11f2a4e05",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "63684554f36faa1c9ddd58076266f7b6eb2bb9b73e69f34ce68ef7f8da47be36",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "d188692365662af2b20b6f988a8c185ec5aea09335837be5eb3d8e641e44591d",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "b285da8cd62095b50eca5986643eb120018f8748b017ad4255cd3940c4436a49",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "10e6c846759d6d3906974aecf30349374c652d6bffd38ed0b381ccbf72294051",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "0b2eeef26853f558d18148e83986af464eebcc71f427eec9b48ffaacfd8229d4",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "924433ef858aed015dafc8fa52ff65489174e4301282bfc56017d2a890151ada",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "a6c43d9ecd7ff7632d2485a0608b1d7dfe9904b9f259f7a1ad53033003279e0a",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "8313d23679732f724cfb22fa0a9ca86f7abe4a04104619a1b610ae06c7286db0",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "0c2c9b965933feee6f33c5326311e4e45dedf46bee09c53f483901eb83fac1a0",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "2986ed0c3b30dae4e33b3435f12c51d4efb000ffff6d7b0228d2bf00c670f589",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "pilot": {
+            "id": "brake_for_berth",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "scan_radiators_and_settle_burn",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Горячая ветка — левый борт."
+            }
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "gunner": {
+            "id": "wait",
+            "args": {}
+          },
+          "quartermaster": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "15b6662d3f66802420f65d6d5ca8f8437fe9cae960f46ebc7b36ee0c8b55099a",
+      "source_data_sha256": "40f83f079a96fcf36b114e44d9fe9673e6f3e22da48df88e33b04bf6f9f02af7",
+      "world_digest": "87df3dcf98323011adb357c986b43e620cbbf4df79893d6484f52068e08a14c6",
+      "contract_digest": "7dd24b0686fa33e6ba59336a6fadd5f5e4f3ef3cee81a1fcc3f77817f5124b5a",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "gunner",
+            "pilot",
+            "quartermaster"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Горячая ветка — левый борт.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "thermal_reading",
+              "value": "port",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "hot_branch"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "dump_coolant_into_branch",
+            "args": {
+              "branch": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "dump_coolant_into_branch",
+          "args": {
+            "branch": "port"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "thermal_reading",
+        "source_parameters": [
+          "hot_branch"
+        ],
+        "rule_explanation": "Горячая ветка связана с веткой сброса охладителя.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

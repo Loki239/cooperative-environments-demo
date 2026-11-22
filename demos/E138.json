@@ -1,0 +1,1605 @@
+{
+  "version": 2,
+  "environment": "E138",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "2da1d3e6f45c6482a292e6554981e25bf996ac657b9cc05aef331efc972933ab",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "1ea828f981dd80b70150dbeea88cbdb74af4a9cadc9bd95d9027d7332bbd442f",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "ce203dedc52daf757e279494f1f82d4d92b7653c52f196609a61131c391508da",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "06a8c25fe40239b6fe62782ac2a8042137fe3c2a98c0347151d6fd86b36bf79e",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "6a71a409d66fc576c21ba0d908cb87fc664cf69eddc3d60f8e181879dc85bc11",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "c6bc739f08d047c4f4c2a791fbea6498371196a84eb6492f544c34a436002857",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "eda20f0ca8eefc89bb6c00d14fc85b265510484bce1c007be64fdc00611968d5",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "6a6cd3f67ed01755d4b6f5444b605b5ec1b68520778d45e4e75a67d0c9fdc00d",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "919dfe36ea4da646b0ed198c7f5e9708dfdc92e7ebae07cf7753d83c3eebbdea",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "a842d425e890a8b3e1d921a8c63ecbce88621bb92d6caf54df3c2c30a2797456",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "fc6e8cb605f17a9286127d4c1f1740a13e3ba5fa0bff16a5f21133c7bb5528c2",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "deploy_wind_vane",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Боковой ветер — толкает влево."
+            }
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "pilot": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "first_officer": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          },
+          "navigator": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 3,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 2,
+      "source_prefix_ticks": 1,
+      "inserted_action_tick": 2,
+      "messages": 1,
+      "source_plan_sha256": "75446daea04bbc74410506f61ad8511451e503ddda4391f5a084a46f50681777",
+      "source_data_sha256": "1b169987e8c8335a65d79bc5619f1c9a45bab46f5e342ef4f18a32c7b90e1969",
+      "world_digest": "55f68e08a6400c260506535813b5166e67a29a824c425731d8747ba43a8c4d7d",
+      "contract_digest": "f9d843db6332dd909fce7c8219069b3ff0374f6c11193a8be56b0aefde1c863f",
+      "deliveries": [
+        {
+          "sender": "engineer",
+          "recipients": [
+            "first_officer",
+            "navigator",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Боковой ветер — толкает влево.",
+          "post_round": 1,
+          "delivery_round": 2,
+          "first_available_action_tick": 3,
+          "facts": [
+            {
+              "field": "wind_reading",
+              "value": "push_port",
+              "revealed_after_tick": 1,
+              "source_parameters": [
+                "crosswind"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "pilot",
+          "shown_action_tick": 3,
+          "shown_call": {
+            "id": "commit_differential_thrust",
+            "args": {
+              "bias": "starboard"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "pilot",
+        "call": {
+          "id": "commit_differential_thrust",
+          "args": {
+            "bias": "starboard"
+          }
+        },
+        "source_tick": 2,
+        "action_tick": 3,
+        "field": "wind_reading",
+        "source_parameters": [
+          "crosswind"
+        ],
+        "rule_explanation": "Боковой ветер связан с выбором компенсирующей тяги пилотом.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

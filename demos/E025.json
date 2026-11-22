@@ -1,0 +1,1821 @@
+{
+  "version": 2,
+  "environment": "E025",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "b1f2da7cd741a5871f931843d50b1f140533e0813ba2aed94aca80d55a45bee9",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "6a8b2ff58e51af447f1ad4997ec5b7a9bd6fe7c9e0414f6ada5bb28445a099d6",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "460df491184a44fb4050f93addff9527fe1efb75b46537d058c2ac4fc3c21a00",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "c4a2f585dd2dfd03caadbb82ebd6e0d876b8b8f0252800c54ba8a3555a788ec4",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "5025048af091fbb8a6634c010ebbfa51a00edf2013316f8b5287d8f7e671e270",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "10c23f40666df372f366be6514f50c9078ea7c9aa368e3c80de265fc2ab25d9f",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "00980000ab80a296ddeda0f1c686b1a327d547574874df5c1c6395d03bba734c",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "950e8ec3b3a367e002c97663b8cd115d09af0f8510d79efd058d09a8c86841ba",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "6d6e914b2e4980aef3284733a592d70343a8e05ec3e750a6faba4dbf603972bc",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "679a4537f9b6c264b80f3226d6a1be48e2493cc6276dfb512389225e2d06830d",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "63a02180e9714ce81fe3e0a990f2a8d6e0aee7beaae780a574aff89a8cab7303",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "IntakeBird": {
+            "id": "lower_intake_cradle",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "peel_address_window",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Адрес на вложении — слева."
+            }
+          },
+          "StampBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "IntakeBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "AddressBird": {
+            "id": "wait",
+            "args": {}
+          },
+          "StampBird": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "DispatchBird": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "a6ed69c741f5d3f0d71cf497d8f7f404a3849f73981bad6efbb221e81bad8a1d",
+      "source_data_sha256": "82f642d8fd2421b9e98b97ce9d6fd6bafb5a540c2a93cadc312f6c7127908241",
+      "world_digest": "ea93ec0dad965e2412c9205dd5139098a31053094e42946cecd97f38abe10c15",
+      "contract_digest": "ab7e294351a9b3bb64ccbfbf9d7a3f33ba90f9d7db3f05f2d0f8381e4f08ed98",
+      "deliveries": [
+        {
+          "sender": "AddressBird",
+          "recipients": [
+            "DispatchBird",
+            "IntakeBird",
+            "StampBird"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Адрес на вложении — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "address_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "enclosed_address"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "StampBird",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "press_routing_stamp",
+            "args": {
+              "side": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "StampBird",
+        "call": {
+          "id": "press_routing_stamp",
+          "args": {
+            "side": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "address_reading",
+        "source_parameters": [
+          "enclosed_address"
+        ],
+        "rule_explanation": "Адрес на вложении проверяется при выборе стороны маршрутного штампа.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

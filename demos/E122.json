@@ -1,0 +1,2037 @@
+{
+  "version": 2,
+  "environment": "E122",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "e54abbcb630f3e7824a21dd7eb6ac58175a82f6febcbec3529b6d0538ee47de7",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "b8389a9c16cd1d574cdee6716e894c4dfabf16a8769f8449a65adcd70f784d4d",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "e5d475ec3568ad386b7ccd494aa62954d2a5e7154bffe6a5dc72ea652b58b828",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "d40d9c0038758beab3a5932bd7aeb21671d139a288d2854be393e7cecae75fee",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "89d094f97adcd07375597217b273ed4dbded1c84ede2abf3aaa0c1a28faf1410",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "b232f5ad2f3039c139ad359b3c1bc9ac1af521e5e8ca0228a087e1c167e4c925",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "c5162fc6f15bc2022487d95429942d5dd1cd1d33ea92ea38997a63962bc78abc",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "79e961d00948e8a6b34b7952b60e5aa7e9145b684d63d59c8fad269b1ef17de9",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "b57f2911f0bbf25c68d0093b8955d2402dbc48d886fd6c80e633f9c97bd9243b",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "7c3f0b80095763c2cc30a254d2214137c8824a1f781b7a18b715be7f2ae04ac3",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "8ae89520235c0cc27c129ca94005cb4f769f4dd674762cb917c64fbe44b3aed0",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "unbolt_outer_cover",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "insert_bridge_shunt",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "test_outer_pairs",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Совпадающая пара — янтарная."
+            }
+          },
+          "Cutter": {
+            "id": "wait",
+            "args": {}
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Surveyor": {
+            "id": "wait",
+            "args": {}
+          },
+          "Cutter": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "CradleTech": {
+            "id": "wait",
+            "args": {}
+          },
+          "FuseTech": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "16109c4f5357ed848b94d66f1b8889e693894ccfc34c78f5ac1ebe0924a95be6",
+      "source_data_sha256": "ca266cabc2f8c5c529592982b09b871c8eb38305df6e0e8eeeead57195653eef",
+      "world_digest": "6892c0700b8cea7bd49b9227ee0000f78c231f7a7715354b3440994e675baf07",
+      "contract_digest": "ea1befab19cefba804936c9dee123df5b67be8dbd01080d904852940a4ec8871",
+      "deliveries": [
+        {
+          "sender": "Surveyor",
+          "recipients": [
+            "CradleTech",
+            "Cutter",
+            "FuseTech"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Совпадающая пара — янтарная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "pair_reading",
+              "value": "amber",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "matching_pair"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Cutter",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "sever_numbered_pair",
+            "args": {
+              "pair": "amber"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Cutter",
+        "call": {
+          "id": "sever_numbered_pair",
+          "args": {
+            "pair": "amber"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "pair_reading",
+        "source_parameters": [
+          "matching_pair"
+        ],
+        "rule_explanation": "Совпадающая пара связана с номером разрезаемой пары проводов.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

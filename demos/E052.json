@@ -1,0 +1,1821 @@
+{
+  "version": 2,
+  "environment": "E052",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "f140778130ae74aa38f7d9ba5ea77aa37bf7d1820686dc123b8c8029c4b0ec35",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "d82ba73d8d6346acdd85df3b92d50a0a891659e99d0002256ae0c73b72ff17ba",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "82a4b7d907aea46105ca4a8bd508dadd89c88a8ce136cce29fc5f0e25164bcfc",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "74d3212b956e49c80b55e3bda28f13217ca4906e186b85567f18840cd94b072a",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "e1a4b24d5cfda3b98b40a1c528b6e2386e3f8b8eaf8c53795885fa5d5bf8e4bf",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "6802dcb51cff5674693edbdbe652cf78022fc8ad0c7a8280702fcf162f2d3db2",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "0aecba7e7a79dd56b33857f500ada8482c333777fa5c55c9fd69771beabfd6ab",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "8bf3a79f56f5b0103e2aca512609d3bbd019dbb329e54fffe1b97af93eadac4a",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "7e285933eff3138bb979119742b817a3f5658b6e74c2bb7c7a747e03b1398245",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "a85a8983b290940d22000de96d9473d5e3a1288f5ee8608ca780a3dd07124eb5",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "99578d6b78ad821ba1894e36d11d5291a454429010f1b7b24fe0eda436f5243f",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "row_one": {
+            "id": "serve_ball",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "sight_spinning_seam",
+            "args": {}
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Смещение стыка — слева."
+            }
+          },
+          "row_two": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "row_one": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_two": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "row_three": {
+            "id": "wait",
+            "args": {}
+          },
+          "row_four": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 4,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 3,
+      "source_prefix_ticks": 2,
+      "inserted_action_tick": 3,
+      "messages": 1,
+      "source_plan_sha256": "9f787adba1e3b2b7e00a5ddd3088a4b698f180a2a304fbf53ab7b4d71b413e59",
+      "source_data_sha256": "d5af24cc9d0ad9cfe9478cbfcdf7645c1876d9df9651fca701b303a7a89d9984",
+      "world_digest": "b8fad1b2efd38799b1b1fd42768d7899ce8ffe2b259f41b9a6333356583a4b49",
+      "contract_digest": "34aa12f022615999056ef1ca5a3254120a90e08402211ece37d298f0b9e221fe",
+      "deliveries": [
+        {
+          "sender": "row_one",
+          "recipients": [
+            "row_four",
+            "row_three",
+            "row_two"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Смещение стыка — слева.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "seam_reading",
+              "value": "left",
+              "revealed_after_tick": 2,
+              "source_parameters": [
+                "seam_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "row_two",
+          "shown_action_tick": 4,
+          "shown_call": {
+            "id": "intercept_in_line",
+            "args": {
+              "line": "left"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "row_two",
+        "call": {
+          "id": "intercept_in_line",
+          "args": {
+            "line": "left"
+          }
+        },
+        "source_tick": 3,
+        "action_tick": 4,
+        "field": "seam_reading",
+        "source_parameters": [
+          "seam_drift"
+        ],
+        "rule_explanation": "Смещение стыка связано с линией перехвата.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

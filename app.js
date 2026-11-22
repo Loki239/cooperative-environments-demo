@@ -6,11 +6,11 @@
   const $ = selector => document.querySelector(selector);
   const esc = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const human = text => String(text).replaceAll('_', ' ');
-  const roleName = actor => (data?.id==='E113'?window.E113Scene.ROLE[actor]:null) || scenes.ROLE[actor] || human(actor);
-  const fieldName = key => (data?.id==='E113'?window.E113Scene.SENSOR[key]:null) || scenes.SENSOR[key] || human(key);
+  const roleName = actor => window.CatalogueScenes?.roleName(data?.id,actor) || (data?.id==='E113'?window.E113Scene.ROLE[actor]:null) || scenes.ROLE[actor] || human(actor);
+  const fieldName = key => window.CatalogueScenes?.fieldLabel(data?.id,key) || (data?.id==='E113'?window.E113Scene.SENSOR[key]:null) || scenes.SENSOR[key] || human(key);
   const commonValues = {unread:'ещё не прочитано', unknown:'неизвестно', none:'нет', locked:'заблокировано', ready:'готово', done:'завершено', pending:'ожидается'};
-  const valueName = value => typeof value === 'boolean' ? (value ? 'да' : 'нет') : value === null ? 'нет показания' : (data?.id==='E113'?window.E113Scene.VALUE[value]:null) || scenes.VALUE[value] || commonValues[value] || human(value);
-  const actionName = call => call.id === 'wait' ? 'Подождать' : call.id === 'send_message' ? 'Отправить сообщение' : (data?.id==='E113'?window.E113Scene.LABEL[call.id]:null) || scenes.LABEL[call.args?.operation] || scenes.LABEL[call.id] || human(call.id);
+  const valueName = value => typeof value === 'boolean' ? (value ? 'да' : 'нет') : value === null ? 'нет показания' : window.CatalogueScenes?.valueLabel(data?.id,value) || (data?.id==='E113'?window.E113Scene.VALUE[value]:null) || scenes.VALUE[value] || commonValues[value] || human(value);
+  const actionName = call => call.id === 'wait' ? 'Подождать' : call.id === 'send_message' ? 'Отправить сообщение' : window.CatalogueScenes?.actionLabel(data?.id,call) || (data?.id==='E113'?window.E113Scene.LABEL[call.id]:null) || scenes.LABEL[call.args?.operation] || scenes.LABEL[call.id] || human(call.id);
   const cache = new Map();
   async function readJSON(path) {
     if (window.ENVIRONMENT_LAB_EMBEDDED && Object.hasOwn(window.ENVIRONMENT_LAB_EMBEDDED,path)) return structuredClone(window.ENVIRONMENT_LAB_EMBEDDED[path]);
@@ -19,11 +19,13 @@
     return response.json();
   }
   let catalogue = [], data, mode = 'about', instance = 0, role, game, drafts, playTrace = [], lastResult = null, previousPlayState = null, lastSceneKey = null;
-  let recorded=null,replaySource='cpu';
+  let recorded=null,demos=null,replaySource='cpu';
+  const defaultSource=()=>recorded?'recorded':demos?'demo':'cpu';
+  const selectedRecord=()=>replaySource==='recorded'?recorded:replaySource==='demo'?demos?.examples.find(e=>e.instance_index===instance):null;
   const recordIDs=new Set(['E113','NG007','E082-core','IN013']);
   let replayFrames = [], replayStep = 0, timer = null, observer = false, filter = 'all', collection = 'core', loadNumber = 0;
   const colors = ['#3266c9','#087f8c','#a96620','#8556a8'];
-  const roleColor = actor => (data?.id==='E113'?window.E113Scene.ROLE_COLOR[actor]:null) || scenes.ROLE_COLOR[actor] || colors[data.world.actors.indexOf(actor) % colors.length];
+  const roleColor = actor => window.CatalogueScenes?.has(data?.id)?colors[data.world.actors.indexOf(actor)%colors.length]:(data?.id==='E113'?window.E113Scene.ROLE_COLOR[actor]:null) || scenes.ROLE_COLOR[actor] || colors[data.world.actors.indexOf(actor) % colors.length];
   const isPublic = key => data.world.state[key].visible_to.includes('public') || data.world.actors.every(a => data.world.state[key].visible_to.includes(a));
   const plural=(n,one,few,many)=>n%100>=11&&n%100<=14?many:n%10===1?one:n%10>=2&&n%10<=4?few:many;
   const title = item => `${item.source_id || item.id} (${item.name})`;
@@ -58,8 +60,14 @@
       if(previousState){const w=new World(data.world,data.instances[instance]);w.state=previousState;w.round=Math.max(0,world.round-1);before=snapshot(w,selected,full);}
       const key=`${data.id}/${instance}/${mode}/${world.round}`;
       content=(window.E113Scene?.has(data.id)?window.E113Scene:window.CoreEnvironmentScenes).render(data.id,snap,active,before,{animate:key!==lastSceneKey,compact:data.collection==='core'});lastSceneKey=key;
+    } else if (window.CatalogueScenes?.has(data.id)) {
+      let before=snap;if(previousState){const w=new World(data.world,data.instances[instance]);w.state=previousState;before=snapshot(w,selected,full);}
+      const key=`${data.id}/${instance}/${mode}/${world.round}`;
+      content=window.CatalogueScenes.render(data.id,snap,active,before,{animate:key!==lastSceneKey});lastSceneKey=key;
     } else if (scenes.has(data.id)) {
-      content = `<svg viewBox="40 120 640 440" role="img" aria-label="${esc(title(data))}: состояние среды">${scenes.render(data.id,snap,active)}</svg>`;
+      let before=snap;if(previousState){const w=new World(data.world,data.instances[instance]);w.state=previousState;before=snapshot(w,selected,full);}
+      const key=`${data.id}/${instance}/${mode}/${world.round}`;
+      content = `<svg class="legacy-object-scene" viewBox="40 120 640 440" role="img" aria-label="${esc(title(data))}: состояние среды">${scenes.render(data.id,snap,active,before,{animate:key!==lastSceneKey})}</svg>`;lastSceneKey=key;
     } else {
       content = `<div class="public-scene"><h3>Общее состояние среды</h3><p class="muted">Параметры, доступные всем участникам.</p><div class="facts-scroll">${facts(Object.entries(snap.public))}</div><div class="roles">${data.world.actors.map(a=>`<span class="role-tag" style="--role:${roleColor(a)}">${esc(roleName(a))}</span>`).join('')}</div></div>`;
     }
@@ -72,12 +80,12 @@
     playTrace = []; lastResult = null; previousPlayState = null; lastSceneKey = null; observer = false;
   }
   function buildReplay() {
-    const useRecord=replaySource==='recorded'&&recorded?.instance_index===instance;
+    const record=selectedRecord(),useRecord=Boolean(record&&record.instance_index===instance);
     const engine=useRecord?new ChatWorld(data.world,data.contract,data.instances[instance]):new World(data.world,data.instances[instance]);
     const w=()=>useRecord?engine.world:engine;
     const save=actions=>({world:structuredClone(w().state),round:w().round,actions,chats:useRecord?structuredClone(engine.chats):{}});
     replayFrames=[save({})];
-    for(const actions of (useRecord?recorded.actions:data.examples[instance].actions)){
+    for(const actions of (useRecord?record.actions:data.examples[instance].actions)){
       if(!engine.stepJoint(actions).ok)throw new Error('Сохранённое прохождение не соответствует правилам.');
       replayFrames.push(save(actions));
     }
@@ -91,9 +99,13 @@
     });
   }
   function sourceControls(){
-    return recorded?`<div class="replay-source"><label for="replay-source">Запись прохождения</label><select class="select" id="replay-source"><option value="cpu" ${replaySource==='cpu'?'selected':''}>CPU · текущий старт · без переписки</option><option value="recorded" ${replaySource==='recorded'?'selected':''}>Qwen · старт ${recorded.instance_index+1} · с перепиской</option></select><a href="replays/${data.id}.json" download>Запись Qwen</a></div>`:'';
+    if(!recorded&&!demos)return '';
+    const extra=recorded?`<option value="recorded" ${replaySource==='recorded'?'selected':''}>Qwen · старт ${recorded.instance_index+1} · с перепиской</option>`:`<option value="demo" ${replaySource==='demo'?'selected':''}>CPU · фрагмент обмена</option>`;
+    return `<div class="replay-source"><label for="replay-source">Запись прохождения</label><select class="select" id="replay-source"><option value="cpu" ${replaySource==='cpu'?'selected':''}>CPU · текущий старт · без переписки</option>${extra}</select><a href="${recorded?'replays':'demos'}/${data.id}.json" download>${recorded?'Запись Qwen':'Записи фрагментов'}</a></div>`;
   }
   function recordedNotice(){return `${recorded.model} · старт ${instance+1} · ${recorded.source_mode==='none'?'без подсказок':'оконные подсказки отправителю'}. Архивная игра, обзор исследователя.`;}
+  function replayNotice(){return replaySource==='recorded'?recordedNotice():replaySource==='demo'?demos.note+' Обзор исследователя.':data.collection==='core'?data.verification.replay_notice:'CPU-пример: команда объединяет доступные наблюдения всех ролей. Отправки сообщений здесь не исполнялись.';}
+  function replayContext(){return replaySource==='recorded'?'Qwen · архив · '+(recorded.source_mode==='none'?'без подсказок':'оконные подсказки'):replaySource==='demo'?'CPU · фрагмент обмена':'CPU · без переписки';}
   function renderCatalogue() {
     const query = $('#search').value.trim().toLocaleLowerCase('ru');
     const items = catalogue.filter(x=>(x.collection||'generated')===collection && (filter !== 'scenes' || x.scene) && `${x.id} ${x.name} ${x.summary} ${x.actors.join(' ')}`.toLocaleLowerCase('ru').includes(query));
@@ -115,11 +127,11 @@
   function selectInstance(value){
     stopPlayback();const n=validInstance(value);
     if(data.kind)window.EstablishedUI.selectInstance(n);
-    else{instance=n;if(mode==='replay'&&recorded?.instance_index!==instance)replaySource='cpu';resetGame();buildReplay();render();}
+    else{instance=n;if(mode==='replay'&&replaySource==='recorded'&&recorded?.instance_index!==instance)replaySource='cpu';resetGame();buildReplay();render();}
   }
   function overview() {
     const world = new World(data.world, data.instances[instance]);
-    return `<div class="overview"><div class="team-stage">${communication({},0,null,false,recorded?'Участники команды. В прохождении показаны их настоящие сообщения.':'Участники команды. В CPU-примере сообщения не записывались.')}${scene(world,{},null,false,'Начальное состояние. Частные показания открываются по ходу игры.')}</div><section class="overview-copy"><h2>Одна задача на всю команду</h2><p>${esc(data.summary)}</p><div class="roles">${data.world.actors.map(a=>`<span class="role-tag" style="--role:${roleColor(a)}">${esc(roleName(a))}</span>`).join('')}</div><p class="mode-note">Сыграйте за все роли по очереди или разберите готовое прохождение по тактам.</p><div class="button-row"><button class="button primary" data-mode="play">Играть вручную</button><button class="button secondary" data-mode="replay">${recorded?'Смотреть общение':'Смотреть прохождение'}</button></div></section></div><div class="evidence-note"><strong>${data.instances.length} вариантов проверены CPU</strong><p>${data.collection==='core'?'Для каждого старта независимо найден и исполнен физический план, без переписки.':'Примеры выполнены идеальной командой с общими наблюдениями, без переписки.'} ${data.collection==='core'?'Проверки общения и прежние исследования описаны в паспорте ниже.':'Необходимость явного чата пока не установлена; модельных игр в этой серии нет.'}</p></div><details class="details"><summary>Роли и передача информации</summary><div class="details-body">${data.description.slice(1,3).map(p=>`<p>${esc(p)}</p>`).join('')}</div></details><details class="details"><summary>Проверки и границы этой реализации</summary><div class="details-body">${data.description.slice(3).map(p=>`<p>${esc(p)}</p>`).join('')}<p>Ниже доступны полные исследовательские данные, включая скрытые параметры и примеры решения.</p></div></details>${downloads()}`;
+    return `<div class="overview"><div class="team-stage">${communication({},0,null,false,recorded?'Участники команды. В прохождении показаны их настоящие сообщения.':demos?'Участники команды. В демонстрации показана исполненная пересылка показаний.':'Участники команды. В CPU-примере сообщения не записывались.')}${scene(world,{},null,false,'Начальное состояние. Частные показания открываются по ходу игры.')}</div><section class="overview-copy"><h2>Одна задача на всю команду</h2><p>${esc(data.summary)}</p><div class="roles">${data.world.actors.map(a=>`<span class="role-tag" style="--role:${roleColor(a)}">${esc(roleName(a))}</span>`).join('')}</div><p class="mode-note">Сыграйте за все роли по очереди или разберите готовое прохождение по тактам.</p><div class="button-row"><button class="button primary" data-mode="play">Играть вручную</button><button class="button secondary" data-mode="replay">${recorded||demos?'Смотреть общение':'Смотреть прохождение'}</button></div></section></div><div class="evidence-note"><strong>${data.instances.length} вариантов проверены CPU</strong><p>${data.collection==='core'?'Для каждого старта независимо найден и исполнен физический план, без переписки.':'Примеры выполнены идеальной командой с общими наблюдениями, без переписки.'} ${data.collection==='core'?'Проверки общения и прежние исследования описаны в паспорте ниже.':'Необходимость явного чата пока не установлена; модельных игр в этой серии нет.'}</p></div><details class="details"><summary>Роли и передача информации</summary><div class="details-body">${data.description.slice(1,3).map(p=>`<p>${esc(p)}</p>`).join('')}</div></details><details class="details"><summary>Проверки и границы этой реализации</summary><div class="details-body">${data.description.slice(3).map(p=>`<p>${esc(p)}</p>`).join('')}<p>Ниже доступны полные исследовательские данные, включая скрытые параметры и примеры решения.</p></div></details>${downloads()}`;
   }
   function passport() {
     const v=data.verification;
@@ -172,11 +184,13 @@
     world.state = frame.world; world.round = frame.round;
     const previous = replayFrames[Math.max(0,replayStep-1)].world;
     const changes = Object.entries(world.state).filter(([k,v])=>!isPublic(k)&&v!==previous[k]&&data.world.state[k].visible_to.length);
-    return toolbar()+sourceControls()+`<p class="replay-notice">${replaySource==='recorded'?esc(recordedNotice()):data.collection==='core'?esc(data.verification.replay_notice):'CPU-пример: команда объединяет доступные наблюдения всех ролей. Отправки сообщений здесь не исполнялись.'}</p><div class="play-grid team-layout"><div><div class="replay-controls"><button class="icon-button" id="previous" aria-label="Предыдущий такт" ${replayStep===0?'disabled':''}>←</button><button class="button primary" id="autoplay">${timer?'Пауза':'Смотреть'}</button><button class="icon-button" id="next" aria-label="Следующий такт" ${replayStep===replayFrames.length-1?'disabled':''}>→</button><input type="range" id="seek" min="0" max="${replayFrames.length-1}" value="${replayStep}" aria-label="Такт прохождения"><span class="step-count">${replayStep} / ${replayFrames.length-1}</span><button class="button secondary next-message" id="next-message" ${nextMessageStep()<0?'disabled':''}>К сообщению →</button></div><div class="team-stage"><div class="team-context">${replaySource==='recorded'?'Qwen · архив · '+(recorded.source_mode==='none'?'без подсказок':'оконные подсказки'):'CPU · без переписки'} · старт ${instance+1}</div>${communication(frame.chats,world.round,null,true,replaySource==='cpu'?'CPU-план без переписки. Люди показаны без передач.':'До этого такта никто не отправлял сообщений.',frame.actions,world)}${scene(world,frame.actions,null,true,replayStep===0?'Стартовый мир до первого действия.':'Состояние после совместного действия выбранного такта.',previous)}</div>${world.success()?`<div class="turn-result success">Цель достигнута. ${replaySource==='recorded'?'Архивная игра Qwen.':'Сохранённый CPU-пример.'}</div>`:''}</div><section class="panel replay-panel"><h3>${replayStep?'Действия в этом такте':'Перед первым ходом'}</h3><div class="action-list">${data.world.actors.map(a=>`<div class="recorded-action" style="--role:${roleColor(a)}"><span class="role-dot"></span><div><strong>${esc(roleName(a))}</strong>${replayStep?esc(actionName(frame.actions[a])):'Исходные наблюдения'}${Object.keys(frame.actions[a]?.args||{}).length&&frame.actions[a]?.id!=='send_message'?`<div class="action-id">${esc(Object.entries(frame.actions[a].args).map(([k,v])=>human(k)+': '+valueName(v)).join(' · '))}</div>`:''}</div></div>`).join('')}</div><div class="section-head"><h3>Новые частные показания</h3></div>${changes.length?changes.map(([k,v])=>`<div class="recorded-action" style="--role:${roleColor(data.world.state[k].visible_to[0])}"><span class="role-dot"></span><div><strong>${esc(data.world.state[k].visible_to.map(roleName).join(', '))}</strong>${esc(fieldName(k))}: ${esc(valueName(v))}</div></div>`).join(''):'<p class="empty">В этом такте частные показания не изменились.</p>'}<details class="details"><summary>Наблюдения всех ролей</summary><div class="details-body">${data.world.actors.map(a=>`<h4 style="color:${roleColor(a)};margin:14px 0 6px">${esc(roleName(a))}</h4>${facts(Object.entries(world.observe(a).state).filter(([k])=>!isPublic(k)))}`).join('')}</div></details><details class="details"><summary>Общие параметры</summary><div class="details-body facts-scroll">${facts(Object.entries(world.state).filter(([k])=>isPublic(k)))}</div></details></section></div>${recorded?`<details class="details"><summary>Источник записи и границы</summary><div class="details-body">${esc(recorded.note)}<p>Состояния восстановлены исходным CPU-симулятором. Действия и сообщения сохранены буквально. Соседство сообщения и удачного действия не доказывает причинного влияния.</p></div></details>`:''}${downloads()}`;
+    return toolbar()+sourceControls()+`<p class="replay-notice">${esc(replayNotice())}</p><div class="play-grid team-layout"><div><div class="replay-controls"><button class="icon-button" id="previous" aria-label="Предыдущий такт" ${replayStep===0?'disabled':''}>←</button><button class="button primary" id="autoplay">${timer?'Пауза':'Смотреть'}</button><button class="icon-button" id="next" aria-label="Следующий такт" ${replayStep===replayFrames.length-1?'disabled':''}>→</button><input type="range" id="seek" min="0" max="${replayFrames.length-1}" value="${replayStep}" aria-label="Такт прохождения"><span class="step-count">${replayStep} / ${replayFrames.length-1}</span><button class="button secondary next-message" id="next-message" ${nextMessageStep()<0?'disabled':''}>К сообщению →</button></div><div class="team-stage"><div class="team-context">${replayContext()} · старт ${instance+1}</div>${communication(frame.chats,world.round,null,true,replaySource==='cpu'?'CPU-план без переписки. Люди показаны без передач.':'До этого такта никто не отправлял сообщений.',frame.actions,world)}${scene(world,frame.actions,null,true,replayStep===0?'Стартовый мир до первого действия.':'Состояние после совместного действия выбранного такта.',previous)}</div>${world.success()?`<div class="turn-result success">Цель достигнута. ${replaySource==='recorded'?'Архивная игра Qwen.':replaySource==='demo'?'Постановочная CPU-демонстрация.':'Сохранённый CPU-пример.'}</div>`:replaySource==='demo'&&replayStep===replayFrames.length-1?'<div class="turn-result">Фрагмент обмена завершён; полная задача ещё не завершена. Полное физическое прохождение доступно в варианте «CPU · без переписки».</div>':''}</div><section class="panel replay-panel"><h3>${replayStep?'Действия в этом такте':'Перед первым ходом'}</h3><div class="action-list">${data.world.actors.map(a=>`<div class="recorded-action" style="--role:${roleColor(a)}"><span class="role-dot"></span><div><strong>${esc(roleName(a))}</strong>${replayStep?esc(actionName(frame.actions[a])):'Исходные наблюдения'}${Object.keys(frame.actions[a]?.args||{}).length&&frame.actions[a]?.id!=='send_message'?`<div class="action-id">${esc(Object.entries(frame.actions[a].args).map(([k,v])=>human(k)+': '+valueName(v)).join(' · '))}</div>`:''}</div></div>`).join('')}</div><div class="section-head"><h3>Новые частные показания</h3></div>${changes.length?changes.map(([k,v])=>`<div class="recorded-action" style="--role:${roleColor(data.world.state[k].visible_to[0])}"><span class="role-dot"></span><div><strong>${esc(data.world.state[k].visible_to.map(roleName).join(', '))}</strong>${esc(fieldName(k))}: ${esc(valueName(v))}</div></div>`).join(''):'<p class="empty">В этом такте частные показания не изменились.</p>'}<details class="details"><summary>Наблюдения всех ролей</summary><div class="details-body">${data.world.actors.map(a=>`<h4 style="color:${roleColor(a)};margin:14px 0 6px">${esc(roleName(a))}</h4>${facts(Object.entries(world.observe(a).state).filter(([k])=>!isPublic(k)))}`).join('')}</div></details><details class="details"><summary>Общие параметры</summary><div class="details-body facts-scroll">${facts(Object.entries(world.state).filter(([k])=>isPublic(k)))}</div></details></section></div>${recorded?`<details class="details"><summary>Источник записи и границы</summary><div class="details-body">${esc(recorded.note)}<p>Состояния восстановлены исходным CPU-симулятором. Действия и сообщения сохранены буквально. Соседство сообщения и удачного действия не доказывает причинного влияния.</p></div></details>`:''}${downloads()}`;
   }
   function render() {
     $('#workspace').innerHTML = `<div class="env-heading"><div><div class="env-kicker"><span>${data.world.actors.length} ${plural(data.world.actors.length,'роль','роли','ролей')}</span><span>${data.world.horizon} ${plural(data.world.horizon,'такт','такта','тактов')}</span><span>${data.instances.length} ${plural(data.instances.length,'вариант','варианта','вариантов')}</span></div><h1>${esc(title(data))}</h1></div><div class="heading-buttons"><button class="icon-button" id="share" aria-label="Скопировать ссылку на среду" title="Скопировать ссылку"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg></button></div></div><div class="tabs" aria-label="Режим просмотра">${[['about','О среде'],['play','Играть'],['replay','Прохождение']].map(([id,label])=>`<button class="tab ${id===mode?'active':''}" data-mode="${id}" aria-pressed="${id===mode}">${label}</button>`).join('')}</div>${data.kind?window.EstablishedUI.render(mode):mode==='about'?overview():mode==='play'?playView():replayView()}${data.collection==='core'?passport():''}`;
     syncControls();window.CommunicationScene?.mountActions();
+    const animatedScenes=[...document.querySelectorAll('.catalogue-scene,.legacy-object-scene')];
+    requestAnimationFrame(()=>{for(const svg of animatedScenes)if(svg.isConnected&&svg.querySelector('animate,animateTransform')){svg.setCurrentTime(0);svg.querySelectorAll('animate,animateTransform').forEach(a=>a.beginElement());}});
     document.title = `${title(data)} — Среды для общения агентов`;
     if (mode==='play'&&!data.kind) renderActionFields();
   }
@@ -193,7 +207,7 @@
         cache.set(entry.id,await readJSON(entry.data));
       }
       if(ticket!==loadNumber) return;
-      data=cache.get(entry.id); recorded=recordIDs.has(data.id)?await readJSON(`replays/${data.id}.json`):null;if(ticket!==loadNumber)return;replaySource=recorded&&source!=='cpu'?'recorded':'cpu';if(next==='replay'&&replaySource==='recorded')start=recorded.instance_index; collection=entry.collection||'generated'; instance=validInstance(start==='random'?Math.floor(Math.random()*data.instances.length):start); if(data.kind)window.EstablishedUI.load(data,render,instance);else {resetGame();buildReplay();} setMode(next); renderCatalogue();
+      data=cache.get(entry.id); recorded=recordIDs.has(data.id)?await readJSON(`replays/${data.id}.json`):null;demos=entry.collection==='generated'?await readJSON(`demos/${data.id}.json`):null;if(ticket!==loadNumber)return;replaySource=source==='cpu'?'cpu':defaultSource();if(next==='replay'&&replaySource==='recorded')start=recorded.instance_index; collection=entry.collection||'generated'; instance=validInstance(start==='random'?Math.floor(Math.random()*data.instances.length):start); if(data.kind)window.EstablishedUI.load(data,render,instance);else {resetGame();buildReplay();} setMode(next); renderCatalogue();
     } catch(error) { $('#workspace').innerHTML=`<div class="error-view"><h2>Среда не загрузилась</h2><p>${esc(error.message)}</p><button class="button secondary" onclick="location.reload()">Обновить страницу</button></div>`; }
   }
   $('#search').addEventListener('input',renderCatalogue);
@@ -251,8 +265,8 @@
   });
   window.addEventListener('hashchange',()=>{
     const query=new URLSearchParams(location.hash.slice(1)), id=query.get('env'), next=query.get('mode')||'about', requestedStart=Number(query.get('start')||1)-1;
-    const start=id===data?.id&&next==='replay'&&(query.get('replay')||(recorded?'recorded':'cpu'))==='recorded'&&recorded?recorded.instance_index:requestedStart;
-    if(id===data?.id){if((query.get('replay')||(recorded?'recorded':'cpu'))!==replaySource){selectEnvironment(id,next,start,query.get('replay'));return;}if(validInstance(start)!==currentInstance())selectInstance(start);setMode(next);}else selectEnvironment(id,next,start,query.get('replay'));
+    const start=id===data?.id&&next==='replay'&&(query.get('replay')||defaultSource())==='recorded'&&recorded?recorded.instance_index:requestedStart;
+    if(id===data?.id){if((query.get('replay')||defaultSource())!==replaySource){selectEnvironment(id,next,start,query.get('replay'));return;}if(validInstance(start)!==currentInstance())selectInstance(start);setMode(next);}else selectEnvironment(id,next,start,query.get('replay'));
   });
   async function start() {
     try {

@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-22T18:03:27+03:00",
+  "scope": "30 generated environments; 7 core scenes regression",
+  "environments_restylized": 30,
+  "total_scenes": 37,
+  "scripted_partial_fragments": 360,
+  "full_original_cpu_plans_unchanged": 360,
+  "fragment_transitions": 1776,
+  "fragment_observations": 8112,
+  "before_choice_deliveries": 360,
+  "model_calls": 0,
+  "browser_paths": 30,
+  "second_starts": 30,
+  "desktop_mobile_screenshots": 60,
+  "core_regression": [
+    {
+      "id": "GRAPH",
+      "source": "native"
+    },
+    {
+      "id": "GL023",
+      "source": "native"
+    },
+    {
+      "id": "E113",
+      "source": "recorded"
+    },
+    {
+      "id": "E044",
+      "source": "native"
+    },
+    {
+      "id": "NG007",
+      "source": "recorded"
+    },
+    {
+      "id": "E082-core",
+      "source": "recorded"
+    },
+    {
+      "id": "IN013",
+      "source": "recorded"
+    }
+  ],
+  "live_motion_environments": 30,
+  "engines_and_source_records_unchanged": true,
+  "no_person_object_connectors": true,
+  "no_role_number_badges": true,
+  "limitations": [
+    "New default exchanges are scripted partial CPU fragments, not model episodes or complete local policies.",
+    "Message delivery before a related action does not establish causal effect or necessity.",
+    "Object geometry is schematic; compound mechanisms use named aggregates."
+  ]
+}

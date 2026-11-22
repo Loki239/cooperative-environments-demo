@@ -16,8 +16,9 @@ function draw(){
  const focused=points.find(r=>r.actor===selected),color=focused.color;
  const detail=document.createElement('div');detail.className='action-explanation';detail.style.setProperty('--role',color);detail.innerHTML=`<span>${esc(focused.roleName)} · ${esc(focused.label)} → ${esc(focused.target.name)}</span>`;stage.append(detail);
  const box=stage.getBoundingClientRect(),overlay=svgElement('svg',{class:'action-overlay',viewBox:`0 0 ${box.width} ${box.height}`,'aria-hidden':'true'});
- for(const r of points){const x=r.point.x,y=r.point.y;
-  overlay.append(svgElement('circle',{class:'physical-target-ring',cx:x,cy:y,r:r.actor===selected?17:13,fill:'none',stroke:r.color,'stroke-width':r.actor===selected?2.7:1.7,opacity:.85,'data-actor':r.actor,'data-target':r.target.name}));
+ const occupied=new Map();
+ for(const r of points){const x=r.point.x,y=r.point.y,key=`${Math.round(x/12)}/${Math.round(y/12)}`,rank=occupied.get(key)||0;occupied.set(key,rank+1);
+  overlay.append(svgElement('circle',{class:'physical-target-ring',cx:x,cy:y,r:13+rank*5,fill:'none',stroke:r.color,'stroke-width':r.actor===selected?2.7:1.7,opacity:.85,'data-actor':r.actor,'data-target':r.target.name}));
 
  }
  stage.append(overlay);

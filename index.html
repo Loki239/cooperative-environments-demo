@@ -7,17 +7,19 @@
   <meta name="description" content="37 исполняемых сред для исследования общения агентов: ручная игра, роли, сообщения и проверенные CPU-прохождения.">
   <title>Среды для общения агентов</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2318314e'/%3E%3Ccircle cx='13' cy='14' r='5' fill='%237da6f4'/%3E%3Ccircle cx='28' cy='14' r='5' fill='%2370c7bf'/%3E%3Ccircle cx='20' cy='28' r='5' fill='%23e6b563'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=colors2">
+  <link rel="stylesheet" href="styles.css?v=allteam1">
   <script defer src="engine.js"></script>
-  <script defer src="scenes.js"></script>
+  <script defer src="scenes.js?v=allteam1"></script>
   <script defer src="core-scenes.js"></script>
   <script defer src="e113-scene.js"></script>
-  <script defer src="action-targets.js?v=colors2"></script>
-  <script defer src="action-overlay.js?v=colors2"></script>
-  <script defer src="communication-scene.js?v=colors2"></script>
+  <script defer src="catalogue-scenes.js?v=allteam1"></script>
+  <script defer src="legacy-action-targets.js?v=allteam1"></script>
+  <script defer src="action-targets.js?v=allteam1"></script>
+  <script defer src="action-overlay.js?v=allteam1"></script>
+  <script defer src="communication-scene.js?v=allteam1"></script>
   <script defer src="established-engine.js"></script>
-  <script defer src="established-ui.js?v=colors2"></script>
-  <script defer src="app.js?v=colors2"></script>
+  <script defer src="established-ui.js?v=allteam1"></script>
+  <script defer src="app.js?v=allteam1"></script>
 </head>
 <body>
   <a class="skip" href="#workspace">К среде</a>
@@ -51,7 +53,7 @@
     <footer class="page-footer">Один браузер, все роли. Расписание ходов и доступные участникам сведения указаны в каждой среде.</footer>
   </div>
   <div id="toast" class="toast" role="status" hidden></div>
-  <dialog id="data-dialog"><button class="dialog-close button secondary" aria-label="Закрыть">Закрыть</button><h2>Что здесь проверено</h2><p>В каталоге две подборки: семь давно разобранных задач и 30 новых продолжений от 20 ноября 2026 года. Для основных задач сохранены 67 CPU-примеров разных типов и четыре архивные игры Qwen с перепиской, для новых — по 12 CPU-примеров. У каждой основной задачи указан объём проверки и его границы.</p><p>В примерах новых продолжений идеальная команда объединяет законные наблюдения всех ролей. Отправки сообщений в них не исполнялись. Проверка необходимости реального чата осталась <code>UNKNOWN</code>, модельных игр у этой серии пока нет.</p><p>Для новых продолжений и четырёх основных WorldSpec-сред работает сохранённый контракт чата: одно действие на роль за такт, сообщение занимает действие. У скрытой сети, пяти рычагов и пневмопочты сохранены их собственные расписания, описанные в карточках. Успех CPU-примера не доказывает, что в том же горизонте получится выиграть с такими сообщениями.</p><p>Вы управляете всеми ролями на одном устройстве. Это песочница для знакомства с правилами, а не сервер для независимых игроков. Полные правила и исходные варианты доступны для исследования; интерфейс выбранной роли скрывает недоступные ей поля.</p><p><a href="provenance.json" download>Скачать происхождение данных</a></p></dialog>
+  <dialog id="data-dialog"><button class="dialog-close button secondary" aria-label="Закрыть">Закрыть</button><h2>Что здесь проверено</h2><p>В каталоге две подборки: семь давно разобранных задач и 30 новых продолжений от 20 ноября 2026 года. Для основных задач сохранены 67 CPU-примеров разных типов и четыре архивные игры Qwen с перепиской, для новых — по 12 CPU-примеров. У каждой основной задачи указан объём проверки и его границы.</p><p>В примерах новых продолжений идеальная команда объединяет законные наблюдения всех ролей. В полных физических планах отправки не исполнялись. Для каждого старта отдельно добавлен короткий постановочный фрагмент с реальной доставкой перед действием партнёра. Фрагмент заканчивается до завершения всей задачи; это иллюстрация, а не прогон модели или доказанная локальная стратегия. Проверка необходимости реального чата осталась <code>UNKNOWN</code>, модельных игр у этой серии пока нет.</p><p>Для новых продолжений и четырёх основных WorldSpec-сред работает сохранённый контракт чата: одно действие на роль за такт, сообщение занимает действие. У скрытой сети, пяти рычагов и пневмопочты сохранены их собственные расписания, описанные в карточках. Успех CPU-примера не доказывает, что в том же горизонте получится выиграть с такими сообщениями.</p><p>Вы управляете всеми ролями на одном устройстве. Это песочница для знакомства с правилами, а не сервер для независимых игроков. Полные правила и исходные варианты доступны для исследования; интерфейс выбранной роли скрывает недоступные ей поля.</p><p><a href="provenance.json" download>Скачать происхождение данных</a></p></dialog>
   <noscript><div class="noscript">Для игры и просмотра шагов нужен JavaScript. <a href="catalogue.json">Скачать список сред</a> или <a href="provenance.json">сведения о проверках</a>.</div></noscript>
 </body>
 </html>

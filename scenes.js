@@ -27,6 +27,8 @@ const circle=(x,y,r,fill='white',stroke=C.ink,sw=3)=>`<circle cx="${x}" cy="${y}
 const known=(snap,key)=>Object.values(snap.private).map(x=>x[key]).find(x=>x!==undefined&&!['unread','unmeasured','veiled','barked'].includes(x));
 const clamp=x=>Math.max(0,Math.min(1,x));
 const active=(event,actor)=>actor in event.actions;
+let moving=false;
+const slide=(x,y,oldx=x,oldy=y)=>moving&&(x!==oldx||y!==oldy)?`<animateTransform attributeName="transform" type="translate" from="${oldx} ${oldy}" to="${x} ${y}" dur="0.7s" fill="freeze"/>`:'';
 function ownerText(line){
  const names=REPLAY.actors.map(a=>({name:ROLE[a],color:ROLE_COLOR[a]})).sort((a,b)=>b.name.length-a.name.length);
  let result='',at=0;
@@ -49,13 +51,13 @@ function caption(e,after){
  if(repeat){labels.push('Юг: стопор уже включён');return labels;}
  return labels.flatMap(x=>wrap(x));
 }
-function trolley(x,y,k=1){return `<g transform="translate(${x},${y}) scale(${k})">`+path('M-54 -32H54V22H-54Z',C.ink,3,C.metal)+path('M-49 -27H49V-15H-49Z',C.light,1,C.light)+path('M-34 -32V-61H30V-32',C.blue,5)+circle(-32,32,12,C.ink,C.ink)+circle(32,32,12,C.ink,C.ink)+circle(-32,32,4,C.paper,C.paper,1)+circle(32,32,4,C.paper,C.paper,1)+path('M-40 7H40',C.blue,5)+'</g>'}
+function trolley(x,y,k=1,oldx=x){return `<g transform="translate(${x},${y})">${slide(x,y,oldx,y)}<g transform="scale(${k})">`+path('M-54 -32H54V22H-54Z',C.ink,3,C.metal)+path('M-49 -27H49V-15H-49Z',C.light,1,C.light)+path('M-34 -32V-61H30V-32',C.blue,5)+circle(-32,32,12,C.ink,C.ink)+circle(32,32,12,C.ink,C.ink)+circle(-32,32,4,C.paper,C.paper,1)+circle(32,32,4,C.paper,C.paper,1)+path('M-40 7H40',C.blue,5)+'</g></g>'}
 function cartScene(s,e,p){
  const v=s.public,late=v.seam_progress!=='locked';let g='';
  if(!late){
   g+=path('M100 435H605',C.line,4)+path('M230 435H345',v.bridge_status==='pinned'?C.purple:C.metal,10)+path('M375 435V315Q420 250 465 315V435',v.arch_status==='deployed'?C.blue:C.metal,12);
   const positions={courtyard:155,arch_chamber:310,exit:555};let x=positions[v.cart_position],old=positions[e.previous.public.cart_position];if(old!==x)x=old+(x-old)*clamp((p-.35)/.55);
-  g+=trolley(x,390,1.1);
+  g+=trolley(x,390,1.1,old);
   if(v.tether_tension)g+=path(`M${x-59} 370L90 370`,C.blue,4);
  }else{
   g+=trolley(335,360,1.4);
@@ -86,7 +88,8 @@ function rovScene(s,e,p){
  let x=390,y=v.position==='aboard'||v.position==='stored'?260:340;
  if(v.recovery_step==='recovery_complete'||v.delivered){x=455;y=255;}
  if(v.recovery_step==='screen_placed')g+=rect(cx+59,375,13,90,C.warm,3,C.orange,3);
- g+=`<g transform="translate(${x},${y})">`+rect(-76,-40,152,74,'#e3ab55',18,active(e,'ROVOperator')?C.blue:C.ink,4)+path('M-60 -29H50',C.warm,7)+circle(-76,-2,18,C.metal,C.ink)+circle(76,-2,18,C.metal,C.ink)+circle(36,-4,15,'#72bbd4',C.blue,3)+path('M28 -12L38 -17',C.paper,3)+path('M-34 -40V-56H34V-40',C.ink,5)+path('M-12 34L-28 72L12 96L28 78',C.ink,5)+'</g>';
+ const old=e.previous.public;let ox=390,oy=['aboard','stored'].includes(old.position)?260:340;if(old.recovery_step==='recovery_complete'||old.delivered){ox=455;oy=255;}
+ g+=`<g transform="translate(${x},${y})">${slide(x,y,ox,oy)}`+rect(-76,-40,152,74,'#e3ab55',18,active(e,'ROVOperator')?C.blue:C.ink,4)+path('M-60 -29H50',C.warm,7)+circle(-76,-2,18,C.metal,C.ink)+circle(76,-2,18,C.metal,C.ink)+circle(36,-4,15,'#72bbd4',C.blue,3)+path('M28 -12L38 -17',C.paper,3)+path('M-34 -40V-56H34V-40',C.ink,5)+path('M-12 34L-28 72L12 96L28 78',C.ink,5)+'</g>';
  const trayY=v.delivered?350:450;
  g+=path(`M325 ${trayY+23}H475`,C.muted,5);
  g+=sample(365,trayY,known(s,'mineral_reading'),v.captures_used>=1)+sample(435,trayY,v.captures_used>=2?v.aligned_mineral:undefined,v.captures_used>=2);
@@ -98,7 +101,7 @@ function ballScene(s,e,p){
   g+=path('M315 225H405',C.blue,12)+path('M550 295V385',C.orange,12)+path('M315 465H405',C.accent,12)+path('M170 295V385',C.purple,12);
   const pos={rack:[270,435],serve_cup:[360,255],north_launch:[360,255],east_approach:[510,320],south_approach:[360,430],south_cradle:[360,430],west_approach:[210,340],target_approach:[430,330],receiver:[430,330],escaped:[620,470]};
   const old=pos[e.previous.public.ball_place]||[270,435],next=pos[v.ball_place]||old,a=clamp((p-.35)/.55),x=old[0]+(next[0]-old[0])*a,y=old[1]+(next[1]-old[1])*a;
-  g+=circle(430,330,40,C.light,C.muted,5)+circle(x,y,17,C.sample,C.orange,2)+path(`M${x-10} ${y-5}Q${x} ${y} ${x+7} ${y+13}`,C.orange,2);
+  g+=circle(430,330,40,C.light,C.muted,5)+`<g transform="translate(${x},${y})">${slide(x,y,old[0],old[1])}`+circle(0,0,17,C.sample,C.orange,2)+path('M-10 -5Q0 0 7 13',C.orange,2)+'</g>';
   if(!v.receiver_open)g+=path('M402 302L458 358',C.accent,3);
  }else{
   g+=circle(360,355,100,C.metal,C.ink,4)+circle(360,355,75,C.light,C.paper,4)+circle(360,355,24,C.sample,C.orange,2)+path('M346 344Q361 351 369 374',C.orange,2);
@@ -111,7 +114,7 @@ function ballScene(s,e,p){
  }
  return g;
 }
-function plane(x,y,angle=0,gear=false){return `<g transform="translate(${x},${y}) rotate(${angle}) scale(1.2)">`+path('M0 -62Q14 -50 13 -5L70 26L68 39L12 22L10 55L33 67L30 77L0 68L-30 77L-33 67L-10 55L-12 22L-68 39L-70 26L-13 -5Q-14 -50 0 -62',C.ink,3,'#edf4f4')+path('M-7 -37Q0 -48 7 -37V-25H-7Z',C.blue,2,'#72bbd4')+path('M-62 28L-16 9M62 28L16 9',C.blue,5)+path('M0 20V59',C.metal,3)+(gear?circle(-18,30,4,C.ink)+circle(18,30,4,C.ink):'')+'</g>'}
+function plane(x,y,angle=0,gear=false,oldx=x,oldy=y){return `<g transform="translate(${x},${y})">${slide(x,y,oldx,oldy)}<g transform="rotate(${angle}) scale(1.2)">`+path('M0 -62Q14 -50 13 -5L70 26L68 39L12 22L10 55L33 67L30 77L0 68L-30 77L-33 67L-10 55L-12 22L-68 39L-70 26L-13 -5Q-14 -50 0 -62',C.ink,3,'#edf4f4')+path('M-7 -37Q0 -48 7 -37V-25H-7Z',C.blue,2,'#72bbd4')+path('M-62 28L-16 9M62 28L16 9',C.blue,5)+path('M0 20V59',C.metal,3)+(gear?circle(-18,30,4,C.ink)+circle(18,30,4,C.ink):'')+'</g></g>'}
 function aircraftScene(s,e,p){
  const v=s.public,exit=v.selected_taxi_exit,off=v.taxi_maneuver_step===4&&v.taxi_route_safe;
  let g=rect(290,170,140,330,'#8da7ad',0,'#708e97',2)+rect(110,315,180,60,'#bdccc8',0,'none')+rect(430,315,180,60,'#bdccc8',0,'none')+path('M360 185V495',C.paper,4,'none','stroke-dasharray="18 18"')+path('M110 345H290M430 345H610',C.warm,3,'none','stroke-dasharray="12 12"');
@@ -119,7 +122,8 @@ function aircraftScene(s,e,p){
  if(v.taxi_maneuver_step>=2&&['port','starboard'].includes(exit)){x=exit==='port'?235:485;y=345;angle=exit==='port'?-90:90;}
  if(off){x=exit==='port'?165:555;y=345;}
  if(['port','starboard'].includes(exit))g+=path(exit==='port'?'M290 345H110':'M430 345H610',C.purple,4);
- g+=plane(x,y,angle,v.gear_down);
+ const old=e.previous.public,oldSide=old.selected_taxi_exit;let ox=360,oy=old.landed?315:405;if(old.taxi_maneuver_step>=2&&['port','starboard'].includes(oldSide)){ox=oldSide==='port'?235:485;oy=345;}if(old.taxi_maneuver_step===4&&old.taxi_route_safe){ox=oldSide==='port'?165:555;oy=345;}
+ g+=plane(x,y,angle,v.gear_down,ox,oy);
  if(off&&['normal','overheated'].includes(v.cooling_procedure)){
   const fanX=exit==='port'?225:495,fanY=450,active=Object.values(e.actions).some(c=>['boosted_fan_cycle','normal_purge'].includes(c.args.operation));
   const a=active?Math.floor(p*4)*22.5:0,finished=v.brake_pack_safe;
@@ -131,7 +135,7 @@ function aircraftScene(s,e,p){
  return g;
 }
 function people(x,y){return circle(x,y-22,7,C.warm,C.ink,2)+path(`M${x} ${y-14}V${y+10}m0 -15l-11 10m11 -10l11 10m-11 5l-8 14m8 -14l8 14`,C.ink,3.5);}
-function box(x,y,accent){return rect(x,y,48,50,accent,1,C.ink,3)+path(`M${x+24} ${y}V${y+50}`,C.paper,3)+path(`M${x+5} ${y+8}H${x+43}`,C.paper,2);}
+function box(x,y,accent,oldx=x){return `<g transform="translate(${x},${y})">${slide(x,y,oldx,y)}`+rect(0,0,48,50,accent,1,C.ink,3)+path('M24 0V50',C.paper,3)+path('M5 8H43',C.paper,2)+'</g>';}
 function refuge(x,y,w,h){return rect(x,y+30,w,h-30,'#e5eee4',0,C.green,3)+path(`M${x-8} ${y+30}L${x+w/2} ${y}L${x+w+8} ${y+30}Z`,C.green,3,'#7ba88b');}
 function floodScene(s,e,p){
  const v=s.public,late=v.bus_status!=='locked';let g='';
@@ -139,8 +143,9 @@ function floodScene(s,e,p){
   g+=path('M95 443H460V480H95Z',C.water,1,C.water)+refuge(475,245,155,210)+path('M95 455H630',C.metal,3);
   const arrived=['arrived','secured','evacuated'].includes(v.phase);let x=arrived?490:285;
   if(e.previous.public.batch_location==='trailer'&&v.batch_location==='refuge')x=285+(490-285)*clamp((p-.35)/.55);
-  g+=path(`M${x-60} 375H${x+60}V420H${x-60}Z`,C.ink,3,C.metal)+path(`M${x-55} 383H${x+55}`,C.light,4)+circle(x-35,432,12,C.ink)+circle(x+35,432,12,C.ink);
-  for(let i=0;i<2;i++){const bx=v.batch_location==='store'?115+i*65:x-52+i*57;g+=box(bx,320,i?C.blue:C.sample);}
+  const old=e.previous.public,oldX=['arrived','secured','evacuated'].includes(old.phase)?490:285;
+  g+=`<g transform="translate(${x},0)">${slide(x,0,oldX,0)}`+path('M-60 375H60V420H-60Z',C.ink,3,C.metal)+path('M-55 383H55',C.light,4)+circle(-35,432,12,C.ink)+circle(35,432,12,C.ink)+'</g>';
+  for(let i=0;i<2;i++){const bx=v.batch_location==='store'?115+i*65:x-52+i*57;const oldBox=old.batch_location==='store'?115+i*65:oldX-52+i*57;g+=box(bx,320,i?C.blue:C.sample,oldBox);}
   const personX=v.crew_location==='threshold'?570:140;g+=people(personX,395)+people(personX+30,400);
  }else{
   g+=refuge(140,195,440,305)+box(355,365,C.sample)+box(420,365,C.blue)+people(510,410)+people(540,415);
@@ -156,5 +161,5 @@ const SCENE={E121:cartScene,NG017:rovScene,E057:ballScene,E138:aircraftScene,NG0
 
 window.EnvironmentScenes={ROLE,ROLE_COLOR,LABEL,VALUE,SENSOR,
   has:id=>Boolean(SCENE[id]),
-  render:(id,snapshot,actions={})=>SCENE[id](snapshot,{previous:snapshot,actions},1)};
+  render:(id,snapshot,actions={},previous=snapshot,options={})=>{moving=Boolean(options.animate)&&!globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;return SCENE[id](snapshot,{previous,actions},1);}};
 })();

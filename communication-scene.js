@@ -4,8 +4,12 @@
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let current=null,lastKey=null;
 const palette=['#3266c9','#087f8c','#a96620','#8556a8','#ae4b6e','#52744a'];
-function person(x,y,color,label,board=false,sending=false,actor="",row=null,wrap=18){
- const lines=label.length>(window.innerWidth<600?10:19)?label.replace(/ (?!.* )/,'\n').split('\n'):[label];
+const measure=document.createElement('canvas').getContext('2d');measure.font='15px Arial';
+function person(x,y,color,label,board=false,sending=false,actor="",row=null,wrap=18,roleWidth=120){
+ const fits=s=>measure.measureText(s).width<=roleWidth;
+ const words=label.split(' ').flatMap(word=>{const parts=[];while(!fits(word)){let cut=word.length-1;while(cut>1&&!fits(word.slice(0,cut)+'‑'))cut--;parts.push(word.slice(0,cut)+'‑');word=word.slice(cut);}if(word)parts.push(word);return parts;});
+ const lines=[''];for(const word of words){const n=lines.length-1;if(lines[n]&&!fits(lines[n]+' '+word))lines.push(word);else lines[n]+=(lines[n]?' ':'')+word;}
+ if(lines.length>2){lines.length=2;while(!fits(lines[1]+'…'))lines[1]=lines[1].slice(0,-1);lines[1]+='…';}
  const shape=board?`<rect x="${x-22}" y="${y-27}" width="44" height="57" rx="4"/><path d="M${x-13} ${y-12}h26m-26 12h26m-26 12h18"/>`:`<circle cx="${x}" cy="${y-32}" r="13"/><path d="M${x} ${y-19}v10"/><rect x="${x-12}" y="${y-10}" width="24" height="35" rx="10"/><path d="M${x-11} ${y-2}l-17 18m39-18 17 ${sending?-7:18}M${x-6} ${y+25}l-8 23m20-23 8 23"/>`;
  return `<g class="team-person" data-person="${esc(label)}" data-actor="${esc(actor)}" ${row?.kind==='physical'&&row.target?`data-action-actor="${esc(actor)}" role="button" tabindex="0" aria-label="${esc(label+': '+row.label)}"`: ''} stroke="${color}" stroke-width="3.3" fill="#fff" stroke-linecap="round" stroke-linejoin="round">${shape}</g>${lines.map((s,i)=>`<text x="${x}" y="${y+70+i*18}" text-anchor="middle" fill="${color}" font-size="15" font-family="Arial,sans-serif">${esc(s)}</text>`).join('')}${actionCaption(row,actor,x,color,wrap)}`;
 }
@@ -18,7 +22,7 @@ function actionCaption(row,actor,x,color,wrap){
 }
 function diagram(events,options,animate){
  const ids=[...new Set([...options.actors,...events.flatMap(e=>[e.sender,...e.recipients])])];
- const width=window.innerWidth<600?360:600, margin=ids.length>5?34:40, x=id=>ids.length===1?width/2:margin+ids.indexOf(id)*(width-2*margin)/(ids.length-1), yy=86;
+ const width=window.innerWidth<600?360:600, margin=ids.length>5?34:ids.length===5?40:width===360?48:56, x=id=>ids.length===1?width/2:margin+ids.indexOf(id)*(width-2*margin)/(ids.length-1), yy=86;
  const color=id=>options.color?.(id)||palette[options.actors.indexOf(id)%palette.length]||'#627286';
  const name=id=>options.name?.(id)||id;
  let paths='';
@@ -26,7 +30,7 @@ function diagram(events,options,animate){
   const direction=x(r)>x(event.sender)?1:-1,end=x(r)-13*direction,start=x(event.sender)+13*direction,route=`M ${start} ${yy-3} Q ${(start+end)/2} ${-16+n%3*17} ${end} ${yy-3}`;
   paths+=`<path class="comm-route" d="${route}" fill="none" stroke="${color(event.sender)}" opacity=".55" stroke-width="2" stroke-dasharray="5 5"/><g class="comm-envelope ${animate?'comm-moving':''}" data-sender="${esc(event.sender)}" data-recipient="${esc(r)}" transform="translate(${end} ${yy-3})" style="--route:path('${route}')"><rect x="-11" y="-8" width="22" height="16" rx="2" fill="#fff" stroke="${color(event.sender)}" stroke-width="2"/><path d="m-10-7 10 8 10-8" fill="none" stroke="${color(event.sender)}" stroke-width="1.5"/></g>`;
  }));
- return `<svg viewBox="0 0 ${width} 230" role="img" aria-label="Команда и фактические передачи сообщений">${paths}${ids.map(id=>person(x(id),yy,color(id),name(id),id.startsWith('board:'),animate&&events.some(e=>e.sender===id),id,(options.actionRows||[]).find(r=>r.actor===id),Math.max(7,Math.floor(Math.min(2*x(id)-8,2*(width-x(id))-8,(width-2*margin)/Math.max(1,ids.length-1)-10)/6.5)))).join('')}</svg>`;
+ return `<svg viewBox="0 0 ${width} 230" role="img" aria-label="Команда и фактические передачи сообщений">${paths}${ids.map(id=>person(x(id),yy,color(id),name(id),id.startsWith('board:'),animate&&events.some(e=>e.sender===id),id,(options.actionRows||[]).find(r=>r.actor===id),Math.max(7,Math.floor(Math.min(2*x(id)-8,2*(width-x(id))-8,(width-2*margin)/Math.max(1,ids.length-1)-10)/6.5)),Math.min(2*x(id)-6,2*(width-x(id))-6,(width-2*margin)/Math.max(1,ids.length-1)-2))).join('')}</svg>`;
 }
 function summary(text){try{if(text.startsWith('NETCERT1:')){const d=JSON.parse(text.slice(9));return `Сообщает известные связи для ${Object.keys(d.adjacency||{}).length} вершин.`;}const d=JSON.parse(text);if(typeof d.flow==='boolean'&&Object.hasOwn(d,'block'))return `Пробный поток ${d.flow?'проходит':'не проходит'}. Блок ${d.block}.`;}catch{}return '';}
 function preview(text){return text.length>210?text.slice(0,210)+'…':text;}

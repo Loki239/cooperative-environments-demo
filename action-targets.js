@@ -70,6 +70,8 @@ function capsule(actor,call,context){
 function describe(env,actor,call,context={}){
  const id=typeof env==='string'?env:env?.id;
  if(!call||typeof call!=='object'||Array.isArray(call))return unmapped();
+ if(window.LegacyActionTargets?.has(id))return window.LegacyActionTargets.describe(id,actor,call,context);
+ if(window.CatalogueScenes?.has(id))return window.CatalogueScenes.describe(id,actor,call,context);
  if(!own(MAP,id)&&!['GRAPH','GL023','E044'].includes(id))return unmapped();
  if(id==='E044')return capsule(actor,call,context);
  if(id==='GL023'){

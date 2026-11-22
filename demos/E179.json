@@ -1,0 +1,2037 @@
+{
+  "version": 2,
+  "environment": "E179",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "148875b1c430ba43b527ca7a118c701181e2c9dea37a4fac813c608e36c1d3c0",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "884cc2d59d76e9a6efce430197a7f34909df6daf3096859d8e00bbffada3f006",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "b7bc537dab57760acb87629e5e597023018cd1784c2c8efe81abd91152410c47",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "766065fc94c16f74bb2a03ad66ed700f5d254370528fdb2986feb8db946afe60",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "5e7a88b6b9fbbb72947d6f4a00589022df7c747292d6f2c00d34ff040e7c2c5e",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "b9b88e45e208de9e002316d92cdfdf32cd4747f6a1eedb5f9a3c2fc4cffbb0e0",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "262aa5330141a8b3af571752dc9755fe32387ab085e9e8f70ff814c0a1f7d7c8",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "c9463ca3f6d3f0e488de31d78dff7d21bae9943011553208a5e09418804f412a",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "73dc56607aa5f7437139091fe0bb1856fe5d7826602b29000f04e2c83b8ed78c",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "41cdb3d92d4004c2ef7cda0b79bcedeec60660b4c78e9af2d76ed376cd3074fe",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "f68d079d86f62be347f39b212a3eed153d62a496974e25a880c3ab7528f783c2",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "raise_cover_screen",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "extend_survey_boom",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "sample_approach_doppler",
+            "args": {}
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Снос — левый борт."
+            }
+          },
+          "carrier": {
+            "id": "wait",
+            "args": {}
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "scout": {
+            "id": "wait",
+            "args": {}
+          },
+          "carrier": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "escort": {
+            "id": "wait",
+            "args": {}
+          },
+          "tug": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "d0c200daf525ea38d488e5beea1f3b6d031088ce294d6eae1d013311455d0776",
+      "source_data_sha256": "7d29857cf1396d32adc58efe8f609aad95b7c02e49a423fcfb2cf4cbe89bed4c",
+      "world_digest": "b7931000f7c3d018922d2c58e244339621aa8fd872620e05bb1ee71682ecea95",
+      "contract_digest": "06fe0cfbec0234a8de1c52dec10cd78c4631a80dff4d2891f20528babe42f3dd",
+      "deliveries": [
+        {
+          "sender": "scout",
+          "recipients": [
+            "carrier",
+            "escort",
+            "tug"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Снос — левый борт.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "drift_reading",
+              "value": "port",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "ion_drift"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "carrier",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "fire_brake_bank",
+            "args": {
+              "bank": "port"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "carrier",
+        "call": {
+          "id": "fire_brake_bank",
+          "args": {
+            "bank": "port"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "drift_reading",
+        "source_parameters": [
+          "ion_drift"
+        ],
+        "rule_explanation": "Снос корабля связан с выбираемым тормозным блоком.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-22T14:50:49.595Z",
+  "examples": 360,
+  "transitions": 1776,
+  "observations": 8112,
+  "messages": 360,
+  "physical_calls_unchanged": 1452,
+  "lawful_facts": 360,
+  "recipient_pre_choice_checks": 360,
+  "all_recipient_delivery_checks": 996,
+  "partial_episodes": 360,
+  "environments": [
+    {
+      "environment": "E121",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "NG017",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E057",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 72
+    },
+    {
+      "environment": "E138",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 36
+    },
+    {
+      "environment": "NG008",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 36
+    },
+    {
+      "environment": "E016",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E025",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E028",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E041",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E052",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E065",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E075",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E082",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E092",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 108
+    },
+    {
+      "environment": "E110",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E122",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E130",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 72
+    },
+    {
+      "environment": "E132",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E134",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E146",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E158",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 156
+    },
+    {
+      "environment": "E166",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E179",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "E188",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "E196",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 60
+    },
+    {
+      "environment": "NG005",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 96
+    },
+    {
+      "environment": "NG006",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "NG012",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "NG013",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    },
+    {
+      "environment": "NG014",
+      "examples": 12,
+      "messages": 12,
+      "transitions": 48
+    }
+  ],
+  "model_calls": 0,
+  "immutable_sources_identical": true,
+  "source_files_checked": 43,
+  "archived_control_identical": true,
+  "archived_control_files_checked": 69
+}

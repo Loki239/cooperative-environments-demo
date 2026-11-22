@@ -1,0 +1,2037 @@
+{
+  "version": 2,
+  "environment": "E196",
+  "evidence_type": "scripted_cpu_with_messages",
+  "complete_episode": false,
+  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "examples": [
+    {
+      "instance_index": 0,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "7c8e068b473c0340fa290f00858d39c8c55b8b63bf48b6f39d49651637bca96b",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 1,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "dbe7ced096acd2e5cb0cd2d71096328c6b79fbd78018c6928a35c26090a4732f",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 2,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "2c2b20d173aede9b029bfb65903e96b86df0cdc4863512ba21d83cb9b7249271",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 3,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "092a4b139b1159d22c77e70e5ca593660deaddd3ce3d68313ab3731b04a9fef6",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 4,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "811479a3647ed82c6b41857d064b0467b91c3e18ac0c1127d43d4d5c33b502be",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 5,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "237b7f2363ab9f08b88a1f29787d06171d5b8640a95df836d468df8e668c7343",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 6,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "cfdd8eaa586385de667daadfc4e30d02fd9b8826c132e2eb4a6ba4623b5f2bb2",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 7,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "deabaadc35689e0e8e776a48647c0f003e061607e79a31735f517f6636e0b217",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 8,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "594e91e1d51e9de95e841363616d1a42b3c9349ea9ce4fbb02b7b3b5a842c772",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 9,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "9387bab02188e21c7241949416fafbd3667e1058e4e82cf4608cfd762bf0c544",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 10,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "68f61c4c1a3066ca8c7307047c9006f28bf4cdba197f44a8515e86880483677d",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    },
+    {
+      "instance_index": 11,
+      "actions": [
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "unlock_capsule_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "carry_capsule_to_press",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "assay_offer_sample",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Знак предложения — солнце."
+            }
+          },
+          "Envoy": {
+            "id": "wait",
+            "args": {}
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Analyst": {
+            "id": "wait",
+            "args": {}
+          },
+          "Envoy": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "Courier": {
+            "id": "wait",
+            "args": {}
+          },
+          "Sealer": {
+            "id": "wait",
+            "args": {}
+          }
+        }
+      ],
+      "rounds": 5,
+      "success": false,
+      "complete_episode": false,
+      "stopped_reason": "illustration_complete",
+      "source_end_tick": 4,
+      "source_prefix_ticks": 3,
+      "inserted_action_tick": 4,
+      "messages": 1,
+      "source_plan_sha256": "816e6af4582a983ea18c8072baadf2218677162bacdd06380c36ffb0f59d7787",
+      "source_data_sha256": "53f8f168de2848f09d22a53796cda08c8d43fee92d3cc54b3df68f745bee1c08",
+      "world_digest": "749593c13fe4515f20a585c595fea21cd8d0645a2a2dc8cf6dc364bd8489e0ad",
+      "contract_digest": "ba94c39839f4f0b5d57c84c097dc9efc382fa96d8dfed0684af5dbf232b02162",
+      "deliveries": [
+        {
+          "sender": "Analyst",
+          "recipients": [
+            "Courier",
+            "Envoy",
+            "Sealer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Знак предложения — солнце.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "offer_reading",
+              "value": "sun",
+              "revealed_after_tick": 3,
+              "source_parameters": [
+                "offer_key"
+              ]
+            }
+          ],
+          "delivered_at_terminal": false,
+          "shown_recipient": "Envoy",
+          "shown_action_tick": 5,
+          "shown_call": {
+            "id": "inscribe_offer",
+            "args": {
+              "glyph": "sun"
+            }
+          },
+          "timing": "available_before_choice",
+          "causal_use_proven": false
+        }
+      ],
+      "feedback_all_accepted": true,
+      "physical_prefix_unchanged": true,
+      "physical_trajectory_identical": false,
+      "causal_use_proven": false,
+      "related_action": {
+        "actor": "Envoy",
+        "call": {
+          "id": "inscribe_offer",
+          "args": {
+            "glyph": "sun"
+          }
+        },
+        "source_tick": 4,
+        "action_tick": 5,
+        "field": "offer_reading",
+        "source_parameters": [
+          "offer_key"
+        ],
+        "rule_explanation": "Знак предложения связан с символом, который записывает посланник.",
+        "relation_type": "direct_rule_reference"
+      }
+    }
+  ]
+}
