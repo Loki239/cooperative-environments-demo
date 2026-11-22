@@ -51,5 +51,8 @@
     "New default exchanges are scripted partial CPU fragments, not model episodes or complete local policies.",
     "Message delivery before a related action does not establish causal effect or necessity.",
     "Object geometry is schematic; compound mechanisms use named aggregates."
-  ]
+  ],
+  "historical_scope": "Original one-exchange partial demonstrations at commit 9fe7738; current demos replaced by full/multistage scenarios.",
+  "applies_to_commit": "9fe7738b47bfd1c15b6aaf63607144a536f0dda8",
+  "current_record_verification": "full-walkthroughs.json"
 }

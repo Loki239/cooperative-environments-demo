@@ -196,5 +196,8 @@
   "immutable_sources_identical": true,
   "source_files_checked": 43,
   "archived_control_identical": true,
-  "archived_control_files_checked": 69
+  "archived_control_files_checked": 69,
+  "historical_scope": "Original one-exchange partial demonstrations at commit 9fe7738; current demos replaced by full/multistage scenarios.",
+  "applies_to_commit": "9fe7738b47bfd1c15b6aaf63607144a536f0dda8",
+  "current_record_verification": "full-walkthroughs.json"
 }

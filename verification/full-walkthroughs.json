@@ -1,0 +1,597 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-22T15:20:37.114Z",
+  "examples": 360,
+  "full_wins": 257,
+  "partials": 103,
+  "transitions": 7984,
+  "observations": 31460,
+  "messages": 1726,
+  "lawful_facts": 1726,
+  "recipient_pre_choice_checks": 1726,
+  "all_recipient_delivery_checks": 4802,
+  "reveal_action_checks": 1726,
+  "source_calls_checked": 6324,
+  "packed_messages": 24,
+  "split_examples": 12,
+  "rejected_joint_controls": [
+    {
+      "environment": "E121",
+      "post_round": 2,
+      "sender": "Glass",
+      "invalid_actor": "Grove",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG017",
+      "post_round": 2,
+      "sender": "Biologist",
+      "invalid_actor": "Geologist",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E057",
+      "post_round": 4,
+      "sender": "North",
+      "invalid_actor": "East",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E138",
+      "post_round": 1,
+      "sender": "engineer",
+      "invalid_actor": "pilot",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG008",
+      "post_round": 1,
+      "sender": "SiteInspector",
+      "invalid_actor": "PowerEngineer",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E016",
+      "post_round": 2,
+      "sender": "captain",
+      "invalid_actor": "deckhand",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E025",
+      "post_round": 2,
+      "sender": "AddressBird",
+      "invalid_actor": "IntakeBird",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E028",
+      "post_round": 2,
+      "sender": "Scout",
+      "invalid_actor": "Warden",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E041",
+      "post_round": 2,
+      "sender": "spotter",
+      "invalid_actor": "batter",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E052",
+      "post_round": 2,
+      "sender": "row_one",
+      "invalid_actor": "row_two",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E065",
+      "post_round": 3,
+      "sender": "Weapons",
+      "invalid_actor": "Captain",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E075",
+      "post_round": 3,
+      "sender": "customer",
+      "invalid_actor": "buyer",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E082",
+      "post_round": 2,
+      "sender": "Water",
+      "invalid_actor": "Power",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E092",
+      "post_round": 3,
+      "sender": "scientist",
+      "invalid_actor": "captain",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E110",
+      "post_round": 2,
+      "sender": "Mechanic",
+      "invalid_actor": "Coordinator",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E122",
+      "post_round": 3,
+      "sender": "Surveyor",
+      "invalid_actor": "Cutter",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E130",
+      "post_round": 2,
+      "sender": "wheel_scout",
+      "invalid_actor": "cart_lead",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E132",
+      "post_round": 3,
+      "sender": "Cluekeeper",
+      "invalid_actor": "Bedkeeper",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E134",
+      "post_round": 3,
+      "sender": "entry_owner",
+      "invalid_actor": "bridge_owner",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E146",
+      "post_round": 3,
+      "sender": "NorthLane",
+      "invalid_actor": "WestDefender",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E158",
+      "post_round": 2,
+      "sender": "Lead",
+      "invalid_actor": "NearRelay",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E166",
+      "post_round": 2,
+      "sender": "source_owner",
+      "invalid_actor": "meter_owner",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E179",
+      "post_round": 3,
+      "sender": "scout",
+      "invalid_actor": "carrier",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E188",
+      "post_round": 2,
+      "sender": "engineer",
+      "invalid_actor": "pilot",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "E196",
+      "post_round": 3,
+      "sender": "Analyst",
+      "invalid_actor": "Envoy",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG005",
+      "post_round": 3,
+      "sender": "executor",
+      "invalid_actor": "coordinator",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG006",
+      "post_round": 2,
+      "sender": "Technician",
+      "invalid_actor": "Console",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG012",
+      "post_round": 2,
+      "sender": "Documents",
+      "invalid_actor": "Evaluator",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG013",
+      "post_round": 2,
+      "sender": "Inspector",
+      "invalid_actor": "Registrar",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    },
+    {
+      "environment": "NG014",
+      "post_round": 2,
+      "sender": "administrator",
+      "invalid_actor": "coordinator",
+      "feedback": {
+        "ok": false,
+        "success": false
+      },
+      "delivered": 0
+    }
+  ],
+  "environments": [
+    {
+      "environment": "E121",
+      "examples": 12,
+      "full_wins": 0,
+      "partials": 12,
+      "messages": 48,
+      "transitions": 276
+    },
+    {
+      "environment": "NG017",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 246
+    },
+    {
+      "environment": "E057",
+      "examples": 12,
+      "full_wins": 0,
+      "partials": 12,
+      "messages": 60,
+      "transitions": 276
+    },
+    {
+      "environment": "E138",
+      "examples": 12,
+      "full_wins": 3,
+      "partials": 9,
+      "messages": 60,
+      "transitions": 279
+    },
+    {
+      "environment": "NG008",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 248
+    },
+    {
+      "environment": "E016",
+      "examples": 12,
+      "full_wins": 0,
+      "partials": 12,
+      "messages": 48,
+      "transitions": 268
+    },
+    {
+      "environment": "E025",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 246
+    },
+    {
+      "environment": "E028",
+      "examples": 12,
+      "full_wins": 4,
+      "partials": 8,
+      "messages": 52,
+      "transitions": 276
+    },
+    {
+      "environment": "E041",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 234
+    },
+    {
+      "environment": "E052",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 272
+    },
+    {
+      "environment": "E065",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 264
+    },
+    {
+      "environment": "E075",
+      "examples": 12,
+      "full_wins": 0,
+      "partials": 12,
+      "messages": 48,
+      "transitions": 276
+    },
+    {
+      "environment": "E082",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 254
+    },
+    {
+      "environment": "E092",
+      "examples": 12,
+      "full_wins": 0,
+      "partials": 12,
+      "messages": 48,
+      "transitions": 258
+    },
+    {
+      "environment": "E110",
+      "examples": 12,
+      "full_wins": 0,
+      "partials": 12,
+      "messages": 52,
+      "transitions": 260
+    },
+    {
+      "environment": "E122",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 272
+    },
+    {
+      "environment": "E130",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 288
+    },
+    {
+      "environment": "E132",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 278
+    },
+    {
+      "environment": "E134",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 282
+    },
+    {
+      "environment": "E146",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 270
+    },
+    {
+      "environment": "E158",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 274
+    },
+    {
+      "environment": "E166",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 240
+    },
+    {
+      "environment": "E179",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 274
+    },
+    {
+      "environment": "E188",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 288
+    },
+    {
+      "environment": "E196",
+      "examples": 12,
+      "full_wins": 8,
+      "partials": 4,
+      "messages": 56,
+      "transitions": 268
+    },
+    {
+      "environment": "NG005",
+      "examples": 12,
+      "full_wins": 4,
+      "partials": 8,
+      "messages": 56,
+      "transitions": 271
+    },
+    {
+      "environment": "NG006",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 264
+    },
+    {
+      "environment": "NG012",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 272
+    },
+    {
+      "environment": "NG013",
+      "examples": 12,
+      "full_wins": 12,
+      "partials": 0,
+      "messages": 60,
+      "transitions": 232
+    },
+    {
+      "environment": "NG014",
+      "examples": 12,
+      "full_wins": 10,
+      "partials": 2,
+      "messages": 58,
+      "transitions": 278
+    }
+  ],
+  "model_calls": 0,
+  "source_files_checked": 43,
+  "immutable_sources_identical": true,
+  "scope": "360 scripted CPU walkthroughs:257 full goals and103 nonterminal substantive prefixes; unchanged native horizon24",
+  "causal_use_proven": false,
+  "local_policy_proven": false
+}

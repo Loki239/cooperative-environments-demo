@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E092",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -72,8 +71,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -176,21 +178,298 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "ring_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_straight"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "3ed5ee81c3c426e4432ea0ec76d02a764b6fe897034882d4b20522a57cd932d5",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -206,47 +485,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "ring_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "ring_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "direct_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_straight"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 1,
@@ -315,8 +704,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -419,21 +811,298 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "ring_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_straight"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "119850c595df896762c8dd6bc2161a40c9b680937c1aa204321baca1085cb834",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -449,47 +1118,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "ring_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "ring_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "direct_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_straight"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 2,
@@ -558,8 +1337,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -662,21 +1444,316 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "ring_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_around_plume"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "isolate_crossfeed",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "53a523c208784368996f120dad90cebd4c749d07d5dd86e34c298eba2487ddc8",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -692,47 +1769,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "ring_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "ring_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "crossed_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_around_plume"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 3,
@@ -801,8 +1988,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -905,21 +2095,316 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "ring_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_around_plume"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "isolate_crossfeed",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "17c7d166c9695431528f84180dcdf605660e18711c1443f0cad86c3d702925da",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -935,47 +2420,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — кольцевое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "ring_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "ring_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "crossed_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_around_plume"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 4,
@@ -1044,8 +2639,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -1148,21 +2746,298 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "iris_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_straight"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "78846a32d96083edd40ac4f7fa4fd69943f1508f45ce56c7bcb04e5472552868",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -1178,47 +3053,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "iris_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "iris_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "direct_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_straight"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 5,
@@ -1287,8 +3272,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -1391,21 +3379,298 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "iris_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_straight"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "e41f407189090d45da7526378df10981aa1da2da4b6451b00e0a9da735237628",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -1421,47 +3686,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "iris_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "iris_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "direct_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_straight"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 6,
@@ -1530,8 +3905,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -1634,21 +4012,316 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "iris_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_around_plume"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "isolate_crossfeed",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "46d31bae9b24d39e91706bac49bd985da0c63d605207f15c3f287189aa1306ea",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -1664,47 +4337,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "iris_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "iris_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "crossed_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_around_plume"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 7,
@@ -1773,8 +4556,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -1877,21 +4663,316 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "iris_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_around_plume"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "isolate_crossfeed",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "a35733a367627c9bc04c8c0451ac3620698e783fa2be48023ca2aeddcba0606a",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -1907,47 +4988,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — лепестковое уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "iris_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "iris_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "crossed_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_around_plume"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 8,
@@ -2016,8 +5207,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -2120,21 +5314,298 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — срезное уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "shear_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_straight"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "a918026f4b032177fa3f276983e772a805cbd6f24800fc01ce06d2f7d17be04e",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -2150,47 +5621,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — срезное уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "shear_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "shear_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "direct_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_straight"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 9,
@@ -2259,8 +5840,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -2363,21 +5947,298 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — срезное уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "shear_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_straight"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "3dbdfe0f69f0e1d8a8c98d9b81a296cfbb6dffe718fa1a2ca61f1f2df07b339e",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -2393,47 +6254,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — срезное уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "shear_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "shear_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — прямой возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "direct_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_straight"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 10,
@@ -2502,8 +6473,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -2606,21 +6580,316 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — срезное уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "shear_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_around_plume"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "isolate_crossfeed",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "b8d092fe020aabd22b8752e887bacaf4fa46634171d03813670c51dad2033ed4",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -2636,47 +6905,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — срезное уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "shear_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "shear_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "crossed_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_around_plume"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     },
     {
       "instance_index": 11,
@@ -2745,8 +7124,11 @@
             "args": {}
           },
           "scientist": {
-            "id": "wait",
-            "args": {}
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уязвимость щита — ионная."
+            }
           },
           "engineer": {
             "id": "wait",
@@ -2849,21 +7231,316 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "burn_through_escape_lane",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "deploy_rescue_beacon",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "stabilize_tow_frame",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "scan_pod_seal",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Уплотнение капсулы — срезное уплотнение."
+            }
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "select_seal_pulse",
+            "args": {
+              "pulse": "shear_seal"
+            }
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "engage_pod_capture",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "prepare_coolant_tow",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "read_coolant_route",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат."
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "choose_tow_route",
+            "args": {
+              "route": "tow_around_plume"
+            }
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "wait",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "isolate_crossfeed",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "pilot": {
+            "id": "tow_pod",
+            "args": {}
+          },
+          "scientist": {
+            "id": "wait",
+            "args": {}
+          },
+          "engineer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 9,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 8,
-      "source_prefix_ticks": 7,
-      "inserted_action_tick": 8,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "c38a468778c14eb02d790b909152cf761ac2751955fd1fb88fc6b42b1ebb69ae",
-      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c",
       "world_digest": "949226ffaf581fa0bba7a2e21d02ba5c4147a9c2517ccaf32a6d5f61a736a473",
       "contract_digest": "bd592b8b3f8f6e269d2a74a8f423afff469f79269f87bbfd3f11c5fb06c81a5f",
       "deliveries": [
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уязвимость щита — ионная.",
+          "post_round": 3,
+          "delivery_round": 4,
+          "first_available_action_tick": 5,
+          "facts": [
+            {
+              "field": "shield_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "shield_weakness"
+              ],
+              "reveal_action": "scan_hostile_shield",
+              "source_reveal_tick": 3,
+              "value": "ion",
+              "reveal_phase": 2,
+              "key": "scientist:shield_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 4,
+                  "source_tick": 5,
+                  "actor": "captain",
+                  "call": {
+                    "id": "fire_at_hostile",
+                    "args": {
+                      "spectrum": "ion"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "shield_weakness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 4
+            }
+          ],
+          "packed_with_source": true,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
         {
           "sender": "engineer",
           "recipients": [
@@ -2879,47 +7556,157 @@
           "facts": [
             {
               "field": "thermal_reading",
-              "value": "port",
-              "revealed_after_tick": 7,
+              "sender": "engineer",
               "source_parameters": [
                 "hot_manifold"
-              ]
+              ],
+              "reveal_action": "probe_hot_manifold",
+              "source_reveal_tick": 7,
+              "value": "port",
+              "reveal_phase": 6,
+              "key": "engineer:thermal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "chart_escape_lane",
+                    "args": {
+                      "lane": "starboard"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "escape_lane",
+                    "checking_actions": [
+                      "burn_through_escape_lane"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "pilot",
-          "shown_action_tick": 9,
-          "shown_call": {
-            "id": "chart_escape_lane",
-            "args": {
-              "lane": "starboard"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "scientist",
+          "recipients": [
+            "captain",
+            "engineer",
+            "pilot"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Уплотнение капсулы — срезное уплотнение.",
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
+          "facts": [
+            {
+              "field": "pod_seal_reading",
+              "sender": "scientist",
+              "source_parameters": [
+                "pod_seal_profile"
+              ],
+              "reveal_action": "scan_pod_seal",
+              "source_reveal_tick": 12,
+              "value": "shear_seal",
+              "reveal_phase": 11,
+              "key": "scientist:pod_seal_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "captain",
+                  "call": {
+                    "id": "select_seal_pulse",
+                    "args": {
+                      "pulse": "shear_seal"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seal_pulse",
+                    "checking_actions": [
+                      "engage_pod_capture"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "engineer",
+          "recipients": [
+            "captain",
+            "pilot",
+            "scientist"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Возврат охлаждения капсулы — перекрещённый возврат.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "pod_coolant_reading",
+              "sender": "engineer",
+              "source_parameters": [
+                "pod_coolant_route"
+              ],
+              "reveal_action": "read_coolant_route",
+              "source_reveal_tick": 16,
+              "value": "crossed_return",
+              "reveal_phase": 15,
+              "key": "engineer:pod_coolant_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "pilot",
+                  "call": {
+                    "id": "choose_tow_route",
+                    "args": {
+                      "route": "tow_around_plume"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tow_route",
+                    "checking_actions": [
+                      "tow_pod"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "pilot",
-        "call": {
-          "id": "chart_escape_lane",
-          "args": {
-            "lane": "starboard"
-          }
-        },
-        "source_tick": 8,
-        "action_tick": 9,
-        "field": "thermal_reading",
-        "source_parameters": [
-          "hot_manifold"
-        ],
-        "rule_explanation": "Пилот записывает escape_lane. Последующий burn_through_escape_lane сравнивает эту ветку с hot_manifold, причиной показания.",
-        "relation_type": "commitment_checked_later"
-      }
+      "source_data_sha256": "b6559f50a24a960ecb77499442a431b7d1ab0f11f5d23723c13e2a1f8fee251c"
     }
   ]
 }

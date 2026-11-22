@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E158",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -46,6 +45,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -130,6 +150,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -250,18 +291,152 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — слева."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "left"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — сухо."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "short_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 22,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 17,
+      "source_total_ticks": 17,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 17,
       "source_plan_sha256": "1188cfa2a6d9f04530bb47c5d40b3c34085d07c2f8d7bc463788ff5bd8a2e517",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -273,54 +448,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — низкая перекладина.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "low_bar",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "low_bar",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "low_bar"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "low_bar"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — слева.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "left",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — сухо.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "dry",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "short_brake",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 22,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "low_bar"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 1,
@@ -363,6 +745,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -447,6 +850,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -567,18 +991,170 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — слева."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "left"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — скользко."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "deploy_drag_mat",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "drag_mat_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 23,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 18,
+      "source_total_ticks": 18,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 18,
       "source_plan_sha256": "7be88adc3a95d98104b6c62361fa3c91f51822b6cd1d6236685314b70ffa8b4e",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -590,54 +1166,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — низкая перекладина.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "low_bar",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "low_bar",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "low_bar"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "low_bar"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — слева.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "left",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — скользко.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "slick",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "deploy_drag_mat",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 23,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "low_bar"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 2,
@@ -680,6 +1463,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -764,6 +1568,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -884,18 +1709,152 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — справа."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "right"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — сухо."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "short_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 22,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 17,
+      "source_total_ticks": 17,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 17,
       "source_plan_sha256": "3db743ab01ce0ec928f80b0c0962ab6d3a387859f98613fadc77b38b0b99f1dc",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -907,54 +1866,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — низкая перекладина.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "low_bar",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "low_bar",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "low_bar"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "low_bar"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — справа.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "right",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — сухо.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "dry",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "short_brake",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 22,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "low_bar"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 3,
@@ -997,6 +2163,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -1081,6 +2268,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -1201,18 +2409,170 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — справа."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "right"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — скользко."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "deploy_drag_mat",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "drag_mat_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 23,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 18,
+      "source_total_ticks": 18,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 18,
       "source_plan_sha256": "62b3989ce58955bc452f449787cb17df0d57ced7d2fd93a4f02920f9d001bc42",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -1224,54 +2584,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — низкая перекладина.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "low_bar",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "low_bar",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "low_bar"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "low_bar"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — справа.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "right",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — скользко.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "slick",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "deploy_drag_mat",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 23,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "low_bar"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 4,
@@ -1314,6 +2881,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -1398,6 +2986,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -1518,18 +3127,170 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "swing_gate_release",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — слева."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "left"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — сухо."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "short_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 23,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 18,
+      "source_total_ticks": 18,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 18,
       "source_plan_sha256": "18ae73286ff5c5aa989c0cbf9f00647fe1ad831dcf4760deb9e50832bc092787",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -1541,54 +3302,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — распашные ворота.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "swing_gate",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "swing_gate",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "swing_gate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "swing_gate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — слева.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 15,
+              "value": "left",
+              "reveal_phase": 14,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — сухо.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 17,
+              "value": "dry",
+              "reveal_phase": 16,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "short_brake",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 23,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "swing_gate"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 5,
@@ -1631,6 +3599,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -1715,6 +3704,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -1835,18 +3845,188 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "swing_gate_release",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — слева."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "left"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — скользко."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "deploy_drag_mat",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "drag_mat_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 24,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 19,
+      "source_total_ticks": 19,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 19,
       "source_plan_sha256": "f12cf4ed5418d9f8497aba94bffc668ff67166445024ea5f4c2024bac44a4e2e",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -1858,54 +4038,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — распашные ворота.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "swing_gate",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "swing_gate",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "swing_gate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "swing_gate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — слева.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 15,
+              "value": "left",
+              "reveal_phase": 14,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — скользко.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 17,
+              "value": "slick",
+              "reveal_phase": 16,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "deploy_drag_mat",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 24,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "swing_gate"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 6,
@@ -1948,6 +4335,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -2032,6 +4440,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -2152,18 +4581,170 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "swing_gate_release",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — справа."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "right"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — сухо."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "short_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 23,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 18,
+      "source_total_ticks": 18,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 18,
       "source_plan_sha256": "74d0b058a08a20b5ecfd3b432dfb3b3a30ac0b728fd9815e435290b2049bc0a4",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -2175,54 +4756,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — распашные ворота.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "swing_gate",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "swing_gate",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "swing_gate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "swing_gate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — справа.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 15,
+              "value": "right",
+              "reveal_phase": 14,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — сухо.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 17,
+              "value": "dry",
+              "reveal_phase": 16,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "short_brake",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 23,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "swing_gate"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 7,
@@ -2265,6 +5053,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -2349,6 +5158,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -2469,18 +5299,188 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "swing_gate_release",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — справа."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "right"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — скользко."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "deploy_drag_mat",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "drag_mat_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 24,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 19,
+      "source_total_ticks": 19,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 19,
       "source_plan_sha256": "7e37862377f5464759b3f0f7d1caf706eb1301cd498c5631d39ba114656d7c85",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -2492,54 +5492,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — распашные ворота.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "swing_gate",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "swing_gate",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "swing_gate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "swing_gate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — справа.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 15,
+              "value": "right",
+              "reveal_phase": 14,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — скользко.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 17,
+              "value": "slick",
+              "reveal_phase": 16,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "deploy_drag_mat",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 24,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "swing_gate"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 8,
@@ -2582,6 +5789,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -2666,6 +5894,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -2786,18 +6035,152 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — слева."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "left"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — сухо."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "short_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 22,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 17,
+      "source_total_ticks": 17,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 17,
       "source_plan_sha256": "7e83ce8f6f8cdacb955f97a5ef56a5f60a2b8576a4e14d72454d9e1be56dfcee",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -2809,54 +6192,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — тесный поворот.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "tight_turn",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "tight_turn",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "tight_turn"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "tight_turn"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — слева.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "left",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — сухо.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "dry",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "short_brake",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 22,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "tight_turn"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 9,
@@ -2899,6 +6489,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -2983,6 +6594,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -3103,18 +6735,170 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — слева."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "left"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — скользко."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "deploy_drag_mat",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "drag_mat_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 23,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 18,
+      "source_total_ticks": 18,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 18,
       "source_plan_sha256": "1cf4b92c74266e5d0e96c8dd75ab923fcac36c375a60ba229e3feeec422842e4",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -3126,54 +6910,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — тесный поворот.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "tight_turn",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "tight_turn",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "tight_turn"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "tight_turn"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — слева.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "left",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — скользко.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "slick",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "deploy_drag_mat",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 23,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "tight_turn"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 10,
@@ -3216,6 +7207,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -3300,6 +7312,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -3420,18 +7453,152 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — справа."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "right"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — сухо."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "short_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 22,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 17,
+      "source_total_ticks": 17,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 17,
       "source_plan_sha256": "8c397f480e5f34c17a897ac9e4fd045ea052accc41bf24e180fe07467551f5f6",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -3443,54 +7610,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — тесный поворот.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "tight_turn",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "tight_turn",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "tight_turn"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "tight_turn"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — справа.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "right",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — сухо.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "dry",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "short_brake",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 22,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "tight_turn"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     },
     {
       "instance_index": 11,
@@ -3533,6 +7907,27 @@
         },
         {
           "Lead": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поворот преследуемого — по часовой стрелке."
+            }
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
             "id": "wait",
             "args": {}
           },
@@ -3617,6 +8012,27 @@
           "LoopRelay": {
             "id": "touch_rear_seat_kho",
             "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Проход у выхода — внутренний."
+            }
           },
           "RearRelay": {
             "id": "wait",
@@ -3737,18 +8153,170 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "cross_recovery_gate",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "inspect_tether_buckle",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона пряжки — справа."
+            }
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "seat_buckle",
+            "args": {
+              "side": "right"
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "inspect_runout_surface",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность выбега — скользко."
+            }
+          },
+          "RearRelay": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "deploy_drag_mat",
+            "args": {}
+          }
+        },
+        {
+          "Lead": {
+            "id": "wait",
+            "args": {}
+          },
+          "NearRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "LoopRelay": {
+            "id": "wait",
+            "args": {}
+          },
+          "RearRelay": {
+            "id": "drag_mat_brake",
+            "args": {}
+          }
         }
       ],
-      "rounds": 13,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 12,
-      "source_prefix_ticks": 11,
-      "inserted_action_tick": 12,
-      "messages": 1,
+      "rounds": 23,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 18,
+      "source_total_ticks": 18,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 18,
       "source_plan_sha256": "ccbdc46cb497c6d2a3d243a72137bf3392bf540bac7ebc18ebaf62c23750e43a",
-      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f",
       "world_digest": "6f8faa8c70c50d9b19fd7f79e7f1ebbfa20d2a092ea28b534fee6cfffdf26949",
       "contract_digest": "d23698e409291402827f50b601801f4d1ba83fe2d7de614dee5d75e2839c2288",
       "deliveries": [
@@ -3760,54 +8328,261 @@
             "RearRelay"
           ],
           "channel": "chat_0",
+          "content": "Моё показание: Поворот преследуемого — по часовой стрелке.",
+          "post_round": 2,
+          "delivery_round": 3,
+          "first_available_action_tick": 4,
+          "facts": [
+            {
+              "field": "turn_reading",
+              "sender": "Lead",
+              "source_parameters": [
+                "runner_turn"
+              ],
+              "reveal_action": "reach_first_pole",
+              "source_reveal_tick": 1,
+              "value": "clockwise",
+              "reveal_phase": 0,
+              "key": "Lead:turn_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_directional_loop",
+                    "args": {
+                      "turn": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runner_turn"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Проход у выхода — внутренний.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "exit_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "seat_clearance"
+              ],
+              "reveal_action": "inspect_rear_seat_exit",
+              "source_reveal_tick": 6,
+              "value": "inner",
+              "reveal_phase": 5,
+              "key": "LoopRelay:exit_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "commit_seat_exit",
+                    "args": {
+                      "lane": "inner"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "seat_clearance"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Lead",
+          "recipients": [
+            "LoopRelay",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
           "content": "Моё показание: Возвратные ворота — тесный поворот.",
-          "post_round": 11,
-          "delivery_round": 12,
-          "first_available_action_tick": 13,
+          "post_round": 13,
+          "delivery_round": 14,
+          "first_available_action_tick": 15,
           "facts": [
             {
               "field": "recovery_gate_reading",
-              "value": "tight_turn",
-              "revealed_after_tick": 11,
+              "sender": "Lead",
               "source_parameters": [
                 "recovery_gate_type"
-              ]
+              ],
+              "reveal_action": "inspect_recovery_gate",
+              "source_reveal_tick": 11,
+              "value": "tight_turn",
+              "reveal_phase": 10,
+              "key": "Lead:recovery_gate_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "NearRelay",
+                  "call": {
+                    "id": "commit_recovery_route",
+                    "args": {
+                      "route": "tight_turn"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "recovery_gate_type"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "NearRelay",
-          "shown_action_tick": 13,
-          "shown_call": {
-            "id": "commit_recovery_route",
-            "args": {
-              "route": "tight_turn"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "NearRelay",
+          "recipients": [
+            "Lead",
+            "LoopRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона пряжки — справа.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "tether_buckle_reading",
+              "sender": "NearRelay",
+              "source_parameters": [
+                "tether_buckle_side"
+              ],
+              "reveal_action": "inspect_tether_buckle",
+              "source_reveal_tick": 14,
+              "value": "right",
+              "reveal_phase": 13,
+              "key": "NearRelay:tether_buckle_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "LoopRelay",
+                  "call": {
+                    "id": "seat_buckle",
+                    "args": {
+                      "side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "tether_buckle_side"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "LoopRelay",
+          "recipients": [
+            "Lead",
+            "NearRelay",
+            "RearRelay"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность выбега — скользко.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "runout_surface_reading",
+              "sender": "LoopRelay",
+              "source_parameters": [
+                "runout_surface_condition"
+              ],
+              "reveal_action": "inspect_runout_surface",
+              "source_reveal_tick": 16,
+              "value": "slick",
+              "reveal_phase": 15,
+              "key": "LoopRelay:runout_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "RearRelay",
+                  "call": {
+                    "id": "deploy_drag_mat",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "runout_surface_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 23,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "NearRelay",
-        "call": {
-          "id": "commit_recovery_route",
-          "args": {
-            "route": "tight_turn"
-          }
-        },
-        "source_tick": 12,
-        "action_tick": 13,
-        "field": "recovery_gate_reading",
-        "source_parameters": [
-          "recovery_gate_type"
-        ],
-        "rule_explanation": "Возвратные ворота связаны с выбираемым маршрутом возврата.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f924e45da02bdc3b29ad3beec55720a9ddb59df03d5f943c6040d181a12ba16f"
     }
   ]
 }

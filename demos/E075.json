@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E075",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -82,18 +81,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — полка без охлаждения."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "ambient_shelf"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "place_on_ambient_shelf"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала основной продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "staple_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "staple"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "companion"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "26acf90bb89b28872d1bc7ca5874303afeabea86b10bfe5adc13d54a602dd827",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -111,47 +383,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — полка без охлаждения.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "ambient_shelf",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "ambient_shelf"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала основной продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "staple_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "staple_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 1,
@@ -230,18 +657,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — полка без охлаждения."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "ambient_shelf"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "place_on_ambient_shelf"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала основной продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "staple_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "staple"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "companion"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "38cc2c1a440a75127625e3b77e27b8eac4cdf570dcba467529e952740a718e98",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -259,47 +959,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — полка без охлаждения.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "ambient_shelf",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "ambient_shelf"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала основной продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "staple_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "staple_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 2,
@@ -378,18 +1233,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — полка без охлаждения."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "ambient_shelf"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "place_on_ambient_shelf"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "companion_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "companion"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "staple"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "67eedd18ceabe3333aa59187ae9b4df22f88deef63bc29f1383aa90827534dcc",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -407,47 +1535,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — полка без охлаждения.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "ambient_shelf",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "ambient_shelf"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "companion_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "companion_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 3,
@@ -526,18 +1809,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — полка без охлаждения."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "ambient_shelf"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "place_on_ambient_shelf"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "companion_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "companion"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "staple"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "a2523eb9c9db0d2c0d77679aac38c3ea37d97079d31d1826591411ddf1ab7942",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -555,47 +2111,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — полка без охлаждения.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "ambient_shelf",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "ambient_shelf"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "companion_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "companion_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 4,
@@ -674,18 +2385,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — охлаждаемый ящик."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "chilled_box"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "prepare_chilled_box"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "insert_cold_liner"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала основной продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "staple_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "staple"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "7ceb5581d374e0e6216ae4944551edb5e73605c76d17dfa3924d2eacfb8df391",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -703,47 +2687,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — охлаждаемый ящик.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "chilled_box",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "chilled_box"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала основной продукт.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 17,
+              "value": "staple_first",
+              "reveal_phase": 16,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "staple_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 5,
@@ -822,18 +2961,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — охлаждаемый ящик."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "chilled_box"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "prepare_chilled_box"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "insert_cold_liner"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала основной продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "staple_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "staple"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 23,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 23,
       "source_plan_sha256": "c4370e4a80fd049f307db855ce7d0e9a2e011508ad83b19a28fd8c1cd4321472",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -851,47 +3263,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — охлаждаемый ящик.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "chilled_box",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "chilled_box"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала основной продукт.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 17,
+              "value": "staple_first",
+              "reveal_phase": 16,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "staple_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 28,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 23 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 6,
@@ -970,18 +3537,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — охлаждаемый ящик."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "chilled_box"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "prepare_chilled_box"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "insert_cold_liner"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "companion_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "companion"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "8075735ad8853abdf786a9306cd08aeaae6c55698bea7db80cf735e356cdfd47",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -999,47 +3839,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — охлаждаемый ящик.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "chilled_box",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "chilled_box"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 17,
+              "value": "companion_first",
+              "reveal_phase": 16,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "companion_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 7,
@@ -1118,18 +4113,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — охлаждаемый ящик."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "chilled_box"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "prepare_chilled_box"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "insert_cold_liner"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "companion_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "companion"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 23,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 23,
       "source_plan_sha256": "2c748c5b31d6043da6da143325f1723922ef8886c23911efe29b249d8257fa32",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -1147,47 +4415,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — охлаждаемый ящик.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "chilled_box",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "chilled_box"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 17,
+              "value": "companion_first",
+              "reveal_phase": 16,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "companion_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 28,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 23 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 8,
@@ -1266,18 +4689,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — отдельные пакеты."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "split_bags"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "split_basket_into_bags"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала основной продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "staple_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "staple"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "companion"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "c1f514dae57513d3892ec99e6bcb82cf2aa4ca4bc0d8a5c8828968ac1cce81c9",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -1295,47 +4991,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — отдельные пакеты.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "split_bags",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "split_bags"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала основной продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "staple_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "staple_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 9,
@@ -1414,18 +5265,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — отдельные пакеты."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "split_bags"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "split_basket_into_bags"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала основной продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "staple_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "staple"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "companion"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "4318d796b30d656426793424ddd087e9d8f3bd06748628fb842484c029e55193",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -1443,47 +5567,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — отдельные пакеты.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "split_bags",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "split_bags"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала основной продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "staple_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "staple_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 10,
@@ -1562,18 +5841,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — отдельные пакеты."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "split_bags"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "split_basket_into_bags"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "companion_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "companion"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "staple"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "67f7c2e1d3d8586182dd84a86ddcba4a82effe97e8fbc3d2d615c622fbb0179d",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -1591,47 +6143,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — отдельные пакеты.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "split_bags",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "split_bags"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "companion_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "companion_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     },
     {
       "instance_index": 11,
@@ -1710,18 +6417,291 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "fetch_and_open_purchased_crate",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "surrender_crate_coupon",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "unlock_and_inspect_reserved_stock",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Доступный дополнительный продукт — фасоль."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "spend_single_use_replacement_reservation",
+            "args": {
+              "category": "beans"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "pack_and_seal_purchases",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "receive_sealed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "return_basket_to_processing_counter",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "open_handling_route_tag",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Способ хранения — отдельные пакеты."
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "choose_handling_route",
+            "args": {
+              "route": "split_bags"
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "perform_handling_operation",
+            "args": {
+              "operation": "split_basket_into_bags"
+            }
+          }
+        },
+        {
+          "customer": {
+            "id": "collect_processed_basket",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "open_cooking_order_card",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт."
+            }
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "choose_cooking_order",
+            "args": {
+              "order": "companion_first"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "prepare_first_product",
+            "args": {
+              "product": "companion"
+            }
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "customer": {
+            "id": "wait",
+            "args": {}
+          },
+          "buyer": {
+            "id": "wait",
+            "args": {}
+          },
+          "grocer": {
+            "id": "prepare_second_product",
+            "args": {
+              "product": "staple"
+            }
+          }
         }
       ],
-      "rounds": 5,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 4,
-      "source_prefix_ticks": 3,
-      "inserted_action_tick": 4,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "61666b91e4282cffc7d156448b5104fa3d97839c907333061550fbf29ec137d2",
-      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2",
       "world_digest": "c9471d0be57a60417dc99a5313c741f1211a943fcec690f5782257831ef4c89a",
       "contract_digest": "26f6dd57e2f2bd202dc664720a0d7f2d0050882a3e0f08e20828c79a0077267c",
       "deliveries": [
@@ -1739,47 +6719,202 @@
           "facts": [
             {
               "field": "diet_reading",
-              "value": "oat",
-              "revealed_after_tick": 3,
+              "sender": "customer",
               "source_parameters": [
                 "diet_cause"
-              ]
+              ],
+              "reveal_action": "open_diet_notice",
+              "source_reveal_tick": 3,
+              "value": "oat",
+              "reveal_phase": 2,
+              "key": "customer:diet_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 3,
+                  "source_tick": 4,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "purchase_staple_crate",
+                    "args": {
+                      "category": "oat"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "diet_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 3
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "buyer",
-          "shown_action_tick": 5,
-          "shown_call": {
-            "id": "purchase_staple_crate",
-            "args": {
-              "category": "oat"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Доступный дополнительный продукт — фасоль.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "stock_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "stock_cause"
+              ],
+              "reveal_action": "unlock_and_inspect_reserved_stock",
+              "source_reveal_tick": 7,
+              "value": "beans",
+              "reveal_phase": 6,
+              "key": "grocer:stock_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "spend_single_use_replacement_reservation",
+                    "args": {
+                      "category": "beans"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "stock_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "grocer",
+          "recipients": [
+            "buyer",
+            "customer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Способ хранения — отдельные пакеты.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "handling_route_reading",
+              "sender": "grocer",
+              "source_parameters": [
+                "handling_route_cause"
+              ],
+              "reveal_action": "open_handling_route_tag",
+              "source_reveal_tick": 12,
+              "value": "split_bags",
+              "reveal_phase": 11,
+              "key": "grocer:handling_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 12,
+                  "source_tick": 13,
+                  "actor": "buyer",
+                  "call": {
+                    "id": "choose_handling_route",
+                    "args": {
+                      "route": "split_bags"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "handling_route_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 12
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "buyer",
+          "recipients": [
+            "customer",
+            "grocer"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Порядок приготовления — сначала дополнительный продукт.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "cooking_order_reading",
+              "sender": "buyer",
+              "source_parameters": [
+                "cooking_order_cause"
+              ],
+              "reveal_action": "open_cooking_order_card",
+              "source_reveal_tick": 16,
+              "value": "companion_first",
+              "reveal_phase": 15,
+              "key": "buyer:cooking_order_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "customer",
+                  "call": {
+                    "id": "choose_cooking_order",
+                    "args": {
+                      "order": "companion_first"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "cooking_order_cause"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 22 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "buyer",
-        "call": {
-          "id": "purchase_staple_crate",
-          "args": {
-            "category": "oat"
-          }
-        },
-        "source_tick": 4,
-        "action_tick": 5,
-        "field": "diet_reading",
-        "source_parameters": [
-          "diet_cause"
-        ],
-        "rule_explanation": "Основа заказа связана с категорией покупаемого продукта.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "ef4533769c5424edf3b1cb5c03eeb3593d5a28c33809662843116e7fae4f2bb2"
     }
   ]
 }

@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E121",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -68,18 +67,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — корневая решётка."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "root_lattice"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "route_root_sling"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "tension_root_sling"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "anchor_live_root"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — над ребром."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "raise_small_pulley"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "pass_over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "lock_upper_guide"
+            }
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "aa40018f9735106191436631c323701300c16919a2060e480ea33906c0267aa5",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -97,47 +389,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — корневая решётка.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "root_lattice",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "root_lattice"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — над ребром.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "over_rib",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "over_rib"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 1,
@@ -202,18 +653,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — корневая решётка."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "root_lattice"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "route_root_sling"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "tension_root_sling"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "anchor_live_root"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — над ребром."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "raise_small_pulley"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "pass_over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "lock_upper_guide"
+            }
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "cf4dd709c7c9bfbc664f6fe498b1a440a11f5cbcd9abe3193149c94b62add487",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -231,47 +975,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — корневая решётка.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "root_lattice",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "root_lattice"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — над ребром.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "over_rib",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "over_rib"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 2,
@@ -336,18 +1239,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — корневая решётка."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "root_lattice"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "route_root_sling"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "tension_root_sling"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "anchor_live_root"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — под канавкой."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "under_groove"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "open_lower_cleat"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "feed_under_slab"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "make_low_haul"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "9cf5c5b3eccaac6e5204fda907005c1115f466c1932abe9ba132286fc09d9f32",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -365,47 +1561,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — корневая решётка.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "root_lattice",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "root_lattice"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — под канавкой.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "under_groove",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "under_groove"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 3,
@@ -470,18 +1825,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — корневая решётка."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "root_lattice"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "route_root_sling"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "tension_root_sling"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "anchor_live_root"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — под канавкой."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "under_groove"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "open_lower_cleat"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "feed_under_slab"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "make_low_haul"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "55a45213abc8fdf90e2393620d3f689489ca5441057cacc1e98dded68498c96f",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -499,47 +2147,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — корневая решётка.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "root_lattice",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "root_lattice"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — под канавкой.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "under_groove",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "under_groove"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 4,
@@ -604,18 +2411,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — стеклянный полоз."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "lower_glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "brace_runner_edge"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "reel_two_short_pulls"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — над ребром."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "raise_small_pulley"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "pass_over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "lock_upper_guide"
+            }
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "9d46237c29d85fa9a480e95c40803809b61cd2a26b94f4675c517f2551dbd455",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -633,47 +2733,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — стеклянный полоз.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "glass_runner",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "glass_runner"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — над ребром.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "over_rib",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "over_rib"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 5,
@@ -738,18 +2997,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — стеклянный полоз."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "lower_glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "brace_runner_edge"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "reel_two_short_pulls"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — над ребром."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "raise_small_pulley"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "pass_over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "lock_upper_guide"
+            }
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "15916182563214f8fbb2e392e01acca97b9bcdbd1302ee2a75a61202ffca351d",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -767,47 +3319,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — стеклянный полоз.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "glass_runner",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "glass_runner"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — над ребром.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "over_rib",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "over_rib"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 6,
@@ -872,18 +3583,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — стеклянный полоз."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "lower_glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "brace_runner_edge"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "reel_two_short_pulls"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — под канавкой."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "under_groove"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "open_lower_cleat"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "feed_under_slab"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "make_low_haul"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "3b58c0fa2c1be5b16a257d91b480b5f0eaa1eb931141b5c29d5263b94ec469be",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -901,47 +3905,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — стеклянный полоз.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "glass_runner",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "glass_runner"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — под канавкой.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "under_groove",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "under_groove"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 7,
@@ -1006,18 +4169,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — стеклянный полоз."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "lower_glass_runner"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "brace_runner_edge"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "reel_two_short_pulls"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — под канавкой."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "under_groove"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "open_lower_cleat"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "feed_under_slab"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "make_low_haul"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "fdc3f9ae8f2f99de3a3bb9f1e75dad1a8b75de8e9f1ebeeb17cb45e688de78f1",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -1035,47 +4491,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — стеклянный полоз.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "glass_runner",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "glass_runner"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — под канавкой.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "under_groove",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "under_groove"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 8,
@@ -1140,18 +4755,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — каменная люлька."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "stone_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "place_stone_cradle"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "transfer_load_to_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "release_cradle_tether"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — над ребром."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "raise_small_pulley"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "pass_over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "lock_upper_guide"
+            }
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "7bd217c7a9e51925f6d87b492bc51f7c0c181781e924e0227af92940bfd320f9",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -1169,47 +5077,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — каменная люлька.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "stone_cradle",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "stone_cradle"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — над ребром.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "over_rib",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "over_rib"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 9,
@@ -1274,18 +5341,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — каменная люлька."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "stone_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "place_stone_cradle"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "transfer_load_to_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "release_cradle_tether"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — над ребром."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "raise_small_pulley"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "pass_over_rib"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "lock_upper_guide"
+            }
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "6015809b34c25b6a76a15576d74cdd6d4c6275e608e006f338c2e23a7da0d70d",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -1303,47 +5663,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — каменная люлька.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "stone_cradle",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "stone_cradle"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — над ребром.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "over_rib",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "over_rib"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 10,
@@ -1408,18 +5927,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — каменная люлька."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "stone_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "place_stone_cradle"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "transfer_load_to_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "release_cradle_tether"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — под канавкой."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "under_groove"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "open_lower_cleat"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "feed_under_slab"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "make_low_haul"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "dbd0486ee3b7b89b55481dcc03c1f1d1a5ceb591a6d7de6236bf116f3f3f0af1",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -1437,47 +6249,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — каменная люлька.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "stone_cradle",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "stone_cradle"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — под канавкой.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "under_groove",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "under_groove"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     },
     {
       "instance_index": 11,
@@ -1542,18 +6513,311 @@
               "rotation": "clockwise"
             }
           }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wind_glass_tether",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "haul_cart_across_roots",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "peel_arch_bark",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Складка арки — сверху."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "unfold_glass_arch",
+            "args": {
+              "route": "over"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "draw_cart_through_stone_exit",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "read_seam_route",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Опора для стыка — каменная люлька."
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "choose_seam_support",
+            "args": {
+              "support": "stone_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "place_stone_cradle"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "transfer_load_to_cradle"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "release_cradle_tether"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "read_tether_channel",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Канал троса — под канавкой."
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "choose_tether_route",
+            "args": {
+              "route": "under_groove"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "operate_stone",
+            "args": {
+              "operation": "open_lower_cleat"
+            }
+          }
+        },
+        {
+          "Glass": {
+            "id": "wait",
+            "args": {}
+          },
+          "Grove": {
+            "id": "operate_grove",
+            "args": {
+              "operation": "feed_under_slab"
+            }
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Glass": {
+            "id": "operate_glass",
+            "args": {
+              "operation": "make_low_haul"
+            }
+          },
+          "Grove": {
+            "id": "wait",
+            "args": {}
+          },
+          "Stone": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 24,
+      "source_physical_calls_completed": 20,
+      "source_physical_calls_total": 25,
       "source_plan_sha256": "0059a87a8432844ea3ca049d9fe8125fccae8b589c6c458da660d9e3af48d8a2",
-      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26",
       "world_digest": "4e1240265d60c25848681beab0c7d9ef02269cbdb18f5f0cc2465fbd56c1c538",
       "contract_digest": "864de44635807e96da27d4260cc4adfec2e448729a2580005e57c866a40eaf1c",
       "deliveries": [
@@ -1571,47 +6835,206 @@
           "facts": [
             {
               "field": "glass_hinge_reading",
-              "value": "clockwise",
-              "revealed_after_tick": 2,
+              "sender": "Glass",
               "source_parameters": [
                 "hinge_handedness"
-              ]
+              ],
+              "reveal_action": "lift_hinge_veil",
+              "source_reveal_tick": 2,
+              "value": "clockwise",
+              "reveal_phase": 1,
+              "key": "Glass:glass_hinge_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Stone",
+                  "call": {
+                    "id": "pin_stone_bridge",
+                    "args": {
+                      "rotation": "clockwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "hinge_handedness"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Stone",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "pin_stone_bridge",
-            "args": {
-              "rotation": "clockwise"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Складка арки — сверху.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "grove_arch_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "arch_fold"
+              ],
+              "reveal_action": "peel_arch_bark",
+              "source_reveal_tick": 7,
+              "value": "over",
+              "reveal_phase": 6,
+              "key": "Grove:grove_arch_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "unfold_glass_arch",
+                    "args": {
+                      "route": "over"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "arch_fold"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Grove",
+          "recipients": [
+            "Glass",
+            "Stone"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Опора для стыка — каменная люлька.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "seam_route_reading",
+              "sender": "Grove",
+              "source_parameters": [
+                "seam_route_profile"
+              ],
+              "reveal_action": "read_seam_route",
+              "source_reveal_tick": 10,
+              "value": "stone_cradle",
+              "reveal_phase": 9,
+              "key": "Grove:seam_route_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Glass",
+                  "call": {
+                    "id": "choose_seam_support",
+                    "args": {
+                      "support": "stone_cradle"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "seam_choice",
+                    "checking_actions": [
+                      "operate_grove",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Stone",
+          "recipients": [
+            "Glass",
+            "Grove"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Канал троса — под канавкой.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "tether_channel_reading",
+              "sender": "Stone",
+              "source_parameters": [
+                "tether_channel_profile"
+              ],
+              "reveal_action": "read_tether_channel",
+              "source_reveal_tick": 15,
+              "value": "under_groove",
+              "reveal_phase": 14,
+              "key": "Stone:tether_channel_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Grove",
+                  "call": {
+                    "id": "choose_tether_route",
+                    "args": {
+                      "route": "under_groove"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "tether_choice",
+                    "checking_actions": [
+                      "operate_glass",
+                      "operate_stone"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 29,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 24 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Stone",
-        "call": {
-          "id": "pin_stone_bridge",
-          "args": {
-            "rotation": "clockwise"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "glass_hinge_reading",
-        "source_parameters": [
-          "hinge_handedness"
-        ],
-        "rule_explanation": "Направление шарнира определяет поворот штифта каменного моста.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "e77113b6a0d4f1427a7182d38e90c73645bdf8727c40547203f3da88ef21fb26"
     }
   ]
 }

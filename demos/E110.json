@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E110",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -68,18 +67,306 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — твёрдая."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "rigid_plate"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_rigid_plate"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — поперёк."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "crosswise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "test_brake_manometer",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Отклик тормозов — устойчивый."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_descent_brake_plan",
+            "args": {
+              "plan": "engine_braking"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 5,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "3d35e1f543813749b5d63e5a01bbf34690a25dc53765606fbfffbb5260b6465e",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -97,47 +384,254 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — твёрдая.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "firm",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "rigid_plate"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — поперёк.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 14,
+              "value": "crosswise",
+              "reveal_phase": 13,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "crosswise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Отклик тормозов — устойчивый.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "brake_response_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "brake_response"
+              ],
+              "reveal_action": "test_brake_manometer",
+              "source_reveal_tick": 17,
+              "value": "steady",
+              "reveal_phase": 16,
+              "key": "Mechanic:brake_response_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_descent_brake_plan",
+                    "args": {
+                      "plan": "engine_braking"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "brake_response"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 5 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 1,
@@ -202,18 +696,306 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — твёрдая."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "rigid_plate"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_rigid_plate"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — поперёк."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "crosswise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "test_brake_manometer",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Отклик тормозов — ослабевает."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_descent_brake_plan",
+            "args": {
+              "plan": "auxiliary_retarder"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 5,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "2826fc66f89f2bd17208972cf5ded20bd1c0d397fdd40983b08afc473c2fda48",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -231,47 +1013,254 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — твёрдая.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "firm",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "rigid_plate"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — поперёк.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 14,
+              "value": "crosswise",
+              "reveal_phase": 13,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "crosswise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Отклик тормозов — ослабевает.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "brake_response_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "brake_response"
+              ],
+              "reveal_action": "test_brake_manometer",
+              "source_reveal_tick": 17,
+              "value": "fading",
+              "reveal_phase": 16,
+              "key": "Mechanic:brake_response_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_descent_brake_plan",
+                    "args": {
+                      "plan": "auxiliary_retarder"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "brake_response"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 22 исходных тактов и 5 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 2,
@@ -336,18 +1325,306 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — твёрдая."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "rigid_plate"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_rigid_plate"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — вдоль."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "lengthwise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "test_brake_manometer",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Отклик тормозов — устойчивый."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_descent_brake_plan",
+            "args": {
+              "plan": "engine_braking"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 5,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "06e3216b3560482b74e737086b2f60ad070f93bad6c26e1eef43d9e0308144e1",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -365,47 +1642,254 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — твёрдая.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "firm",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "rigid_plate"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — вдоль.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 14,
+              "value": "lengthwise",
+              "reveal_phase": 13,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "lengthwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Отклик тормозов — устойчивый.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "brake_response_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "brake_response"
+              ],
+              "reveal_action": "test_brake_manometer",
+              "source_reveal_tick": 17,
+              "value": "steady",
+              "reveal_phase": 16,
+              "key": "Mechanic:brake_response_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_descent_brake_plan",
+                    "args": {
+                      "plan": "engine_braking"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "brake_response"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 5 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 3,
@@ -470,18 +1954,306 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — твёрдая."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "rigid_plate"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_rigid_plate"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — вдоль."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "lengthwise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "test_brake_manometer",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Отклик тормозов — ослабевает."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_descent_brake_plan",
+            "args": {
+              "plan": "auxiliary_retarder"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 5,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 22,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 22,
       "source_plan_sha256": "4f1e14c98eb07e65b4cc7c68b8c770244faeb8437102bf87ff048aadef06e2cb",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -499,47 +2271,254 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — твёрдая.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "firm",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "rigid_plate"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — вдоль.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 14,
+              "value": "lengthwise",
+              "reveal_phase": 13,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 14,
+                  "source_tick": 15,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "lengthwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 14
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Отклик тормозов — ослабевает.",
+          "post_round": 21,
+          "delivery_round": 22,
+          "first_available_action_tick": 23,
+          "facts": [
+            {
+              "field": "brake_response_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "brake_response"
+              ],
+              "reveal_action": "test_brake_manometer",
+              "source_reveal_tick": 17,
+              "value": "fading",
+              "reveal_phase": 16,
+              "key": "Mechanic:brake_response_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_descent_brake_plan",
+                    "args": {
+                      "plan": "auxiliary_retarder"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "brake_response"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 27,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 22 исходных тактов и 5 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 4,
@@ -604,18 +2583,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — рыхлый гравий."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "traction_net"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "spread_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "anchor_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — поперёк."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "crosswise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "da9f24508c3ef9482f1ef9ee18cebfb08197f8699cb843a69a9035db64ef0fde",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -633,47 +2869,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — рыхлый гравий.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "loose_gravel",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "traction_net"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — поперёк.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "crosswise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "crosswise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 5,
@@ -738,18 +3131,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — рыхлый гравий."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "traction_net"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "spread_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "anchor_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — поперёк."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "crosswise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 23,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 23,
       "source_plan_sha256": "cc8c28566dd56ee01b08e80e2633233f2b7887386ff9fb750cd432f5ea86ac19",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -767,47 +3417,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — рыхлый гравий.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "loose_gravel",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "traction_net"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — поперёк.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "crosswise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "crosswise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 28,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 23 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 6,
@@ -872,18 +3679,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — рыхлый гравий."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "traction_net"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "spread_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "anchor_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — вдоль."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "lengthwise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "11793fe0bb69dedddb18f100a09278fff8baa40f67956e258f96e15ea0a3f58a",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -901,47 +3965,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — рыхлый гравий.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "loose_gravel",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "traction_net"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — вдоль.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "lengthwise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "lengthwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 7,
@@ -1006,18 +4227,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — рыхлый гравий."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "traction_net"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "spread_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "anchor_traction_net"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — вдоль."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "lengthwise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 23,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 23,
       "source_plan_sha256": "e24fb4a0c195a66a91c5fe021d583e1ac2d964adb5db6f85cd3fbbe7d515db36",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -1035,47 +4513,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — рыхлый гравий.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "loose_gravel",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "traction_net"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — вдоль.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "lengthwise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "lengthwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 28,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 23 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 8,
@@ -1140,18 +4775,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — размыта."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "washout_bridge"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_bridge_boards"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lock_bridge_pins"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — поперёк."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "crosswise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "0ee9ea9211a3d8aabb8041846ac483b20035b93e7f3ae9309874d6554c91d04e",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -1169,47 +5061,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — размыта.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "washout",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "washout_bridge"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — поперёк.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "crosswise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "crosswise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 9,
@@ -1274,18 +5323,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — размыта."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "washout_bridge"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_bridge_boards"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lock_bridge_pins"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — поперёк."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "crosswise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 23,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 23,
       "source_plan_sha256": "90e464c7d6280f3a55976a8234b285033fa403f7dd8f4ed0dee7454a64a0f97b",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -1303,47 +5609,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — размыта.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "washout",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "washout_bridge"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — поперёк.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "crosswise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "crosswise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 28,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 23 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 10,
@@ -1408,18 +5871,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — размыта."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "washout_bridge"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_bridge_boards"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lock_bridge_pins"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — вдоль."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "lengthwise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "1e8b9cd8802305e247096a4aecfc29b5d2933dae57795e74f203c9c1bd9e189b",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -1437,47 +6157,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — размыта.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "washout",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "washout_bridge"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — вдоль.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "lengthwise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "lengthwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     },
     {
       "instance_index": 11,
@@ -1542,18 +6419,275 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "issue_station_and_valley_route_pass",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "roll_to_fuel_dock",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "open_docked_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "inspect_dock_identification_plate",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сторона бензинового насоса — слева."
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "spend_voucher_on_fuel_port",
+            "args": {
+              "port": "left"
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "seal_fuel_cap",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "probe_apron_surface",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Поверхность площадки — размыта."
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "choose_apron_support",
+            "args": {
+              "support": "washout_bridge"
+            }
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lay_bridge_boards"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "perform_apron_support_step",
+            "args": {
+              "operation": "lock_bridge_pins"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "drive_onto_weighing_cradle",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "read_cargo_pull_axis",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "wait",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Направление тяги груза — вдоль."
+            }
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "choose_cargo_brace_geometry",
+            "args": {
+              "geometry": "lengthwise"
+            }
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "Mechanic": {
+            "id": "tighten_cargo_brace",
+            "args": {}
+          },
+          "Coordinator": {
+            "id": "wait",
+            "args": {}
+          },
+          "Driver": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 21,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 17,
+      "source_total_ticks": 23,
+      "source_physical_calls_completed": 17,
+      "source_physical_calls_total": 23,
       "source_plan_sha256": "9d78656a49a2ea1d8a7941398d4e84d2e071b6ad24368ad3caf2d8e1a0390263",
-      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10",
       "world_digest": "fae8d2b625ef2797e1f7affe71ae4a69b541a7b73afd174b673532ba9c1f37e5",
       "contract_digest": "45fd5d56da63c8e0f315733e10b129c5d3090d053899016991fda68ab2d81558",
       "deliveries": [
@@ -1571,47 +6705,204 @@
           "facts": [
             {
               "field": "tire_reading",
-              "value": "low",
-              "revealed_after_tick": 2,
+              "sender": "Mechanic",
               "source_parameters": [
                 "low_pressure"
-              ]
+              ],
+              "reveal_action": "measure_four_tires",
+              "source_reveal_tick": 2,
+              "value": "low",
+              "reveal_phase": 1,
+              "key": "Mechanic:tire_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "discharge_tire_module",
+                    "args": {
+                      "mode": "inflate"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "low_pressure"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "Coordinator",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "discharge_tire_module",
-            "args": {
-              "mode": "inflate"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Coordinator",
+          "recipients": [
+            "Driver",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сторона бензинового насоса — слева.",
+          "post_round": 8,
+          "delivery_round": 9,
+          "first_available_action_tick": 10,
+          "facts": [
+            {
+              "field": "pump_reading",
+              "sender": "Coordinator",
+              "source_parameters": [
+                "petrol_on_left"
+              ],
+              "reveal_action": "inspect_dock_identification_plate",
+              "source_reveal_tick": 7,
+              "value": "left",
+              "reveal_phase": 6,
+              "key": "Coordinator:pump_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 7,
+                  "source_tick": 8,
+                  "actor": "Driver",
+                  "call": {
+                    "id": "spend_voucher_on_fuel_port",
+                    "args": {
+                      "port": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "petrol_on_left"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 7
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Mechanic",
+          "recipients": [
+            "Coordinator",
+            "Driver"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Поверхность площадки — размыта.",
+          "post_round": 12,
+          "delivery_round": 13,
+          "first_available_action_tick": 14,
+          "facts": [
+            {
+              "field": "apron_surface_reading",
+              "sender": "Mechanic",
+              "source_parameters": [
+                "apron_surface_profile"
+              ],
+              "reveal_action": "probe_apron_surface",
+              "source_reveal_tick": 10,
+              "value": "washout",
+              "reveal_phase": 9,
+              "key": "Mechanic:apron_surface_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 10,
+                  "source_tick": 11,
+                  "actor": "Coordinator",
+                  "call": {
+                    "id": "choose_apron_support",
+                    "args": {
+                      "support": "washout_bridge"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "apron_support_choice",
+                    "checking_actions": [
+                      "drive_onto_weighing_cradle"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 10
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "Driver",
+          "recipients": [
+            "Coordinator",
+            "Mechanic"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Направление тяги груза — вдоль.",
+          "post_round": 18,
+          "delivery_round": 19,
+          "first_available_action_tick": 20,
+          "facts": [
+            {
+              "field": "cargo_pull_reading",
+              "sender": "Driver",
+              "source_parameters": [
+                "cargo_pull_axis"
+              ],
+              "reveal_action": "read_cargo_pull_axis",
+              "source_reveal_tick": 15,
+              "value": "lengthwise",
+              "reveal_phase": 14,
+              "key": "Driver:cargo_pull_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 15,
+                  "source_tick": 16,
+                  "actor": "Mechanic",
+                  "call": {
+                    "id": "choose_cargo_brace_geometry",
+                    "args": {
+                      "geometry": "lengthwise"
+                    }
+                  },
+                  "relation": {
+                    "type": "commitment_checked_later",
+                    "stored_field": "cargo_brace_geometry",
+                    "checking_actions": [
+                      "tighten_cargo_brace"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 15
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 28,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 17 из 23 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "Coordinator",
-        "call": {
-          "id": "discharge_tire_module",
-          "args": {
-            "mode": "inflate"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "tire_reading",
-        "source_parameters": [
-          "low_pressure"
-        ],
-        "rule_explanation": "Давление в шине связано с режимом разрядки ремонтного модуля.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "f35e1428c86b122230fec6317b91f28b269181b0d026720c5b051980dcdf8e10"
     }
   ]
 }

@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E041",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -68,18 +67,248 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — ближняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "near_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "left"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — свободно."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 19,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 14,
+      "source_total_ticks": 14,
+      "source_physical_calls_completed": 14,
+      "source_physical_calls_total": 14,
       "source_plan_sha256": "fa07d6516570e2a2453a5f71362f336e2fce444157fed1bf699e95c0aa3bd00f",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -97,47 +326,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — ближняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "near_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "near_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "left_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — свободно.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "free",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "hoist_panel",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 19,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 1,
@@ -202,18 +634,262 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — ближняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "near_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "left"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — зажата."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "release_sling",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 20,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 15,
+      "source_total_ticks": 15,
+      "source_physical_calls_completed": 15,
+      "source_physical_calls_total": 15,
       "source_plan_sha256": "f652e5364429c6bb57b56f4d854e4857b783c296d4603a05cdef99a587e75a62",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -231,47 +907,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — ближняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "near_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "near_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "left_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — зажата.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "bound",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "release_sling",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 20,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 2,
@@ -336,18 +1215,248 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — ближняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "near_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "right"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — свободно."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 19,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 14,
+      "source_total_ticks": 14,
+      "source_physical_calls_completed": 14,
+      "source_physical_calls_total": 14,
       "source_plan_sha256": "3132ae48e299bdc29357ea5ef506f30e01b423e0295dfc20a56ee61ffbc2092e",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -365,47 +1474,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — ближняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "near_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "near_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "right_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — свободно.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "free",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "hoist_panel",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 19,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 3,
@@ -470,18 +1782,262 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — ближняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "near_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "right"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — зажата."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "release_sling",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 20,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 15,
+      "source_total_ticks": 15,
+      "source_physical_calls_completed": 15,
+      "source_physical_calls_total": 15,
       "source_plan_sha256": "663f1c59660c4ad92a8a9fe08726397adac09e3d2384cda5bcc3e11feda845bc",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -499,47 +2055,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — ближняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "near_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "near_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "right_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — зажата.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "bound",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "release_sling",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 20,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 4,
@@ -604,18 +2363,248 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — дальняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "far_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "left"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — свободно."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 19,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 14,
+      "source_total_ticks": 14,
+      "source_physical_calls_completed": 14,
+      "source_physical_calls_total": 14,
       "source_plan_sha256": "0f525d14aa42a7ac62541c7699323005fc57bf3617b037ca086386a1b5cb1bed",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -633,47 +2622,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — дальняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "far_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "far_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "left_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — свободно.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "free",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "hoist_panel",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 19,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 5,
@@ -738,18 +2930,262 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — дальняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "far_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "left"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — зажата."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "release_sling",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 20,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 15,
+      "source_total_ticks": 15,
+      "source_physical_calls_completed": 15,
+      "source_physical_calls_total": 15,
       "source_plan_sha256": "4a22f350d4c188573dbd766b4a3b1c800ea46e2b2b47d6c32d0a73a9cf383855",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -767,47 +3203,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — дальняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "far_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "far_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "left_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — зажата.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "bound",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "release_sling",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 20,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 6,
@@ -872,18 +3511,248 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — дальняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "far_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "right"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — свободно."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 19,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 14,
+      "source_total_ticks": 14,
+      "source_physical_calls_completed": 14,
+      "source_physical_calls_total": 14,
       "source_plan_sha256": "b398effd50118276060f841589120e8840207d36bb353f572355fe17df0b0e08",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -901,47 +3770,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — дальняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "far_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "far_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "right_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — свободно.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "free",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "hoist_panel",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 19,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 7,
@@ -1006,18 +4078,262 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — дальняя полоса."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "far_lane"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "right"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — зажата."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "release_sling",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 20,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 15,
+      "source_total_ticks": 15,
+      "source_physical_calls_completed": 15,
+      "source_physical_calls_total": 15,
       "source_plan_sha256": "95f1b79ed648165da278bada2e1fd133bdd094a47168846dee0d6291db2cf5df",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -1035,47 +4351,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — дальняя полоса.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "far_lane",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "far_lane"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "right_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — зажата.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "bound",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "release_sling",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 20,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 8,
@@ -1140,18 +4659,248 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — обе полосы."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "both_lanes"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "left"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — свободно."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 19,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 14,
+      "source_total_ticks": 14,
+      "source_physical_calls_completed": 14,
+      "source_physical_calls_total": 14,
       "source_plan_sha256": "66a4e3a7dbbf82f05323b5e203273486a64b6e9affe36999c1e7e883ef626d29",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -1169,47 +4918,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — обе полосы.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "split_lanes",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "both_lanes"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "left_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — свободно.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "free",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "hoist_panel",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 19,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 9,
@@ -1274,18 +5226,262 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — обе полосы."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "both_lanes"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "left"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — зажата."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "release_sling",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 20,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 15,
+      "source_total_ticks": 15,
+      "source_physical_calls_completed": 15,
+      "source_physical_calls_total": 15,
       "source_plan_sha256": "ce36f0982c50f43f0bfea230f061188dfef1bae6b17c640259380813db7c3677",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -1303,47 +5499,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — обе полосы.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "split_lanes",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "both_lanes"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — левая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "left_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — зажата.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "bound",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "release_sling",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 20,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 10,
@@ -1408,18 +5807,248 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — обе полосы."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "both_lanes"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "right"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — свободно."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 19,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 14,
+      "source_total_ticks": 14,
+      "source_physical_calls_completed": 14,
+      "source_physical_calls_total": 14,
       "source_plan_sha256": "6f5ba38b720f7c5c988697ecfee12638b4b7e94b120f08f0cbbddafa7d66f470",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -1437,47 +6066,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — обе полосы.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "split_lanes",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "both_lanes"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "right_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — свободно.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "free",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "hoist_panel",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 19,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     },
     {
       "instance_index": 11,
@@ -1542,18 +6374,262 @@
               "side": "left"
             }
           }
+        },
+        {
+          "batter": {
+            "id": "drive_wedge",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_footing",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Внутренняя опора — ближняя."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "set_final_angle",
+            "args": {
+              "side": "near"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "brace_remains",
+            "args": {
+              "face": "left_route"
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "finish_town",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "read_debris_spread",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Расположение обломков — обе полосы."
+            }
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "clear_route",
+            "args": {
+              "route": "both_lanes"
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "read_panel_load_bias",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее."
+            }
+          }
+        },
+        {
+          "batter": {
+            "id": "shift_panel",
+            "args": {
+              "fulcrum_side": "right"
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "read_sling_condition",
+            "args": {}
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние стропы — зажата."
+            }
+          },
+          "spotter": {
+            "id": "wait",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "release_sling",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "batter": {
+            "id": "wait",
+            "args": {}
+          },
+          "spotter": {
+            "id": "hoist_panel",
+            "args": {}
+          },
+          "wedge_setter": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
-      "success": false,
-      "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "rounds": 20,
+      "messages": 5,
+      "success": true,
+      "complete_episode": true,
+      "stopped_reason": "goal_reached",
+      "source_end_tick": 15,
+      "source_total_ticks": 15,
+      "source_physical_calls_completed": 15,
+      "source_physical_calls_total": 15,
       "source_plan_sha256": "56b99fe06040310906cb84aa993e31516e67e1fd767d6c58d22fb2d1332f0f0b",
-      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093",
       "world_digest": "0ee9d1ec3a9e5ec44b8c796b65438644900eec519de02f3a34e519bb59f374cb",
       "contract_digest": "1ddcd6445ac91bda3791b7c2fb58b5d62f11034f29a6d8bb57fa042149ab232d",
       "deliveries": [
@@ -1571,47 +6647,250 @@
           "facts": [
             {
               "field": "outer_read",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "spotter",
               "source_parameters": [
                 "outer_hinge"
-              ]
+              ],
+              "reveal_action": "read_hinge",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "spotter:outer_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "set_wedge",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "outer_hinge"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "wedge_setter",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "set_wedge",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Внутренняя опора — ближняя.",
+          "post_round": 6,
+          "delivery_round": 7,
+          "first_available_action_tick": 8,
+          "facts": [
+            {
+              "field": "inner_read",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "inner_footing"
+              ],
+              "reveal_action": "read_footing",
+              "source_reveal_tick": 5,
+              "value": "near",
+              "reveal_phase": 4,
+              "key": "wedge_setter:inner_read",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 5,
+                  "source_tick": 6,
+                  "actor": "batter",
+                  "call": {
+                    "id": "set_final_angle",
+                    "args": {
+                      "side": "near"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "inner_footing"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 5
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "spotter",
+          "recipients": [
+            "batter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Расположение обломков — обе полосы.",
+          "post_round": 11,
+          "delivery_round": 12,
+          "first_available_action_tick": 13,
+          "facts": [
+            {
+              "field": "debris_reading",
+              "sender": "spotter",
+              "source_parameters": [
+                "debris_spread"
+              ],
+              "reveal_action": "read_debris_spread",
+              "source_reveal_tick": 9,
+              "value": "split_lanes",
+              "reveal_phase": 8,
+              "key": "spotter:debris_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 9,
+                  "source_tick": 10,
+                  "actor": "wedge_setter",
+                  "call": {
+                    "id": "clear_route",
+                    "args": {
+                      "route": "both_lanes"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "debris_spread"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 9
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "wedge_setter",
+          "recipients": [
+            "batter",
+            "spotter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Перекос нагрузки панели — правая сторона тяжелее.",
+          "post_round": 14,
+          "delivery_round": 15,
+          "first_available_action_tick": 16,
+          "facts": [
+            {
+              "field": "load_bias_reading",
+              "sender": "wedge_setter",
+              "source_parameters": [
+                "panel_load_bias"
+              ],
+              "reveal_action": "read_panel_load_bias",
+              "source_reveal_tick": 11,
+              "value": "right_heavy",
+              "reveal_phase": 10,
+              "key": "wedge_setter:load_bias_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 11,
+                  "source_tick": 12,
+                  "actor": "batter",
+                  "call": {
+                    "id": "shift_panel",
+                    "args": {
+                      "fulcrum_side": "right"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "panel_load_bias"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 11
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "batter",
+          "recipients": [
+            "spotter",
+            "wedge_setter"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние стропы — зажата.",
+          "post_round": 17,
+          "delivery_round": 18,
+          "first_available_action_tick": 19,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "batter",
+              "source_parameters": [
+                "sling_condition"
+              ],
+              "reveal_action": "read_sling_condition",
+              "source_reveal_tick": 13,
+              "value": "bound",
+              "reveal_phase": 12,
+              "key": "batter:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "spotter",
+                  "call": {
+                    "id": "release_sling",
+                    "args": {}
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_condition"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 20,
+      "revealed_facts_completed": 5,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Полная задача выполнена.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "wedge_setter",
-        "call": {
-          "id": "set_wedge",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "outer_read",
-        "source_parameters": [
-          "outer_hinge"
-        ],
-        "rule_explanation": "Внешний шарнир связан со стороной установки клина.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "2815db48a0377372a55e949e845e9bae653cf6c1519732652afd84f80856a093"
     }
   ]
 }

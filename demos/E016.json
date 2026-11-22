@@ -1,9 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "environment": "E016",
   "evidence_type": "scripted_cpu_with_messages",
-  "complete_episode": false,
-  "note": "Постановочный фрагмент: раскрытие показания, реальная передача и следующий ход. Физические действия взяты из готового CPU-плана; это не полная стратегия и не прогон модели.",
+  "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
   "examples": [
     {
       "instance_index": 0,
@@ -68,18 +67,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — левый борт."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "port"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — ослаблена."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "tighten"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "77444b31974377801bba3db142b27bb2db5ae369053a9303108bb6256ff3e39f",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -97,47 +363,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — левый борт.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "port",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "port"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — ослаблена.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "slack",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "tighten"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 1,
@@ -202,18 +623,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — левый борт."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "port"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — ослаблена."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "tighten"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "0e145b8c5feaa7da90b33c5c710aaf40c4b2e0db8cbe12131ba153b7cfc4b390",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -231,47 +919,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — левый борт.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "port",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "port"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — ослаблена.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "slack",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "tighten"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 2,
@@ -336,18 +1179,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — левый борт."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "port"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — натянута."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "loosen"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "f4240e3fa48855bdbd80281efafab399d76ac6de83e2436974005c48f0146ba0",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -365,47 +1475,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — левый борт.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "port",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "port"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — натянута.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "taut",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "loosen"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 3,
@@ -470,18 +1735,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — левый борт."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "port"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — натянута."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "loosen"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "4b50d580d2c0ea11b488455db02cbdfb21de7a2baf1d00780523e54abf2ffb7a",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -499,47 +2031,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — левый борт.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "port",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "port"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — натянута.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "taut",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "loosen"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 4,
@@ -604,18 +2291,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — середина судна."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "midships"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — ослаблена."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "tighten"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "49776b98c145cbc050e1e09973a0c9ce70975b50538c87cc924ccde82cec9c9b",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -633,47 +2587,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — середина судна.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "midships",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "midships"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — ослаблена.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "slack",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "tighten"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 5,
@@ -738,18 +2847,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — середина судна."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "midships"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — ослаблена."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "tighten"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "2b45e00daef5366ff58be7427818f1050d9e475911f9ae17dc07a92083273933",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -767,47 +3143,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — середина судна.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "midships",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "midships"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — ослаблена.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "slack",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "tighten"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 6,
@@ -872,18 +3403,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — середина судна."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "midships"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — натянута."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "loosen"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "9772845fddf95e4707f02e0b35b1203069adb34a3187d967fe0546200ebc25b8",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -901,47 +3699,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — середина судна.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "midships",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "midships"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — натянута.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "taut",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "loosen"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 7,
@@ -1006,18 +3959,285 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — середина судна."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "midships"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — натянута."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "loosen"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 22,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 18,
+      "source_total_ticks": 20,
+      "source_physical_calls_completed": 18,
+      "source_physical_calls_total": 20,
       "source_plan_sha256": "5786144ec39fd3d2a48a25a8dcb8623ab6ca222ce4c3f725c0738d65972760f0",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -1035,47 +4255,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — середина судна.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "midships",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "midships"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — натянута.",
+          "post_round": 19,
+          "delivery_round": 20,
+          "first_available_action_tick": 21,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 16,
+              "value": "taut",
+              "reveal_phase": 15,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 16,
+                  "source_tick": 17,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "loosen"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 16
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 25,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 18 из 20 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 8,
@@ -1140,18 +4515,299 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — корма."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "stern"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "thread_stern_ring",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — ослаблена."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "tighten"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "a16e9c6218a48fdaf0576b44e0ef8d1de4421eb93c9f15d9131c90513a44e792",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -1169,47 +4825,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — корма.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "stern",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "stern"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — ослаблена.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 17,
+              "value": "slack",
+              "reveal_phase": 16,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "tighten"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 9,
@@ -1274,18 +5085,299 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — корма."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "stern"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "thread_stern_ring",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — ослаблена."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "tighten"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "fae09ace6d81783269127d209103b66b6592e4090352579c7213eb4de55b867a",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -1303,47 +5395,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — корма.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "stern",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "stern"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — ослаблена.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 17,
+              "value": "slack",
+              "reveal_phase": 16,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "tighten"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 10,
@@ -1408,18 +5655,299 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — корма."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "stern"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "thread_stern_ring",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — натянута."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "loosen"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "8333ee9d1988e657d702dbe44d1ef622b195607142d13516a392f155380f10ef",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -1437,47 +5965,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — корма.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "stern",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "stern"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — натянута.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 17,
+              "value": "taut",
+              "reveal_phase": 16,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "loosen"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     },
     {
       "instance_index": 11,
@@ -1542,18 +6225,299 @@
             "id": "wait",
             "args": {}
           }
+        },
+        {
+          "captain": {
+            "id": "throw_first",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "catch_and_report_first",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "choose_rigger",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "clear_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_line",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Состояние линии — свободно."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "prepare_rigger",
+            "args": {
+              "mode": "direct"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "throw_second",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "catch_and_report_final",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "unfold_cradle",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "read_gust",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Сектор порыва — корма."
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "choose_anchor",
+            "args": {
+              "site": "stern"
+            }
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "thread_stern_ring",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "attach_tension_clamp",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "read_tension",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "send_message",
+            "args": {
+              "chat_id": "chat_0",
+              "content": "Моё показание: Натяжение стропы — натянута."
+            }
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "adjust_winch",
+            "args": {
+              "direction": "loosen"
+            }
+          },
+          "deckhand": {
+            "id": "wait",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
+        },
+        {
+          "captain": {
+            "id": "wait",
+            "args": {}
+          },
+          "deckhand": {
+            "id": "insert_latch_pin",
+            "args": {}
+          },
+          "rigger": {
+            "id": "wait",
+            "args": {}
+          }
         }
       ],
-      "rounds": 4,
+      "rounds": 23,
+      "messages": 4,
       "success": false,
       "complete_episode": false,
-      "stopped_reason": "illustration_complete",
-      "source_end_tick": 3,
-      "source_prefix_ticks": 2,
-      "inserted_action_tick": 3,
-      "messages": 1,
+      "stopped_reason": "substantial_prefix_before_horizon",
+      "source_end_tick": 19,
+      "source_total_ticks": 21,
+      "source_physical_calls_completed": 19,
+      "source_physical_calls_total": 21,
       "source_plan_sha256": "b51f70a53439ba69064e3f722bb15009ff582e748624ecdbc52a4589c8005de7",
-      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3",
       "world_digest": "392f3c833b65e6255c2e93488057698c2717443fa45ba7eba76e3a5d77ab4380",
       "contract_digest": "ef618ce7036c4a886f8a2557ae14c63a308aacce134c3c7cc6c9132f52f21d0a",
       "deliveries": [
@@ -1571,47 +6535,202 @@
           "facts": [
             {
               "field": "wind_reading",
-              "value": "left",
-              "revealed_after_tick": 2,
+              "sender": "captain",
               "source_parameters": [
                 "wind_side"
-              ]
+              ],
+              "reveal_action": "read_wind",
+              "source_reveal_tick": 2,
+              "value": "left",
+              "reveal_phase": 1,
+              "key": "captain:wind_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 2,
+                  "source_tick": 3,
+                  "actor": "deckhand",
+                  "call": {
+                    "id": "prepare_deckhand",
+                    "args": {
+                      "side": "left"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "wind_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 2
             }
           ],
-          "delivered_at_terminal": false,
-          "shown_recipient": "deckhand",
-          "shown_action_tick": 4,
-          "shown_call": {
-            "id": "prepare_deckhand",
-            "args": {
-              "side": "left"
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Состояние линии — свободно.",
+          "post_round": 9,
+          "delivery_round": 10,
+          "first_available_action_tick": 11,
+          "facts": [
+            {
+              "field": "line_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "line_condition"
+              ],
+              "reveal_action": "read_line",
+              "source_reveal_tick": 8,
+              "value": "clear",
+              "reveal_phase": 7,
+              "key": "deckhand:line_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 8,
+                  "source_tick": 9,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "prepare_rigger",
+                    "args": {
+                      "mode": "direct"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "line_reading"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 8
             }
-          },
-          "timing": "available_before_choice",
-          "causal_use_proven": false
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "captain",
+          "recipients": [
+            "deckhand",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Сектор порыва — корма.",
+          "post_round": 15,
+          "delivery_round": 16,
+          "first_available_action_tick": 17,
+          "facts": [
+            {
+              "field": "gust_reading",
+              "sender": "captain",
+              "source_parameters": [
+                "gust_sector"
+              ],
+              "reveal_action": "read_gust",
+              "source_reveal_tick": 13,
+              "value": "stern",
+              "reveal_phase": 12,
+              "key": "captain:gust_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 13,
+                  "source_tick": 14,
+                  "actor": "rigger",
+                  "call": {
+                    "id": "choose_anchor",
+                    "args": {
+                      "site": "stern"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "gust_sector"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 13
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
+        },
+        {
+          "sender": "deckhand",
+          "recipients": [
+            "captain",
+            "rigger"
+          ],
+          "channel": "chat_0",
+          "content": "Моё показание: Натяжение стропы — натянута.",
+          "post_round": 20,
+          "delivery_round": 21,
+          "first_available_action_tick": 22,
+          "facts": [
+            {
+              "field": "sling_reading",
+              "sender": "deckhand",
+              "source_parameters": [
+                "sling_tension"
+              ],
+              "reveal_action": "read_tension",
+              "source_reveal_tick": 17,
+              "value": "taut",
+              "reveal_phase": 16,
+              "key": "deckhand:sling_reading",
+              "value_changed": true,
+              "targets": [
+                {
+                  "phase": 17,
+                  "source_tick": 18,
+                  "actor": "captain",
+                  "call": {
+                    "id": "adjust_winch",
+                    "args": {
+                      "direction": "loosen"
+                    }
+                  },
+                  "relation": {
+                    "type": "direct_rule_reference",
+                    "references": [
+                      "sling_tension"
+                    ]
+                  }
+                }
+              ],
+              "first_target_phase": 17
+            }
+          ],
+          "packed_with_source": false,
+          "causal_use_proven": false,
+          "delivered_at_terminal": false
         }
       ],
       "feedback_all_accepted": true,
-      "physical_prefix_unchanged": true,
-      "physical_trajectory_identical": false,
+      "schedule_total_ticks": 26,
+      "revealed_facts_completed": 4,
+      "registered_facts_total": 5,
+      "rescheduled_source_joints": [],
+      "note": "Постановочное прохождение с сообщениями на готовом CPU-плане. Показания реально раскрываются и доставляются до связанных действий; физические решения взяты из сценария, а не вычислены из переписки. Это не прогон модели.",
+      "ending_note": "Показаны 19 из 21 исходных тактов и 4 из 5 обменов. Это незавершённая часть прохождения; предел времени не наступил.",
       "causal_use_proven": false,
-      "related_action": {
-        "actor": "deckhand",
-        "call": {
-          "id": "prepare_deckhand",
-          "args": {
-            "side": "left"
-          }
-        },
-        "source_tick": 3,
-        "action_tick": 4,
-        "field": "wind_reading",
-        "source_parameters": [
-          "wind_side"
-        ],
-        "rule_explanation": "Сторона ветра проверяется при подготовке стороны приёма.",
-        "relation_type": "direct_rule_reference"
-      }
+      "source_data_sha256": "0472940c98365981973b3641f71634be460ffdffa245ef6858041267636c58c3"
     }
   ]
 }
