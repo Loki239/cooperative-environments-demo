@@ -51,3 +51,26 @@
 
 .scene-observations>summary{padding:12px 16px;cursor:pointer;color:#526c62;font-size:13px}.comm-event:not(:has(.comm-select.active))>p,.comm-event:not(:has(.comm-select.active))>details{display:none}.comm-summary{font-weight:600;color:#284c41}
 .play-grid .replay-controls{position:sticky;top:8px;z-index:3;background:#fff;box-shadow:0 2px 8px #18314e0a}
+
+/* The team and the shared task form one foreground scene. */
+.team-layout{grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:22px}
+.team-stage{max-width:720px;margin:0 auto 16px;background:#fff;border:1px solid #ceded4;border-radius:14px;overflow:hidden}
+.team-stage .communication-scene{border:0;border-radius:0;margin:0;padding:12px 16px;background:#fbfdfb}
+.team-stage .communication-scene .section-head{margin:0 0 2px}.team-stage .communication-scene svg{max-width:640px;max-height:195px}
+.team-stage .scene-wrap{border:0;border-top:1px solid #dce7df;border-radius:0;background:#f7faf7}
+.team-stage .scene-wrap>svg,.team-stage .scene-wrap svg.mechanism-scene,.team-stage .e113-scene svg.e113-map{width:100%;height:245px;max-height:245px;aspect-ratio:auto}
+.team-stage .scene-caption,.team-stage .e113-location-note{display:none}
+.team-stage .scene-ribbon{padding:8px 14px;font-size:12px}.team-stage .scene-action,.team-stage .e113-action{font-size:12px;margin:0;padding:8px 14px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.team-stage .e113-cargo-key{display:flex;flex-wrap:wrap;padding:6px 12px;gap:4px 16px;font-size:12px}.team-stage .e113-cargo-key span{font-size:12px}
+.team-stage .scene-observations>summary,.team-stage .e113-reading-details>summary{font-size:12px;padding:8px 14px}
+.team-stage .comm-events{display:flex;flex-wrap:wrap;gap:5px}.team-stage .comm-event{display:contents}.team-stage .comm-select{width:auto;padding:5px 8px;font-size:12px;border:1px solid #d5e3d9;border-radius:7px;order:0}.team-stage .comm-select span{display:none}
+.team-stage .comm-event>p,.team-stage .comm-event>details{flex-basis:100%;order:1;margin:2px 0;font-size:13px}.team-stage .comm-preview{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;line-height:1.5;white-space:pre-wrap}
+.team-stage .comm-event:not(:has(.comm-select.active))>p,.team-stage .comm-event:not(:has(.comm-select.active))>details{display:none}
+.team-stage .comm-event details{font-size:11px;color:#64746e}.team-stage .comm-event details p{font-size:13px;color:#284c41}
+.team-stage .empty{margin:0;padding:5px 0 8px}.team-layout .replay-controls{border:1px solid #d8e4dc;border-radius:10px;margin-bottom:8px;flex-wrap:wrap;scroll-margin-top:8px;padding:10px}
+.next-message{font-size:12px;padding:8px 10px}.team-layout>.panel{font-size:13px}
+.team-layout .comm-moving{animation-duration:1500ms}
+@media(max-width:1000px){.team-layout{grid-template-columns:minmax(0,1fr)}.team-layout>.panel{max-width:720px;width:100%;margin:auto}.team-stage{width:100%}}
+@media(max-width:520px){.team-stage .communication-scene{padding:10px}.team-stage .communication-scene svg{height:155px;max-height:155px}.team-stage .scene-wrap>svg,.team-stage .scene-wrap svg.mechanism-scene,.team-stage .e113-scene svg.e113-map{height:220px;max-height:220px}.team-stage .comm-select{font-size:11px}.team-layout .next-message{flex-basis:100%}.team-layout .replay-controls{top:4px}.team-stage .comm-preview{font-size:12px}}
+.team-context{padding:7px 14px;background:#edf5ef;color:#426352;font-size:11px;border-bottom:1px solid #dae7de}
+.team-layout .team-stage .scene-observations,.team-layout .team-stage .e113-reading-details{display:none}

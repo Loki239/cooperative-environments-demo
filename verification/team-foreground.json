@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-22",
+  "scope": "People and recorded communication in the primary replay flow, seven core environments.",
+  "changes": [
+    "Default recorded Qwen in four supported replay views; explicit CPU remains available.",
+    "People stay visible before the first message; delivered routes and compact world share one card.",
+    "All simultaneous delivery routes are shown, with selectable exact message text.",
+    "Next-message navigation; longer visual hold on communication steps.",
+    "Anonymous local boards and manual observation boundaries preserved."
+  ],
+  "source_data_changed": false,
+  "new_model_runs": 0,
+  "runtime_sha256": {
+    "app.js": "21586144df297992743d4fff09a5f88b0656f66d0d4309163495c378401b4014",
+    "established-ui.js": "8c59baac0c435c528bfd94a0c952332475255a8fc3ec863f1261b0fc77854ff5",
+    "communication-scene.js": "a8b61cfb2de68d661879592c300336b054a14089cddbeff7a241f1e75737a69d",
+    "styles.css": "6fcbcb5fbe70796d80fd7d9bbd17394b9f41a03f6636aa167669c66fbeb101d6",
+    "index.html": "6bdd3d7a2e7080bb5fd99f068c30fa4247ce260e5f43cd6126112b136653d86a"
+  },
+  "checks": {
+    "source_switch_cases": 62,
+    "recorded_messages": 51,
+    "delivered_routes": 122,
+    "primary_flow_environments": 7,
+    "offline_core": 7,
+    "javascript_errors": 0
+  }
+}
