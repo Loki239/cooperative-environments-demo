@@ -2,7 +2,7 @@
 
 [Открыть интерактивное демо](https://loki239.github.io/cooperative-environments-demo/)
 
-[GIF и роли: 14 прохождений с краткими пояснениями](https://loki239.github.io/cooperative-environments-demo/gifs/)
+[GIF и роли: 23 прохождения, включая 18 задач на BFCL](https://loki239.github.io/cooperative-environments-demo/gifs/)
 
 37 готовых сред: семь основных задач и 30 новых продолжений. Можно играть за разные роли и смотреть сохранённые CPU-прохождения. Есть выбор старта, предметные схемы и ссылка на выбранную задачу.
 
