@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E138 (посадка самолёта) — два оформления</title>
+  <style>
+    :root { color-scheme:light; --ink:#243a35; --muted:#64726d; --green:#39745e; --line:#dce5df; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f6f8f7; color:var(--ink); font:17px/1.55 Arial,sans-serif; }
+    main { max-width:1536px; margin:0 auto; padding:28px 28px 48px; }
+    a { color:var(--green); text-underline-offset:3px; }
+    h1 { font-size:clamp(26px,3vw,38px); line-height:1.2; margin:24px 0 14px; }
+    .intro { max-width:880px; margin:0 0 16px; }
+    .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:24px 0; }
+    button { font:inherit; cursor:pointer; border:1px solid var(--green); border-radius:7px; padding:10px 18px; background:var(--green); color:white; }
+    button.secondary { background:white; color:var(--green); }
+    button:focus-visible,a:focus-visible { outline:3px solid #ac6d24; outline-offset:4px; }
+    #status { color:var(--muted); font-size:15px; }
+    .comparison { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; align-items:start; }
+    article { min-width:0; }
+    h2 { margin:0 0 8px; font-size:23px; }
+    article>p { min-height:52px; margin:0 0 16px; max-width:650px; color:var(--muted); }
+    video { width:100%; max-width:720px; aspect-ratio:1; display:block; background:white; border:1px solid var(--line); border-radius:12px; }
+    .downloads { display:flex; gap:22px; margin-top:12px; }
+    .context { border-top:1px solid var(--line); margin-top:30px; padding-top:20px; max-width:980px; }
+    .context p { margin:8px 0; }
+    @media(max-width:800px) { main { padding:20px 16px 36px; } .comparison { grid-template-columns:1fr; gap:32px; } article>p { min-height:0; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+<main>
+  <a href="../#env=E138&amp;mode=about&amp;start=1&amp;replay=demo">К среде и полному прохождению</a>
+  <h1>E138 (посадка самолёта): два оформления</h1>
+  <p class="intro">Одна запись, одинаковые события и подписи. Сравниваем, как показать действия экипажа: в общей сцене или с приближением к нужной детали. Человечки и цвета ролей сохранены.</p>
+  <div class="toolbar">
+    <button id="play">Запустить оба с начала</button>
+    <button id="pause" class="secondary">Пауза</button>
+    <span id="status" role="status">Просмотр запускается по кнопке.</span>
+  </div>
+  <section class="comparison" aria-label="Два варианта оформления">
+    <article>
+      <h2>Общая сцена</h2>
+      <p>Самолёт и рабочие детали остаются в одном кадре. Видны связь действий и состояние всей конструкции.</p>
+      <video controls playsinline preload="metadata" poster="overview.png" aria-label="Общая сцена посадки самолёта"><source src="overview.mp4" type="video/mp4"></video>
+      <div class="downloads"><a href="overview.gif" download>Скачать GIF</a><a href="overview.mp4" download>Скачать MP4</a></div>
+    </article>
+    <article>
+      <h2>Фокус на детали</h2>
+      <p>Текущая операция показана крупнее. Экипаж и сообщения остаются на месте, меняется только вид предметной сцены.</p>
+      <video controls playsinline preload="metadata" poster="detail.png" aria-label="Крупные планы посадки самолёта"><source src="detail.mp4" type="video/mp4"></video>
+      <div class="downloads"><a href="detail.gif" download>Скачать GIF</a><a href="detail.mp4" download>Скачать MP4</a></div>
+    </article>
+  </section>
+  <section class="context" aria-label="Что показывает запись">
+    <p><strong>Задача экипажа:</strong> согласовать настройки и посадить самолёт, используя частные показания ветра и радара.</p>
+    <p>Здесь показан фрагмент до касания полосы. Полная задача продолжается рулением и охлаждением. Это постановочная CPU-запись с фактическими доставками сообщений; физические решения взяты из готового плана. Она не показывает игру языковой модели и не доказывает необходимость каждого сообщения.</p>
+    <p>Геометрия условная. Движение камеры служит объяснению и не добавляет игровых действий. Оба оформления пока предложены для сравнения.</p>
+  </section>
+</main>
+<script>
+  const videos = [...document.querySelectorAll('video')];
+  const status = document.querySelector('#status');
+  document.querySelector('#play').addEventListener('click', async () => {
+    videos.forEach(video => { video.pause(); video.currentTime = 0; });
+    const results = await Promise.allSettled(videos.map(video => video.play()));
+    status.textContent = results.every(result => result.status === 'fulfilled')
+      ? 'Оба варианта запущены с начала.'
+      : 'Не удалось запустить оба видео. Используйте кнопку воспроизведения под нужным вариантом.';
+  });
+  document.querySelector('#pause').addEventListener('click', () => {
+    videos.forEach(video => video.pause());
+    status.textContent = 'Оба варианта на паузе.';
+  });
+</script>
+</body>
+</html>
